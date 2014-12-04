@@ -1,0 +1,144 @@
+Nov 6, 2014 3:38:27 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/lib/jvm/java-6-openjdk-amd64/jre/lib/amd64/server:/usr/lib/jvm/java-6-openjdk-amd64/jre/lib/amd64:/usr/lib/jvm/java-6-openjdk-amd64/jre/../lib/amd64:/oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 6, 2014 3:38:27 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16310
+Nov 6, 2014 3:38:27 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 1228 ms
+Nov 6, 2014 3:38:27 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 6, 2014 3:38:27 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.35
+Nov 6, 2014 3:38:27 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 6, 2014 3:38:28 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory OnlineImageProcess
+Nov 6, 2014 3:38:28 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 6, 2014 3:38:28 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory OnlineInformationSystem
+Nov 6, 2014 3:38:28 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16310
+Nov 6, 2014 3:38:28 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 6, 2014 3:38:28 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/20  config=null
+Nov 6, 2014 3:38:28 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 1036 ms
+Nov 6, 2014 3:40:45 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16310
+Nov 6, 2014 3:40:46 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 6, 2014 3:40:46 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/OnlineImageProcess] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 6, 2014 3:40:47 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16310
+Nov 6, 2014 5:17:37 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/lib/jvm/java-6-openjdk-amd64/jre/lib/amd64/server:/usr/lib/jvm/java-6-openjdk-amd64/jre/lib/amd64:/usr/lib/jvm/java-6-openjdk-amd64/jre/../lib/amd64:/oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 6, 2014 5:17:37 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16310
+Nov 6, 2014 5:17:37 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 1305 ms
+Nov 6, 2014 5:17:37 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 6, 2014 5:17:37 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.35
+Nov 6, 2014 5:17:37 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 6, 2014 5:17:38 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory OnlineImageProcess
+Nov 6, 2014 5:17:38 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 6, 2014 5:17:38 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory OnlineInformationSystem
+Nov 6, 2014 5:17:38 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16310
+Nov 6, 2014 5:17:38 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 6, 2014 5:17:38 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/33  config=null
+Nov 6, 2014 5:17:38 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 928 ms
+Nov 6, 2014 5:39:48 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Concur
+Nov 6, 2014 5:39:52 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16310
+Nov 6, 2014 5:39:53 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 6, 2014 5:39:53 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/OnlineImageProcess] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 6, 2014 5:39:54 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16310
+Nov 6, 2014 6:10:37 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/lib/jvm/java-6-openjdk-amd64/jre/lib/amd64/server:/usr/lib/jvm/java-6-openjdk-amd64/jre/lib/amd64:/usr/lib/jvm/java-6-openjdk-amd64/jre/../lib/amd64:/oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 6, 2014 6:10:37 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16310
+Nov 6, 2014 6:10:37 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 637 ms
+Nov 6, 2014 6:10:37 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 6, 2014 6:10:37 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.35
+Nov 6, 2014 6:10:37 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Concur
+Nov 6, 2014 6:10:38 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 6, 2014 6:10:38 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory OnlineImageProcess
+Nov 6, 2014 6:10:38 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 6, 2014 6:10:38 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory OnlineInformationSystem
+Nov 6, 2014 6:10:38 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16310
+Nov 6, 2014 6:10:38 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 6, 2014 6:10:38 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/15  config=null
+Nov 6, 2014 6:10:38 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 553 ms
+Nov 6, 2014 6:24:28 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16310
+Nov 6, 2014 6:24:29 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 6, 2014 6:24:29 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/OnlineImageProcess] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 6, 2014 6:24:29 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16310
+Nov 6, 2014 6:25:42 PM org.apache.catalina.core.AprLifecycleListener init
+INFO: The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: /usr/lib/jvm/java-6-openjdk-amd64/jre/lib/amd64/server:/usr/lib/jvm/java-6-openjdk-amd64/jre/lib/amd64:/usr/lib/jvm/java-6-openjdk-amd64/jre/../lib/amd64:/oracle/lib:/usr/java/packages/lib/amd64:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib
+Nov 6, 2014 6:25:42 PM org.apache.coyote.http11.Http11Protocol init
+INFO: Initializing Coyote HTTP/1.1 on http-16310
+Nov 6, 2014 6:25:42 PM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 593 ms
+Nov 6, 2014 6:25:42 PM org.apache.catalina.core.StandardService start
+INFO: Starting service Catalina
+Nov 6, 2014 6:25:42 PM org.apache.catalina.core.StandardEngine start
+INFO: Starting Servlet Engine: Apache Tomcat/6.0.35
+Nov 6, 2014 6:25:42 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Concur
+Nov 6, 2014 6:25:42 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory ROOT
+Nov 6, 2014 6:25:43 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory OnlineImageProcess
+Nov 6, 2014 6:25:43 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory proj1
+Nov 6, 2014 6:25:43 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory OnlineInformationSystem
+Nov 6, 2014 6:25:43 PM org.apache.coyote.http11.Http11Protocol start
+INFO: Starting Coyote HTTP/1.1 on http-16310
+Nov 6, 2014 6:25:43 PM org.apache.jk.common.ChannelSocket init
+INFO: JK: ajp13 listening on /0.0.0.0:8009
+Nov 6, 2014 6:25:43 PM org.apache.jk.server.JkMain start
+INFO: Jk running ID=0 time=0/17  config=null
+Nov 6, 2014 6:25:43 PM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 512 ms
+Nov 6, 2014 7:13:33 PM org.apache.catalina.startup.HostConfig deployDirectory
+INFO: Deploying web application directory Banff Park_files
+Nov 6, 2014 7:16:15 PM org.apache.coyote.http11.Http11Protocol pause
+INFO: Pausing Coyote HTTP/1.1 on http-16310
+Nov 6, 2014 7:16:16 PM org.apache.catalina.core.StandardService stop
+INFO: Stopping service Catalina
+Nov 6, 2014 7:16:16 PM org.apache.catalina.loader.WebappClassLoader clearReferencesJdbc
+SEVERE: The web application [/OnlineImageProcess] registered the JDBC driver [oracle.jdbc.OracleDriver] but failed to unregister it when the web application was stopped. To prevent a memory leak, the JDBC Driver has been forcibly unregistered.
+Nov 6, 2014 7:16:16 PM org.apache.coyote.http11.Http11Protocol destroy
+INFO: Stopping Coyote HTTP/1.1 on http-16310

@@ -1,0 +1,4428 @@
+Nov 11, 2014 3:40:02 PM org.apache.catalina.core.ApplicationContext log
+INFO: Marking servlet PictureBrowse as unavailable
+Nov 11, 2014 3:40:02 PM org.apache.catalina.core.ApplicationContext log
+SEVERE: Error loading WebappClassLoader
+  context: /OnlineImageProcess
+  delegate: false
+  repositories:
+    /WEB-INF/classes/
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@2795a626
+ PictureBrowse
+java.lang.ClassNotFoundException: PictureBrowse
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1680)
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1526)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1128)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:827)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:129)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 3:40:02 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Allocate exception for servlet PictureBrowse
+java.lang.ClassNotFoundException: PictureBrowse
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1680)
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1526)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1128)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:827)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:129)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 3:40:08 PM org.apache.catalina.core.StandardWrapperValve invoke
+INFO: Servlet PictureBrowse is currently unavailable
+Nov 11, 2014 3:48:54 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 24 in the jsp file: /search.jsp
+Syntax error, insert ")" to complete Expression
+21: 	
+22: 	//Start from the search time period
+23: 	try {
+24: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START");
+25: 		Calender c = Calender.getInstance();
+26: 		c.setTime(dateStart);
+27: 		c.set(Calender.HOUR_OF_DAY,0);
+
+
+An error occurred at line: 25 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+22: 	//Start from the search time period
+23: 	try {
+24: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START");
+25: 		Calender c = Calender.getInstance();
+26: 		c.setTime(dateStart);
+27: 		c.set(Calender.HOUR_OF_DAY,0);
+28: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 25 in the jsp file: /search.jsp
+Calender cannot be resolved
+22: 	//Start from the search time period
+23: 	try {
+24: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START");
+25: 		Calender c = Calender.getInstance();
+26: 		c.setTime(dateStart);
+27: 		c.set(Calender.HOUR_OF_DAY,0);
+28: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 27 in the jsp file: /search.jsp
+Calender.HOUR_OF_DAY cannot be resolved to a type
+24: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START");
+25: 		Calender c = Calender.getInstance();
+26: 		c.setTime(dateStart);
+27: 		c.set(Calender.HOUR_OF_DAY,0);
+28: 	}catch (IllegalArgumentException e) {
+29: 		e.printStackTrace();
+30: 	}
+
+
+An error occurred at line: 34 in the jsp file: /search.jsp
+String literal is not properly closed by a double-quote
+31: 	
+32: 	//End date
+33: 	try {
+34: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END');
+35: 		Calender c = Calender.getInstance();
+36: 		c.setTime(dateStart);
+37: 		c.set(Calender.HOUR_OF_DATE,0);
+
+
+An error occurred at line: 34 in the jsp file: /search.jsp
+String literal is not properly closed by a double-quote
+31: 	
+32: 	//End date
+33: 	try {
+34: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END');
+35: 		Calender c = Calender.getInstance();
+36: 		c.setTime(dateStart);
+37: 		c.set(Calender.HOUR_OF_DATE,0);
+
+
+An error occurred at line: 34 in the jsp file: /search.jsp
+Syntax error, insert ")" to complete MethodInvocation
+31: 	
+32: 	//End date
+33: 	try {
+34: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END');
+35: 		Calender c = Calender.getInstance();
+36: 		c.setTime(dateStart);
+37: 		c.set(Calender.HOUR_OF_DATE,0);
+
+
+An error occurred at line: 34 in the jsp file: /search.jsp
+Syntax error, insert ")" to complete MethodInvocation
+31: 	
+32: 	//End date
+33: 	try {
+34: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END');
+35: 		Calender c = Calender.getInstance();
+36: 		c.setTime(dateStart);
+37: 		c.set(Calender.HOUR_OF_DATE,0);
+
+
+An error occurred at line: 34 in the jsp file: /search.jsp
+Syntax error, insert ";" to complete BlockStatements
+31: 	
+32: 	//End date
+33: 	try {
+34: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END');
+35: 		Calender c = Calender.getInstance();
+36: 		c.setTime(dateStart);
+37: 		c.set(Calender.HOUR_OF_DATE,0);
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 4:21:01 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 24 in the jsp file: /search.jsp
+Syntax error, insert ")" to complete Expression
+21: 	
+22: 	//Start from the search time period
+23: 	try {
+24: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START");
+25: 		Calender c = Calender.getInstance();
+26: 		c.setTime(dateStart);
+27: 		c.set(Calender.HOUR_OF_DAY,0);
+
+
+An error occurred at line: 25 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+22: 	//Start from the search time period
+23: 	try {
+24: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START");
+25: 		Calender c = Calender.getInstance();
+26: 		c.setTime(dateStart);
+27: 		c.set(Calender.HOUR_OF_DAY,0);
+28: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 25 in the jsp file: /search.jsp
+Calender cannot be resolved
+22: 	//Start from the search time period
+23: 	try {
+24: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START");
+25: 		Calender c = Calender.getInstance();
+26: 		c.setTime(dateStart);
+27: 		c.set(Calender.HOUR_OF_DAY,0);
+28: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 27 in the jsp file: /search.jsp
+Calender.HOUR_OF_DAY cannot be resolved to a type
+24: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START");
+25: 		Calender c = Calender.getInstance();
+26: 		c.setTime(dateStart);
+27: 		c.set(Calender.HOUR_OF_DAY,0);
+28: 	}catch (IllegalArgumentException e) {
+29: 		e.printStackTrace();
+30: 	}
+
+
+An error occurred at line: 34 in the jsp file: /search.jsp
+String literal is not properly closed by a double-quote
+31: 	
+32: 	//End date
+33: 	try {
+34: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END');
+35: 		Calender c = Calender.getInstance();
+36: 		c.setTime(dateStart);
+37: 		c.set(Calender.HOUR_OF_DATE,0);
+
+
+An error occurred at line: 34 in the jsp file: /search.jsp
+String literal is not properly closed by a double-quote
+31: 	
+32: 	//End date
+33: 	try {
+34: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END');
+35: 		Calender c = Calender.getInstance();
+36: 		c.setTime(dateStart);
+37: 		c.set(Calender.HOUR_OF_DATE,0);
+
+
+An error occurred at line: 34 in the jsp file: /search.jsp
+Syntax error, insert ")" to complete MethodInvocation
+31: 	
+32: 	//End date
+33: 	try {
+34: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END');
+35: 		Calender c = Calender.getInstance();
+36: 		c.setTime(dateStart);
+37: 		c.set(Calender.HOUR_OF_DATE,0);
+
+
+An error occurred at line: 34 in the jsp file: /search.jsp
+Syntax error, insert ")" to complete MethodInvocation
+31: 	
+32: 	//End date
+33: 	try {
+34: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END');
+35: 		Calender c = Calender.getInstance();
+36: 		c.setTime(dateStart);
+37: 		c.set(Calender.HOUR_OF_DATE,0);
+
+
+An error occurred at line: 34 in the jsp file: /search.jsp
+Syntax error, insert ";" to complete BlockStatements
+31: 	
+32: 	//End date
+33: 	try {
+34: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END');
+35: 		Calender c = Calender.getInstance();
+36: 		c.setTime(dateStart);
+37: 		c.set(Calender.HOUR_OF_DATE,0);
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 4:39:14 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 25 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+22: 	//Start from the search time period
+23: 	try {
+24: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+25: 		Calender c = Calender.getInstance();
+26: 		c.setTime(dateStart);
+27: 		c.set(Calender.HOUR_OF_DAY,0);
+28: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 25 in the jsp file: /search.jsp
+Calender cannot be resolved
+22: 	//Start from the search time period
+23: 	try {
+24: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+25: 		Calender c = Calender.getInstance();
+26: 		c.setTime(dateStart);
+27: 		c.set(Calender.HOUR_OF_DAY,0);
+28: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 27 in the jsp file: /search.jsp
+Calender.HOUR_OF_DAY cannot be resolved to a type
+24: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+25: 		Calender c = Calender.getInstance();
+26: 		c.setTime(dateStart);
+27: 		c.set(Calender.HOUR_OF_DAY,0);
+28: 	}catch (IllegalArgumentException e) {
+29: 		e.printStackTrace();
+30: 	}
+
+
+An error occurred at line: 35 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+32: 	//End date
+33: 	try {
+34: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+35: 		Calender c = Calender.getInstance();
+36: 		c.setTime(dateStart);
+37: 		c.set(Calender.HOUR_OF_DATE,0);
+38: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 35 in the jsp file: /search.jsp
+Calender cannot be resolved
+32: 	//End date
+33: 	try {
+34: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+35: 		Calender c = Calender.getInstance();
+36: 		c.setTime(dateStart);
+37: 		c.set(Calender.HOUR_OF_DATE,0);
+38: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 37 in the jsp file: /search.jsp
+Calender.HOUR_OF_DATE cannot be resolved to a type
+34: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+35: 		Calender c = Calender.getInstance();
+36: 		c.setTime(dateStart);
+37: 		c.set(Calender.HOUR_OF_DATE,0);
+38: 	}catch (IllegalArgumentException e) {
+39: 		e.printStackTrace();
+40: 	}
+
+
+An error occurred at line: 44 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+41: 	
+42: 	query = query == null||query.equals("") ? null : query;
+43: 	
+44: 	String user = HtmlPrinter.getUserCookie(request.getCookies());
+45: 	
+46: 	if (user == null) {
+47: 		response.setHeader("Refresh", "0; URL=profile.jsp");
+
+
+An error occurred at line: 51 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+48: 		return;
+49: 	}
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+
+
+An error occurred at line: 52 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+49: 	}
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+55: 	ResultSet resultset;
+
+
+An error occurred at line: 52 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+49: 	}
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+55: 	ResultSet resultset;
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+55: 	ResultSet resultset;
+56: 	String p_id;
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+55: 	ResultSet resultset;
+56: 	String p_id;
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+adapter cannot be resolved to a variable
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+55: 	ResultSet resultset;
+56: 	String p_id;
+
+
+An error occurred at line: 79 in the jsp file: /search.jsp
+helper cannot be resolved
+76: 			<TD align="center">
+77: 				<%
+78: 					if (request.getParameter("SEARCH") != null && (dateStart != null || dateEnd != null || query != null)) {
+79: 						resultset = helper.getSearchItems(query, dateStart, dateEnd);
+80: 					} else {
+81: 						response.setHeader("Refresh", "0; URL=profile.jsp");
+82: 						return;
+
+
+An error occurred at line: 94 in the jsp file: /search.jsp
+rset cannot be resolved
+91: 										done = true;
+92: 										break;
+93: 									}
+94: 									p_id = rset.getString("photo_id");
+95: 									out.println("<TD style='width:150px;height:150px;max-width:150px;max-height:150px;min-width:150px;min-height:150px;overflow:hidden;'>");
+96: 									out.println("<A href=\"/proj1/GetBigPic?big" + p_id+ "\">");
+97: 									out.println("<IMG src=\"/proj1/GetOnePic?" + p_id+ "\">");
+
+
+An error occurred at line: 113 in the jsp file: /search.jsp
+sqladapter cannot be resolved
+110: 		</TR>
+111: 	</TABLE>
+112: 	<%
+113: 		sqladapter.closeConnection();
+114: 	%>
+115: </BODY>
+116: </HTML>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 4:48:50 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 9 in the generated java file
+Only a type can be imported. java.util.Calender resolves to a package
+
+An error occurred at line: 26 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+23: 	//Start from the search time period
+24: 	try {
+25: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+26: 		Calender c = Calender.getInstance();
+27: 		c.setTime(dateStart);
+28: 		c.set(Calender.HOUR_OF_DAY,0);
+29: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 26 in the jsp file: /search.jsp
+Calender cannot be resolved
+23: 	//Start from the search time period
+24: 	try {
+25: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+26: 		Calender c = Calender.getInstance();
+27: 		c.setTime(dateStart);
+28: 		c.set(Calender.HOUR_OF_DAY,0);
+29: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 28 in the jsp file: /search.jsp
+Calender.HOUR_OF_DAY cannot be resolved to a type
+25: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+26: 		Calender c = Calender.getInstance();
+27: 		c.setTime(dateStart);
+28: 		c.set(Calender.HOUR_OF_DAY,0);
+29: 	}catch (IllegalArgumentException e) {
+30: 		e.printStackTrace();
+31: 	}
+
+
+An error occurred at line: 36 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+33: 	//End date
+34: 	try {
+35: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+36: 		Calender c = Calender.getInstance();
+37: 		c.setTime(dateStart);
+38: 		c.set(Calender.HOUR_OF_DATE,0);
+39: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 36 in the jsp file: /search.jsp
+Calender cannot be resolved
+33: 	//End date
+34: 	try {
+35: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+36: 		Calender c = Calender.getInstance();
+37: 		c.setTime(dateStart);
+38: 		c.set(Calender.HOUR_OF_DATE,0);
+39: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 38 in the jsp file: /search.jsp
+Calender.HOUR_OF_DATE cannot be resolved to a type
+35: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+36: 		Calender c = Calender.getInstance();
+37: 		c.setTime(dateStart);
+38: 		c.set(Calender.HOUR_OF_DATE,0);
+39: 	}catch (IllegalArgumentException e) {
+40: 		e.printStackTrace();
+41: 	}
+
+
+An error occurred at line: 45 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+42: 	
+43: 	query = query == null||query.equals("") ? null : query;
+44: 	
+45: 	String user = HtmlPrinter.getUserCookie(request.getCookies());
+46: 	
+47: 	if (user == null) {
+48: 		response.setHeader("Refresh", "0; URL=profile.jsp");
+
+
+An error occurred at line: 52 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+49: 		return;
+50: 	}
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+50: 	}
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+50: 	}
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+
+
+An error occurred at line: 54 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+57: 	String p_id;
+
+
+An error occurred at line: 54 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+57: 	String p_id;
+
+
+An error occurred at line: 54 in the jsp file: /search.jsp
+adapter cannot be resolved to a variable
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+57: 	String p_id;
+
+
+An error occurred at line: 80 in the jsp file: /search.jsp
+helper cannot be resolved
+77: 			<TD align="center">
+78: 				<%
+79: 					if (request.getParameter("SEARCH") != null && (dateStart != null || dateEnd != null || query != null)) {
+80: 						resultset = helper.getSearchItems(query, dateStart, dateEnd);
+81: 					} else {
+82: 						response.setHeader("Refresh", "0; URL=profile.jsp");
+83: 						return;
+
+
+An error occurred at line: 95 in the jsp file: /search.jsp
+rset cannot be resolved
+92: 										done = true;
+93: 										break;
+94: 									}
+95: 									p_id = rset.getString("photo_id");
+96: 									out.println("<TD style='width:150px;height:150px;max-width:150px;max-height:150px;min-width:150px;min-height:150px;overflow:hidden;'>");
+97: 									out.println("<A href=\"/proj1/GetBigPic?big" + p_id+ "\">");
+98: 									out.println("<IMG src=\"/proj1/GetOnePic?" + p_id+ "\">");
+
+
+An error occurred at line: 114 in the jsp file: /search.jsp
+sqladapter cannot be resolved
+111: 		</TR>
+112: 	</TABLE>
+113: 	<%
+114: 		sqladapter.closeConnection();
+115: 	%>
+116: </BODY>
+117: </HTML>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 4:49:13 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 8 in the generated java file
+Only a type can be imported. java.util.Calender resolves to a package
+
+An error occurred at line: 26 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+23: 	//Start from the search time period
+24: 	try {
+25: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+26: 		Calender c = Calender.getInstance();
+27: 		c.setTime(dateStart);
+28: 		c.set(Calender.HOUR_OF_DAY,0);
+29: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 26 in the jsp file: /search.jsp
+Calender cannot be resolved
+23: 	//Start from the search time period
+24: 	try {
+25: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+26: 		Calender c = Calender.getInstance();
+27: 		c.setTime(dateStart);
+28: 		c.set(Calender.HOUR_OF_DAY,0);
+29: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 28 in the jsp file: /search.jsp
+Calender.HOUR_OF_DAY cannot be resolved to a type
+25: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+26: 		Calender c = Calender.getInstance();
+27: 		c.setTime(dateStart);
+28: 		c.set(Calender.HOUR_OF_DAY,0);
+29: 	}catch (IllegalArgumentException e) {
+30: 		e.printStackTrace();
+31: 	}
+
+
+An error occurred at line: 36 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+33: 	//End date
+34: 	try {
+35: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+36: 		Calender c = Calender.getInstance();
+37: 		c.setTime(dateStart);
+38: 		c.set(Calender.HOUR_OF_DATE,0);
+39: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 36 in the jsp file: /search.jsp
+Calender cannot be resolved
+33: 	//End date
+34: 	try {
+35: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+36: 		Calender c = Calender.getInstance();
+37: 		c.setTime(dateStart);
+38: 		c.set(Calender.HOUR_OF_DATE,0);
+39: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 38 in the jsp file: /search.jsp
+Calender.HOUR_OF_DATE cannot be resolved to a type
+35: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+36: 		Calender c = Calender.getInstance();
+37: 		c.setTime(dateStart);
+38: 		c.set(Calender.HOUR_OF_DATE,0);
+39: 	}catch (IllegalArgumentException e) {
+40: 		e.printStackTrace();
+41: 	}
+
+
+An error occurred at line: 45 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+42: 	
+43: 	query = query == null||query.equals("") ? null : query;
+44: 	
+45: 	String user = HtmlPrinter.getUserCookie(request.getCookies());
+46: 	
+47: 	if (user == null) {
+48: 		response.setHeader("Refresh", "0; URL=profile.jsp");
+
+
+An error occurred at line: 52 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+49: 		return;
+50: 	}
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+50: 	}
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+50: 	}
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+
+
+An error occurred at line: 54 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+57: 	String p_id;
+
+
+An error occurred at line: 54 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+57: 	String p_id;
+
+
+An error occurred at line: 54 in the jsp file: /search.jsp
+adapter cannot be resolved to a variable
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+57: 	String p_id;
+
+
+An error occurred at line: 80 in the jsp file: /search.jsp
+helper cannot be resolved
+77: 			<TD align="center">
+78: 				<%
+79: 					if (request.getParameter("SEARCH") != null && (dateStart != null || dateEnd != null || query != null)) {
+80: 						resultset = helper.getSearchItems(query, dateStart, dateEnd);
+81: 					} else {
+82: 						response.setHeader("Refresh", "0; URL=profile.jsp");
+83: 						return;
+
+
+An error occurred at line: 95 in the jsp file: /search.jsp
+rset cannot be resolved
+92: 										done = true;
+93: 										break;
+94: 									}
+95: 									p_id = rset.getString("photo_id");
+96: 									out.println("<TD style='width:150px;height:150px;max-width:150px;max-height:150px;min-width:150px;min-height:150px;overflow:hidden;'>");
+97: 									out.println("<A href=\"/proj1/GetBigPic?big" + p_id+ "\">");
+98: 									out.println("<IMG src=\"/proj1/GetOnePic?" + p_id+ "\">");
+
+
+An error occurred at line: 114 in the jsp file: /search.jsp
+sqladapter cannot be resolved
+111: 		</TR>
+112: 	</TABLE>
+113: 	<%
+114: 		sqladapter.closeConnection();
+115: 	%>
+116: </BODY>
+117: </HTML>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 4:56:45 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 8 in the generated java file
+Only a type can be imported. java.util.Calender resolves to a package
+
+An error occurred at line: 25 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+22: 	//Start from the search time period
+23: 	try {
+24: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+25: 		Calender c = Calender.getInstance();
+26: 		c.setTime(dateStart);
+27: 		c.set(Calender.HOUR_OF_DAY,0);
+28: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 25 in the jsp file: /search.jsp
+Calender cannot be resolved
+22: 	//Start from the search time period
+23: 	try {
+24: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+25: 		Calender c = Calender.getInstance();
+26: 		c.setTime(dateStart);
+27: 		c.set(Calender.HOUR_OF_DAY,0);
+28: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 27 in the jsp file: /search.jsp
+Calender.HOUR_OF_DAY cannot be resolved to a type
+24: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+25: 		Calender c = Calender.getInstance();
+26: 		c.setTime(dateStart);
+27: 		c.set(Calender.HOUR_OF_DAY,0);
+28: 	}catch (IllegalArgumentException e) {
+29: 		e.printStackTrace();
+30: 	}
+
+
+An error occurred at line: 35 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+32: 	//End date
+33: 	try {
+34: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+35: 		Calender c = Calender.getInstance();
+36: 		c.setTime(dateStart);
+37: 		c.set(Calender.HOUR_OF_DATE,0);
+38: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 35 in the jsp file: /search.jsp
+Calender cannot be resolved
+32: 	//End date
+33: 	try {
+34: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+35: 		Calender c = Calender.getInstance();
+36: 		c.setTime(dateStart);
+37: 		c.set(Calender.HOUR_OF_DATE,0);
+38: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 37 in the jsp file: /search.jsp
+Calender.HOUR_OF_DATE cannot be resolved to a type
+34: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+35: 		Calender c = Calender.getInstance();
+36: 		c.setTime(dateStart);
+37: 		c.set(Calender.HOUR_OF_DATE,0);
+38: 	}catch (IllegalArgumentException e) {
+39: 		e.printStackTrace();
+40: 	}
+
+
+An error occurred at line: 44 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+41: 	
+42: 	query = query == null||query.equals("") ? null : query;
+43: 	
+44: 	String user = HtmlPrinter.getUserCookie(request.getCookies());
+45: 	
+46: 	if (user == null) {
+47: 		response.setHeader("Refresh", "0; URL=profile.jsp");
+
+
+An error occurred at line: 51 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+48: 		return;
+49: 	}
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+
+
+An error occurred at line: 52 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+49: 	}
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+55: 	ResultSet resultset;
+
+
+An error occurred at line: 52 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+49: 	}
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+55: 	ResultSet resultset;
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+55: 	ResultSet resultset;
+56: 	String p_id;
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+55: 	ResultSet resultset;
+56: 	String p_id;
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+adapter cannot be resolved to a variable
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+55: 	ResultSet resultset;
+56: 	String p_id;
+
+
+An error occurred at line: 79 in the jsp file: /search.jsp
+helper cannot be resolved
+76: 			<TD align="center">
+77: 				<%
+78: 					if (request.getParameter("SEARCH") != null && (dateStart != null || dateEnd != null || query != null)) {
+79: 						resultset = helper.getSearchItems(query, dateStart, dateEnd);
+80: 					} else {
+81: 						response.setHeader("Refresh", "0; URL=profile.jsp");
+82: 						return;
+
+
+An error occurred at line: 94 in the jsp file: /search.jsp
+rset cannot be resolved
+91: 										done = true;
+92: 										break;
+93: 									}
+94: 									p_id = rset.getString("photo_id");
+95: 									out.println("<TD style='width:150px;height:150px;max-width:150px;max-height:150px;min-width:150px;min-height:150px;overflow:hidden;'>");
+96: 									out.println("<A href=\"/proj1/GetBigPic?big" + p_id+ "\">");
+97: 									out.println("<IMG src=\"/proj1/GetOnePic?" + p_id+ "\">");
+
+
+An error occurred at line: 113 in the jsp file: /search.jsp
+sqladapter cannot be resolved
+110: 		</TR>
+111: 	</TABLE>
+112: 	<%
+113: 		sqladapter.closeConnection();
+114: 	%>
+115: </BODY>
+116: </HTML>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 5:05:35 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 9 in the generated java file
+Only a type can be imported. org.ivec.eresearch.knowledgeportal.dao.CategoryDao resolves to a package
+
+An error occurred at line: 10 in the generated java file
+Only a type can be imported. org.ivec.eresearch.knowledgeportal.model.Category resolves to a package
+
+An error occurred at line: 26 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+23: 	//Start from the search time period
+24: 	try {
+25: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+26: 		Calender c = Calender.getInstance();
+27: 		c.setTime(dateStart);
+28: 		c.set(Calender.HOUR_OF_DAY,0);
+29: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 26 in the jsp file: /search.jsp
+Calender cannot be resolved
+23: 	//Start from the search time period
+24: 	try {
+25: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+26: 		Calender c = Calender.getInstance();
+27: 		c.setTime(dateStart);
+28: 		c.set(Calender.HOUR_OF_DAY,0);
+29: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 28 in the jsp file: /search.jsp
+Calender.HOUR_OF_DAY cannot be resolved to a type
+25: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+26: 		Calender c = Calender.getInstance();
+27: 		c.setTime(dateStart);
+28: 		c.set(Calender.HOUR_OF_DAY,0);
+29: 	}catch (IllegalArgumentException e) {
+30: 		e.printStackTrace();
+31: 	}
+
+
+An error occurred at line: 36 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+33: 	//End date
+34: 	try {
+35: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+36: 		Calender c = Calender.getInstance();
+37: 		c.setTime(dateStart);
+38: 		c.set(Calender.HOUR_OF_DATE,0);
+39: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 36 in the jsp file: /search.jsp
+Calender cannot be resolved
+33: 	//End date
+34: 	try {
+35: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+36: 		Calender c = Calender.getInstance();
+37: 		c.setTime(dateStart);
+38: 		c.set(Calender.HOUR_OF_DATE,0);
+39: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 38 in the jsp file: /search.jsp
+Calender.HOUR_OF_DATE cannot be resolved to a type
+35: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+36: 		Calender c = Calender.getInstance();
+37: 		c.setTime(dateStart);
+38: 		c.set(Calender.HOUR_OF_DATE,0);
+39: 	}catch (IllegalArgumentException e) {
+40: 		e.printStackTrace();
+41: 	}
+
+
+An error occurred at line: 45 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+42: 	
+43: 	query = query == null||query.equals("") ? null : query;
+44: 	
+45: 	String user = HtmlPrinter.getUserCookie(request.getCookies());
+46: 	
+47: 	if (user == null) {
+48: 		response.setHeader("Refresh", "0; URL=profile.jsp");
+
+
+An error occurred at line: 52 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+49: 		return;
+50: 	}
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+50: 	}
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+50: 	}
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+
+
+An error occurred at line: 54 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+57: 	String p_id;
+
+
+An error occurred at line: 54 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+57: 	String p_id;
+
+
+An error occurred at line: 54 in the jsp file: /search.jsp
+adapter cannot be resolved to a variable
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+57: 	String p_id;
+
+
+An error occurred at line: 80 in the jsp file: /search.jsp
+helper cannot be resolved
+77: 			<TD align="center">
+78: 				<%
+79: 					if (request.getParameter("SEARCH") != null && (dateStart != null || dateEnd != null || query != null)) {
+80: 						resultset = helper.getSearchItems(query, dateStart, dateEnd);
+81: 					} else {
+82: 						response.setHeader("Refresh", "0; URL=profile.jsp");
+83: 						return;
+
+
+An error occurred at line: 95 in the jsp file: /search.jsp
+rset cannot be resolved
+92: 										done = true;
+93: 										break;
+94: 									}
+95: 									p_id = rset.getString("photo_id");
+96: 									out.println("<TD style='width:150px;height:150px;max-width:150px;max-height:150px;min-width:150px;min-height:150px;overflow:hidden;'>");
+97: 									out.println("<A href=\"/proj1/GetBigPic?big" + p_id+ "\">");
+98: 									out.println("<IMG src=\"/proj1/GetOnePic?" + p_id+ "\">");
+
+
+An error occurred at line: 114 in the jsp file: /search.jsp
+sqladapter cannot be resolved
+111: 		</TR>
+112: 	</TABLE>
+113: 	<%
+114: 		sqladapter.closeConnection();
+115: 	%>
+116: </BODY>
+117: </HTML>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 5:07:07 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 6 in the generated java file
+Syntax error on token ";", delete this token
+
+An error occurred at line: 7 in the generated java file
+Syntax error on token ";", delete this token
+
+An error occurred at line: 8 in the generated java file
+Syntax error on token ";", delete this token
+
+An error occurred at line: 9 in the generated java file
+Only a type can be imported. org.ivec.eresearch.knowledgeportal.dao.CategoryDao resolves to a package
+
+An error occurred at line: 9 in the generated java file
+Syntax error on token ";", delete this token
+
+An error occurred at line: 10 in the generated java file
+Only a type can be imported. org.ivec.eresearch.knowledgeportal.model.Category resolves to a package
+
+An error occurred at line: 26 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+23: 	//Start from the search time period
+24: 	try {
+25: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+26: 		Calender c = Calender.getInstance();
+27: 		c.setTime(dateStart);
+28: 		c.set(Calender.HOUR_OF_DAY,0);
+29: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 26 in the jsp file: /search.jsp
+Calender cannot be resolved
+23: 	//Start from the search time period
+24: 	try {
+25: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+26: 		Calender c = Calender.getInstance();
+27: 		c.setTime(dateStart);
+28: 		c.set(Calender.HOUR_OF_DAY,0);
+29: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 28 in the jsp file: /search.jsp
+Calender.HOUR_OF_DAY cannot be resolved to a type
+25: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+26: 		Calender c = Calender.getInstance();
+27: 		c.setTime(dateStart);
+28: 		c.set(Calender.HOUR_OF_DAY,0);
+29: 	}catch (IllegalArgumentException e) {
+30: 		e.printStackTrace();
+31: 	}
+
+
+An error occurred at line: 36 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+33: 	//End date
+34: 	try {
+35: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+36: 		Calender c = Calender.getInstance();
+37: 		c.setTime(dateStart);
+38: 		c.set(Calender.HOUR_OF_DATE,0);
+39: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 36 in the jsp file: /search.jsp
+Calender cannot be resolved
+33: 	//End date
+34: 	try {
+35: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+36: 		Calender c = Calender.getInstance();
+37: 		c.setTime(dateStart);
+38: 		c.set(Calender.HOUR_OF_DATE,0);
+39: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 38 in the jsp file: /search.jsp
+Calender.HOUR_OF_DATE cannot be resolved to a type
+35: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+36: 		Calender c = Calender.getInstance();
+37: 		c.setTime(dateStart);
+38: 		c.set(Calender.HOUR_OF_DATE,0);
+39: 	}catch (IllegalArgumentException e) {
+40: 		e.printStackTrace();
+41: 	}
+
+
+An error occurred at line: 45 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+42: 	
+43: 	query = query == null||query.equals("") ? null : query;
+44: 	
+45: 	String user = HtmlPrinter.getUserCookie(request.getCookies());
+46: 	
+47: 	if (user == null) {
+48: 		response.setHeader("Refresh", "0; URL=profile.jsp");
+
+
+An error occurred at line: 52 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+49: 		return;
+50: 	}
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+50: 	}
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+50: 	}
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+
+
+An error occurred at line: 54 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+57: 	String p_id;
+
+
+An error occurred at line: 54 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+57: 	String p_id;
+
+
+An error occurred at line: 54 in the jsp file: /search.jsp
+adapter cannot be resolved to a variable
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+57: 	String p_id;
+
+
+An error occurred at line: 80 in the jsp file: /search.jsp
+helper cannot be resolved
+77: 			<TD align="center">
+78: 				<%
+79: 					if (request.getParameter("SEARCH") != null && (dateStart != null || dateEnd != null || query != null)) {
+80: 						resultset = helper.getSearchItems(query, dateStart, dateEnd);
+81: 					} else {
+82: 						response.setHeader("Refresh", "0; URL=profile.jsp");
+83: 						return;
+
+
+An error occurred at line: 95 in the jsp file: /search.jsp
+rset cannot be resolved
+92: 										done = true;
+93: 										break;
+94: 									}
+95: 									p_id = rset.getString("photo_id");
+96: 									out.println("<TD style='width:150px;height:150px;max-width:150px;max-height:150px;min-width:150px;min-height:150px;overflow:hidden;'>");
+97: 									out.println("<A href=\"/proj1/GetBigPic?big" + p_id+ "\">");
+98: 									out.println("<IMG src=\"/proj1/GetOnePic?" + p_id+ "\">");
+
+
+An error occurred at line: 114 in the jsp file: /search.jsp
+sqladapter cannot be resolved
+111: 		</TR>
+112: 	</TABLE>
+113: 	<%
+114: 		sqladapter.closeConnection();
+115: 	%>
+116: </BODY>
+117: </HTML>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 5:07:59 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 9 in the generated java file
+Only a type can be imported. org.ivec.eresearch.knowledgeportal.dao.CategoryDao resolves to a package
+
+An error occurred at line: 10 in the generated java file
+Only a type can be imported. org.ivec.eresearch.knowledgeportal.model.Category resolves to a package
+
+An error occurred at line: 26 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+23: 	//Start from the search time period
+24: 	try {
+25: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+26: 		Calender c = Calender.getInstance();
+27: 		c.setTime(dateStart);
+28: 		c.set(Calender.HOUR_OF_DAY,0);
+29: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 26 in the jsp file: /search.jsp
+Calender cannot be resolved
+23: 	//Start from the search time period
+24: 	try {
+25: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+26: 		Calender c = Calender.getInstance();
+27: 		c.setTime(dateStart);
+28: 		c.set(Calender.HOUR_OF_DAY,0);
+29: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 28 in the jsp file: /search.jsp
+Calender.HOUR_OF_DAY cannot be resolved to a type
+25: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+26: 		Calender c = Calender.getInstance();
+27: 		c.setTime(dateStart);
+28: 		c.set(Calender.HOUR_OF_DAY,0);
+29: 	}catch (IllegalArgumentException e) {
+30: 		e.printStackTrace();
+31: 	}
+
+
+An error occurred at line: 36 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+33: 	//End date
+34: 	try {
+35: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+36: 		Calender c = Calender.getInstance();
+37: 		c.setTime(dateStart);
+38: 		c.set(Calender.HOUR_OF_DATE,0);
+39: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 36 in the jsp file: /search.jsp
+Calender cannot be resolved
+33: 	//End date
+34: 	try {
+35: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+36: 		Calender c = Calender.getInstance();
+37: 		c.setTime(dateStart);
+38: 		c.set(Calender.HOUR_OF_DATE,0);
+39: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 38 in the jsp file: /search.jsp
+Calender.HOUR_OF_DATE cannot be resolved to a type
+35: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+36: 		Calender c = Calender.getInstance();
+37: 		c.setTime(dateStart);
+38: 		c.set(Calender.HOUR_OF_DATE,0);
+39: 	}catch (IllegalArgumentException e) {
+40: 		e.printStackTrace();
+41: 	}
+
+
+An error occurred at line: 45 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+42: 	
+43: 	query = query == null||query.equals("") ? null : query;
+44: 	
+45: 	String user = HtmlPrinter.getUserCookie(request.getCookies());
+46: 	
+47: 	if (user == null) {
+48: 		response.setHeader("Refresh", "0; URL=profile.jsp");
+
+
+An error occurred at line: 52 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+49: 		return;
+50: 	}
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+50: 	}
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+50: 	}
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+
+
+An error occurred at line: 54 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+57: 	String p_id;
+
+
+An error occurred at line: 54 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+57: 	String p_id;
+
+
+An error occurred at line: 54 in the jsp file: /search.jsp
+adapter cannot be resolved to a variable
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+57: 	String p_id;
+
+
+An error occurred at line: 80 in the jsp file: /search.jsp
+helper cannot be resolved
+77: 			<TD align="center">
+78: 				<%
+79: 					if (request.getParameter("SEARCH") != null && (dateStart != null || dateEnd != null || query != null)) {
+80: 						resultset = helper.getSearchItems(query, dateStart, dateEnd);
+81: 					} else {
+82: 						response.setHeader("Refresh", "0; URL=profile.jsp");
+83: 						return;
+
+
+An error occurred at line: 95 in the jsp file: /search.jsp
+rset cannot be resolved
+92: 										done = true;
+93: 										break;
+94: 									}
+95: 									p_id = rset.getString("photo_id");
+96: 									out.println("<TD style='width:150px;height:150px;max-width:150px;max-height:150px;min-width:150px;min-height:150px;overflow:hidden;'>");
+97: 									out.println("<A href=\"/proj1/GetBigPic?big" + p_id+ "\">");
+98: 									out.println("<IMG src=\"/proj1/GetOnePic?" + p_id+ "\">");
+
+
+An error occurred at line: 114 in the jsp file: /search.jsp
+sqladapter cannot be resolved
+111: 		</TR>
+112: 	</TABLE>
+113: 	<%
+114: 		sqladapter.closeConnection();
+115: 	%>
+116: </BODY>
+117: </HTML>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 5:08:31 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 9 in the generated java file
+Only a type can be imported. org.ivec.eresearch.knowledgeportal.dao.CategoryDao resolves to a package
+
+An error occurred at line: 10 in the generated java file
+Only a type can be imported. org.ivec.eresearch.knowledgeportal.model.Category resolves to a package
+
+An error occurred at line: 26 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+23: 	//Start from the search time period
+24: 	try {
+25: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+26: 		Calender c = Calender.getInstance();
+27: 		c.setTime(dateStart);
+28: 		c.set(Calender.HOUR_OF_DAY,0);
+29: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 26 in the jsp file: /search.jsp
+Calender cannot be resolved
+23: 	//Start from the search time period
+24: 	try {
+25: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+26: 		Calender c = Calender.getInstance();
+27: 		c.setTime(dateStart);
+28: 		c.set(Calender.HOUR_OF_DAY,0);
+29: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 28 in the jsp file: /search.jsp
+Calender.HOUR_OF_DAY cannot be resolved to a type
+25: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+26: 		Calender c = Calender.getInstance();
+27: 		c.setTime(dateStart);
+28: 		c.set(Calender.HOUR_OF_DAY,0);
+29: 	}catch (IllegalArgumentException e) {
+30: 		e.printStackTrace();
+31: 	}
+
+
+An error occurred at line: 36 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+33: 	//End date
+34: 	try {
+35: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+36: 		Calender c = Calender.getInstance();
+37: 		c.setTime(dateStart);
+38: 		c.set(Calender.HOUR_OF_DATE,0);
+39: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 36 in the jsp file: /search.jsp
+Calender cannot be resolved
+33: 	//End date
+34: 	try {
+35: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+36: 		Calender c = Calender.getInstance();
+37: 		c.setTime(dateStart);
+38: 		c.set(Calender.HOUR_OF_DATE,0);
+39: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 38 in the jsp file: /search.jsp
+Calender.HOUR_OF_DATE cannot be resolved to a type
+35: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+36: 		Calender c = Calender.getInstance();
+37: 		c.setTime(dateStart);
+38: 		c.set(Calender.HOUR_OF_DATE,0);
+39: 	}catch (IllegalArgumentException e) {
+40: 		e.printStackTrace();
+41: 	}
+
+
+An error occurred at line: 45 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+42: 	
+43: 	query = query == null||query.equals("") ? null : query;
+44: 	
+45: 	String user = HtmlPrinter.getUserCookie(request.getCookies());
+46: 	
+47: 	if (user == null) {
+48: 		response.setHeader("Refresh", "0; URL=profile.jsp");
+
+
+An error occurred at line: 52 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+49: 		return;
+50: 	}
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+50: 	}
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+50: 	}
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+
+
+An error occurred at line: 54 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+57: 	String p_id;
+
+
+An error occurred at line: 54 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+57: 	String p_id;
+
+
+An error occurred at line: 54 in the jsp file: /search.jsp
+adapter cannot be resolved to a variable
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+57: 	String p_id;
+
+
+An error occurred at line: 80 in the jsp file: /search.jsp
+helper cannot be resolved
+77: 			<TD align="center">
+78: 				<%
+79: 					if (request.getParameter("SEARCH") != null && (dateStart != null || dateEnd != null || query != null)) {
+80: 						resultset = helper.getSearchItems(query, dateStart, dateEnd);
+81: 					} else {
+82: 						response.setHeader("Refresh", "0; URL=profile.jsp");
+83: 						return;
+
+
+An error occurred at line: 95 in the jsp file: /search.jsp
+rset cannot be resolved
+92: 										done = true;
+93: 										break;
+94: 									}
+95: 									p_id = rset.getString("photo_id");
+96: 									out.println("<TD style='width:150px;height:150px;max-width:150px;max-height:150px;min-width:150px;min-height:150px;overflow:hidden;'>");
+97: 									out.println("<A href=\"/proj1/GetBigPic?big" + p_id+ "\">");
+98: 									out.println("<IMG src=\"/proj1/GetOnePic?" + p_id+ "\">");
+
+
+An error occurred at line: 114 in the jsp file: /search.jsp
+sqladapter cannot be resolved
+111: 		</TR>
+112: 	</TABLE>
+113: 	<%
+114: 		sqladapter.closeConnection();
+115: 	%>
+116: </BODY>
+117: </HTML>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 5:08:34 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.lang.ClassNotFoundException: org.apache.jsp.search_jsp
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:217)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:205)
+	at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:134)
+	at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:66)
+	at org.apache.jasper.JspCompilationContext.load(JspCompilationContext.java:628)
+	at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:149)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:340)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 5:08:36 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 9 in the generated java file
+Only a type can be imported. org.ivec.eresearch.knowledgeportal.dao.CategoryDao resolves to a package
+
+An error occurred at line: 10 in the generated java file
+Only a type can be imported. org.ivec.eresearch.knowledgeportal.model.Category resolves to a package
+
+An error occurred at line: 26 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+23: 	//Start from the search time period
+24: 	try {
+25: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+26: 		Calender c = Calender.getInstance();
+27: 		c.setTime(dateStart);
+28: 		c.set(Calender.HOUR_OF_DAY,0);
+29: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 26 in the jsp file: /search.jsp
+Calender cannot be resolved
+23: 	//Start from the search time period
+24: 	try {
+25: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+26: 		Calender c = Calender.getInstance();
+27: 		c.setTime(dateStart);
+28: 		c.set(Calender.HOUR_OF_DAY,0);
+29: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 28 in the jsp file: /search.jsp
+Calender.HOUR_OF_DAY cannot be resolved to a type
+25: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+26: 		Calender c = Calender.getInstance();
+27: 		c.setTime(dateStart);
+28: 		c.set(Calender.HOUR_OF_DAY,0);
+29: 	}catch (IllegalArgumentException e) {
+30: 		e.printStackTrace();
+31: 	}
+
+
+An error occurred at line: 36 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+33: 	//End date
+34: 	try {
+35: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+36: 		Calender c = Calender.getInstance();
+37: 		c.setTime(dateStart);
+38: 		c.set(Calender.HOUR_OF_DATE,0);
+39: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 36 in the jsp file: /search.jsp
+Calender cannot be resolved
+33: 	//End date
+34: 	try {
+35: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+36: 		Calender c = Calender.getInstance();
+37: 		c.setTime(dateStart);
+38: 		c.set(Calender.HOUR_OF_DATE,0);
+39: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 38 in the jsp file: /search.jsp
+Calender.HOUR_OF_DATE cannot be resolved to a type
+35: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+36: 		Calender c = Calender.getInstance();
+37: 		c.setTime(dateStart);
+38: 		c.set(Calender.HOUR_OF_DATE,0);
+39: 	}catch (IllegalArgumentException e) {
+40: 		e.printStackTrace();
+41: 	}
+
+
+An error occurred at line: 45 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+42: 	
+43: 	query = query == null||query.equals("") ? null : query;
+44: 	
+45: 	String user = HtmlPrinter.getUserCookie(request.getCookies());
+46: 	
+47: 	if (user == null) {
+48: 		response.setHeader("Refresh", "0; URL=profile.jsp");
+
+
+An error occurred at line: 52 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+49: 		return;
+50: 	}
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+50: 	}
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+50: 	}
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+
+
+An error occurred at line: 54 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+57: 	String p_id;
+
+
+An error occurred at line: 54 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+57: 	String p_id;
+
+
+An error occurred at line: 54 in the jsp file: /search.jsp
+adapter cannot be resolved to a variable
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+57: 	String p_id;
+
+
+An error occurred at line: 80 in the jsp file: /search.jsp
+helper cannot be resolved
+77: 			<TD align="center">
+78: 				<%
+79: 					if (request.getParameter("SEARCH") != null && (dateStart != null || dateEnd != null || query != null)) {
+80: 						resultset = helper.getSearchItems(query, dateStart, dateEnd);
+81: 					} else {
+82: 						response.setHeader("Refresh", "0; URL=profile.jsp");
+83: 						return;
+
+
+An error occurred at line: 95 in the jsp file: /search.jsp
+rset cannot be resolved
+92: 										done = true;
+93: 										break;
+94: 									}
+95: 									p_id = rset.getString("photo_id");
+96: 									out.println("<TD style='width:150px;height:150px;max-width:150px;max-height:150px;min-width:150px;min-height:150px;overflow:hidden;'>");
+97: 									out.println("<A href=\"/proj1/GetBigPic?big" + p_id+ "\">");
+98: 									out.println("<IMG src=\"/proj1/GetOnePic?" + p_id+ "\">");
+
+
+An error occurred at line: 114 in the jsp file: /search.jsp
+sqladapter cannot be resolved
+111: 		</TR>
+112: 	</TABLE>
+113: 	<%
+114: 		sqladapter.closeConnection();
+115: 	%>
+116: </BODY>
+117: </HTML>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 5:08:37 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.lang.ClassNotFoundException: org.apache.jsp.search_jsp
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:217)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:205)
+	at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:134)
+	at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:66)
+	at org.apache.jasper.JspCompilationContext.load(JspCompilationContext.java:628)
+	at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:149)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:340)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 5:08:39 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.lang.ClassNotFoundException: org.apache.jsp.search_jsp
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:217)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:205)
+	at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:134)
+	at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:66)
+	at org.apache.jasper.JspCompilationContext.load(JspCompilationContext.java:628)
+	at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:149)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:340)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 5:08:41 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 9 in the generated java file
+Only a type can be imported. org.ivec.eresearch.knowledgeportal.dao.CategoryDao resolves to a package
+
+An error occurred at line: 10 in the generated java file
+Only a type can be imported. org.ivec.eresearch.knowledgeportal.model.Category resolves to a package
+
+An error occurred at line: 26 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+23: 	//Start from the search time period
+24: 	try {
+25: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+26: 		Calender c = Calender.getInstance();
+27: 		c.setTime(dateStart);
+28: 		c.set(Calender.HOUR_OF_DAY,0);
+29: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 26 in the jsp file: /search.jsp
+Calender cannot be resolved
+23: 	//Start from the search time period
+24: 	try {
+25: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+26: 		Calender c = Calender.getInstance();
+27: 		c.setTime(dateStart);
+28: 		c.set(Calender.HOUR_OF_DAY,0);
+29: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 28 in the jsp file: /search.jsp
+Calender.HOUR_OF_DAY cannot be resolved to a type
+25: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+26: 		Calender c = Calender.getInstance();
+27: 		c.setTime(dateStart);
+28: 		c.set(Calender.HOUR_OF_DAY,0);
+29: 	}catch (IllegalArgumentException e) {
+30: 		e.printStackTrace();
+31: 	}
+
+
+An error occurred at line: 36 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+33: 	//End date
+34: 	try {
+35: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+36: 		Calender c = Calender.getInstance();
+37: 		c.setTime(dateStart);
+38: 		c.set(Calender.HOUR_OF_DATE,0);
+39: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 36 in the jsp file: /search.jsp
+Calender cannot be resolved
+33: 	//End date
+34: 	try {
+35: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+36: 		Calender c = Calender.getInstance();
+37: 		c.setTime(dateStart);
+38: 		c.set(Calender.HOUR_OF_DATE,0);
+39: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 38 in the jsp file: /search.jsp
+Calender.HOUR_OF_DATE cannot be resolved to a type
+35: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+36: 		Calender c = Calender.getInstance();
+37: 		c.setTime(dateStart);
+38: 		c.set(Calender.HOUR_OF_DATE,0);
+39: 	}catch (IllegalArgumentException e) {
+40: 		e.printStackTrace();
+41: 	}
+
+
+An error occurred at line: 45 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+42: 	
+43: 	query = query == null||query.equals("") ? null : query;
+44: 	
+45: 	String user = HtmlPrinter.getUserCookie(request.getCookies());
+46: 	
+47: 	if (user == null) {
+48: 		response.setHeader("Refresh", "0; URL=profile.jsp");
+
+
+An error occurred at line: 52 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+49: 		return;
+50: 	}
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+50: 	}
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+50: 	}
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+
+
+An error occurred at line: 54 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+57: 	String p_id;
+
+
+An error occurred at line: 54 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+57: 	String p_id;
+
+
+An error occurred at line: 54 in the jsp file: /search.jsp
+adapter cannot be resolved to a variable
+51: 	
+52: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+53: 	SQLAdapter sqlAdapter = new SQLAdapter();
+54: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+55: 	String firstName = queryhelper.getFirstName();
+56: 	ResultSet resultset;
+57: 	String p_id;
+
+
+An error occurred at line: 80 in the jsp file: /search.jsp
+helper cannot be resolved
+77: 			<TD align="center">
+78: 				<%
+79: 					if (request.getParameter("SEARCH") != null && (dateStart != null || dateEnd != null || query != null)) {
+80: 						resultset = helper.getSearchItems(query, dateStart, dateEnd);
+81: 					} else {
+82: 						response.setHeader("Refresh", "0; URL=profile.jsp");
+83: 						return;
+
+
+An error occurred at line: 95 in the jsp file: /search.jsp
+rset cannot be resolved
+92: 										done = true;
+93: 										break;
+94: 									}
+95: 									p_id = rset.getString("photo_id");
+96: 									out.println("<TD style='width:150px;height:150px;max-width:150px;max-height:150px;min-width:150px;min-height:150px;overflow:hidden;'>");
+97: 									out.println("<A href=\"/proj1/GetBigPic?big" + p_id+ "\">");
+98: 									out.println("<IMG src=\"/proj1/GetOnePic?" + p_id+ "\">");
+
+
+An error occurred at line: 114 in the jsp file: /search.jsp
+sqladapter cannot be resolved
+111: 		</TR>
+112: 	</TABLE>
+113: 	<%
+114: 		sqladapter.closeConnection();
+115: 	%>
+116: </BODY>
+117: </HTML>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 5:08:56 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 25 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+22: 	//Start from the search time period
+23: 	try {
+24: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+25: 		Calender c = Calender.getInstance();
+26: 		c.setTime(dateStart);
+27: 		c.set(Calender.HOUR_OF_DAY,0);
+28: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 25 in the jsp file: /search.jsp
+Calender cannot be resolved
+22: 	//Start from the search time period
+23: 	try {
+24: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+25: 		Calender c = Calender.getInstance();
+26: 		c.setTime(dateStart);
+27: 		c.set(Calender.HOUR_OF_DAY,0);
+28: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 27 in the jsp file: /search.jsp
+Calender.HOUR_OF_DAY cannot be resolved to a type
+24: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+25: 		Calender c = Calender.getInstance();
+26: 		c.setTime(dateStart);
+27: 		c.set(Calender.HOUR_OF_DAY,0);
+28: 	}catch (IllegalArgumentException e) {
+29: 		e.printStackTrace();
+30: 	}
+
+
+An error occurred at line: 35 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+32: 	//End date
+33: 	try {
+34: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+35: 		Calender c = Calender.getInstance();
+36: 		c.setTime(dateStart);
+37: 		c.set(Calender.HOUR_OF_DATE,0);
+38: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 35 in the jsp file: /search.jsp
+Calender cannot be resolved
+32: 	//End date
+33: 	try {
+34: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+35: 		Calender c = Calender.getInstance();
+36: 		c.setTime(dateStart);
+37: 		c.set(Calender.HOUR_OF_DATE,0);
+38: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 37 in the jsp file: /search.jsp
+Calender.HOUR_OF_DATE cannot be resolved to a type
+34: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+35: 		Calender c = Calender.getInstance();
+36: 		c.setTime(dateStart);
+37: 		c.set(Calender.HOUR_OF_DATE,0);
+38: 	}catch (IllegalArgumentException e) {
+39: 		e.printStackTrace();
+40: 	}
+
+
+An error occurred at line: 44 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+41: 	
+42: 	query = query == null||query.equals("") ? null : query;
+43: 	
+44: 	String user = HtmlPrinter.getUserCookie(request.getCookies());
+45: 	
+46: 	if (user == null) {
+47: 		response.setHeader("Refresh", "0; URL=profile.jsp");
+
+
+An error occurred at line: 51 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+48: 		return;
+49: 	}
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+
+
+An error occurred at line: 52 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+49: 	}
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+55: 	ResultSet resultset;
+
+
+An error occurred at line: 52 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+49: 	}
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+55: 	ResultSet resultset;
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+55: 	ResultSet resultset;
+56: 	String p_id;
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+55: 	ResultSet resultset;
+56: 	String p_id;
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+adapter cannot be resolved to a variable
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+55: 	ResultSet resultset;
+56: 	String p_id;
+
+
+An error occurred at line: 79 in the jsp file: /search.jsp
+helper cannot be resolved
+76: 			<TD align="center">
+77: 				<%
+78: 					if (request.getParameter("SEARCH") != null && (dateStart != null || dateEnd != null || query != null)) {
+79: 						resultset = helper.getSearchItems(query, dateStart, dateEnd);
+80: 					} else {
+81: 						response.setHeader("Refresh", "0; URL=profile.jsp");
+82: 						return;
+
+
+An error occurred at line: 94 in the jsp file: /search.jsp
+rset cannot be resolved
+91: 										done = true;
+92: 										break;
+93: 									}
+94: 									p_id = rset.getString("photo_id");
+95: 									out.println("<TD style='width:150px;height:150px;max-width:150px;max-height:150px;min-width:150px;min-height:150px;overflow:hidden;'>");
+96: 									out.println("<A href=\"/proj1/GetBigPic?big" + p_id+ "\">");
+97: 									out.println("<IMG src=\"/proj1/GetOnePic?" + p_id+ "\">");
+
+
+An error occurred at line: 113 in the jsp file: /search.jsp
+sqladapter cannot be resolved
+110: 		</TR>
+111: 	</TABLE>
+112: 	<%
+113: 		sqladapter.closeConnection();
+114: 	%>
+115: </BODY>
+116: </HTML>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 5:09:03 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 25 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+22: 	//Start from the search time period
+23: 	try {
+24: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+25: 		Calender c = Calender.getInstance();
+26: 		c.setTime(dateStart);
+27: 		c.set(Calender.HOUR_OF_DAY,0);
+28: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 25 in the jsp file: /search.jsp
+Calender cannot be resolved
+22: 	//Start from the search time period
+23: 	try {
+24: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+25: 		Calender c = Calender.getInstance();
+26: 		c.setTime(dateStart);
+27: 		c.set(Calender.HOUR_OF_DAY,0);
+28: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 27 in the jsp file: /search.jsp
+Calender.HOUR_OF_DAY cannot be resolved to a type
+24: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+25: 		Calender c = Calender.getInstance();
+26: 		c.setTime(dateStart);
+27: 		c.set(Calender.HOUR_OF_DAY,0);
+28: 	}catch (IllegalArgumentException e) {
+29: 		e.printStackTrace();
+30: 	}
+
+
+An error occurred at line: 35 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+32: 	//End date
+33: 	try {
+34: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+35: 		Calender c = Calender.getInstance();
+36: 		c.setTime(dateStart);
+37: 		c.set(Calender.HOUR_OF_DATE,0);
+38: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 35 in the jsp file: /search.jsp
+Calender cannot be resolved
+32: 	//End date
+33: 	try {
+34: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+35: 		Calender c = Calender.getInstance();
+36: 		c.setTime(dateStart);
+37: 		c.set(Calender.HOUR_OF_DATE,0);
+38: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 37 in the jsp file: /search.jsp
+Calender.HOUR_OF_DATE cannot be resolved to a type
+34: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+35: 		Calender c = Calender.getInstance();
+36: 		c.setTime(dateStart);
+37: 		c.set(Calender.HOUR_OF_DATE,0);
+38: 	}catch (IllegalArgumentException e) {
+39: 		e.printStackTrace();
+40: 	}
+
+
+An error occurred at line: 44 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+41: 	
+42: 	query = query == null||query.equals("") ? null : query;
+43: 	
+44: 	String user = HtmlPrinter.getUserCookie(request.getCookies());
+45: 	
+46: 	if (user == null) {
+47: 		response.setHeader("Refresh", "0; URL=profile.jsp");
+
+
+An error occurred at line: 51 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+48: 		return;
+49: 	}
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+
+
+An error occurred at line: 52 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+49: 	}
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+55: 	ResultSet resultset;
+
+
+An error occurred at line: 52 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+49: 	}
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+55: 	ResultSet resultset;
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+55: 	ResultSet resultset;
+56: 	String p_id;
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+55: 	ResultSet resultset;
+56: 	String p_id;
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+adapter cannot be resolved to a variable
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+55: 	ResultSet resultset;
+56: 	String p_id;
+
+
+An error occurred at line: 79 in the jsp file: /search.jsp
+helper cannot be resolved
+76: 			<TD align="center">
+77: 				<%
+78: 					if (request.getParameter("SEARCH") != null && (dateStart != null || dateEnd != null || query != null)) {
+79: 						resultset = helper.getSearchItems(query, dateStart, dateEnd);
+80: 					} else {
+81: 						response.setHeader("Refresh", "0; URL=profile.jsp");
+82: 						return;
+
+
+An error occurred at line: 94 in the jsp file: /search.jsp
+rset cannot be resolved
+91: 										done = true;
+92: 										break;
+93: 									}
+94: 									p_id = rset.getString("photo_id");
+95: 									out.println("<TD style='width:150px;height:150px;max-width:150px;max-height:150px;min-width:150px;min-height:150px;overflow:hidden;'>");
+96: 									out.println("<A href=\"/proj1/GetBigPic?big" + p_id+ "\">");
+97: 									out.println("<IMG src=\"/proj1/GetOnePic?" + p_id+ "\">");
+
+
+An error occurred at line: 113 in the jsp file: /search.jsp
+sqladapter cannot be resolved
+110: 		</TR>
+111: 	</TABLE>
+112: 	<%
+113: 		sqladapter.closeConnection();
+114: 	%>
+115: </BODY>
+116: </HTML>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 5:09:03 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.lang.ClassNotFoundException: org.apache.jsp.search_jsp
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:217)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:205)
+	at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:134)
+	at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:66)
+	at org.apache.jasper.JspCompilationContext.load(JspCompilationContext.java:628)
+	at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:149)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:340)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 5:09:07 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.lang.ClassNotFoundException: org.apache.jsp.search_jsp
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:217)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:205)
+	at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:134)
+	at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:66)
+	at org.apache.jasper.JspCompilationContext.load(JspCompilationContext.java:628)
+	at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:149)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:340)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 5:09:38 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 25 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+22: 	//Start from the search time period
+23: 	try {
+24: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+25: 		Calender c = Calender.getInstance();
+26: 		c.setTime(dateStart);
+27: 		c.set(Calender.HOUR_OF_DAY,0);
+28: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 25 in the jsp file: /search.jsp
+Calender cannot be resolved
+22: 	//Start from the search time period
+23: 	try {
+24: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+25: 		Calender c = Calender.getInstance();
+26: 		c.setTime(dateStart);
+27: 		c.set(Calender.HOUR_OF_DAY,0);
+28: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 27 in the jsp file: /search.jsp
+Calender.HOUR_OF_DAY cannot be resolved to a type
+24: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+25: 		Calender c = Calender.getInstance();
+26: 		c.setTime(dateStart);
+27: 		c.set(Calender.HOUR_OF_DAY,0);
+28: 	}catch (IllegalArgumentException e) {
+29: 		e.printStackTrace();
+30: 	}
+
+
+An error occurred at line: 35 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+32: 	//End date
+33: 	try {
+34: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+35: 		Calender c = Calender.getInstance();
+36: 		c.setTime(dateStart);
+37: 		c.set(Calender.HOUR_OF_DATE,0);
+38: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 35 in the jsp file: /search.jsp
+Calender cannot be resolved
+32: 	//End date
+33: 	try {
+34: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+35: 		Calender c = Calender.getInstance();
+36: 		c.setTime(dateStart);
+37: 		c.set(Calender.HOUR_OF_DATE,0);
+38: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 37 in the jsp file: /search.jsp
+Calender.HOUR_OF_DATE cannot be resolved to a type
+34: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+35: 		Calender c = Calender.getInstance();
+36: 		c.setTime(dateStart);
+37: 		c.set(Calender.HOUR_OF_DATE,0);
+38: 	}catch (IllegalArgumentException e) {
+39: 		e.printStackTrace();
+40: 	}
+
+
+An error occurred at line: 44 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+41: 	
+42: 	query = query == null||query.equals("") ? null : query;
+43: 	
+44: 	String user = HtmlPrinter.getUserCookie(request.getCookies());
+45: 	
+46: 	if (user == null) {
+47: 		response.setHeader("Refresh", "0; URL=profile.jsp");
+
+
+An error occurred at line: 51 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+48: 		return;
+49: 	}
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+
+
+An error occurred at line: 52 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+49: 	}
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+55: 	ResultSet resultset;
+
+
+An error occurred at line: 52 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+49: 	}
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+55: 	ResultSet resultset;
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+55: 	ResultSet resultset;
+56: 	String p_id;
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+55: 	ResultSet resultset;
+56: 	String p_id;
+
+
+An error occurred at line: 53 in the jsp file: /search.jsp
+adapter cannot be resolved to a variable
+50: 	
+51: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+52: 	SQLAdapter sqlAdapter = new SQLAdapter();
+53: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+54: 	String firstName = queryhelper.getFirstName();
+55: 	ResultSet resultset;
+56: 	String p_id;
+
+
+An error occurred at line: 79 in the jsp file: /search.jsp
+helper cannot be resolved
+76: 			<TD align="center">
+77: 				<%
+78: 					if (request.getParameter("SEARCH") != null && (dateStart != null || dateEnd != null || query != null)) {
+79: 						resultset = helper.getSearchItems(query, dateStart, dateEnd);
+80: 					} else {
+81: 						response.setHeader("Refresh", "0; URL=profile.jsp");
+82: 						return;
+
+
+An error occurred at line: 94 in the jsp file: /search.jsp
+rset cannot be resolved
+91: 										done = true;
+92: 										break;
+93: 									}
+94: 									p_id = rset.getString("photo_id");
+95: 									out.println("<TD style='width:150px;height:150px;max-width:150px;max-height:150px;min-width:150px;min-height:150px;overflow:hidden;'>");
+96: 									out.println("<A href=\"/proj1/GetBigPic?big" + p_id+ "\">");
+97: 									out.println("<IMG src=\"/proj1/GetOnePic?" + p_id+ "\">");
+
+
+An error occurred at line: 113 in the jsp file: /search.jsp
+sqladapter cannot be resolved
+110: 		</TR>
+111: 	</TABLE>
+112: 	<%
+113: 		sqladapter.closeConnection();
+114: 	%>
+115: </BODY>
+116: </HTML>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 5:14:48 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 23 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+20: 	//Start from the search time period
+21: 	try {
+22: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+23: 		Calender c = Calender.getInstance();
+24: 		c.setTime(dateStart);
+25: 		c.set(Calender.HOUR_OF_DAY,0);
+26: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 23 in the jsp file: /search.jsp
+Calender cannot be resolved
+20: 	//Start from the search time period
+21: 	try {
+22: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+23: 		Calender c = Calender.getInstance();
+24: 		c.setTime(dateStart);
+25: 		c.set(Calender.HOUR_OF_DAY,0);
+26: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 25 in the jsp file: /search.jsp
+Calender.HOUR_OF_DAY cannot be resolved to a type
+22: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+23: 		Calender c = Calender.getInstance();
+24: 		c.setTime(dateStart);
+25: 		c.set(Calender.HOUR_OF_DAY,0);
+26: 	}catch (IllegalArgumentException e) {
+27: 		e.printStackTrace();
+28: 	}
+
+
+An error occurred at line: 33 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+30: 	//End date
+31: 	try {
+32: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+33: 		Calender c = Calender.getInstance();
+34: 		c.setTime(dateStart);
+35: 		c.set(Calender.HOUR_OF_DATE,0);
+36: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 33 in the jsp file: /search.jsp
+Calender cannot be resolved
+30: 	//End date
+31: 	try {
+32: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+33: 		Calender c = Calender.getInstance();
+34: 		c.setTime(dateStart);
+35: 		c.set(Calender.HOUR_OF_DATE,0);
+36: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 35 in the jsp file: /search.jsp
+Calender.HOUR_OF_DATE cannot be resolved to a type
+32: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+33: 		Calender c = Calender.getInstance();
+34: 		c.setTime(dateStart);
+35: 		c.set(Calender.HOUR_OF_DATE,0);
+36: 	}catch (IllegalArgumentException e) {
+37: 		e.printStackTrace();
+38: 	}
+
+
+An error occurred at line: 42 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+39: 	
+40: 	query = query == null||query.equals("") ? null : query;
+41: 	
+42: 	String user = HtmlPrinter.getUserCookie(request.getCookies());
+43: 	
+44: 	if (user == null) {
+45: 		response.setHeader("Refresh", "0; URL=profile.jsp");
+
+
+An error occurred at line: 49 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+46: 		return;
+47: 	}
+48: 	
+49: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+50: 	SQLAdapter sqlAdapter = new SQLAdapter();
+51: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+52: 	String firstName = queryhelper.getFirstName();
+
+
+An error occurred at line: 50 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+47: 	}
+48: 	
+49: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+50: 	SQLAdapter sqlAdapter = new SQLAdapter();
+51: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+52: 	String firstName = queryhelper.getFirstName();
+53: 	ResultSet resultset;
+
+
+An error occurred at line: 50 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+47: 	}
+48: 	
+49: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+50: 	SQLAdapter sqlAdapter = new SQLAdapter();
+51: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+52: 	String firstName = queryhelper.getFirstName();
+53: 	ResultSet resultset;
+
+
+An error occurred at line: 51 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+48: 	
+49: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+50: 	SQLAdapter sqlAdapter = new SQLAdapter();
+51: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+52: 	String firstName = queryhelper.getFirstName();
+53: 	ResultSet resultset;
+54: 	String p_id;
+
+
+An error occurred at line: 51 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+48: 	
+49: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+50: 	SQLAdapter sqlAdapter = new SQLAdapter();
+51: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+52: 	String firstName = queryhelper.getFirstName();
+53: 	ResultSet resultset;
+54: 	String p_id;
+
+
+An error occurred at line: 51 in the jsp file: /search.jsp
+adapter cannot be resolved to a variable
+48: 	
+49: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+50: 	SQLAdapter sqlAdapter = new SQLAdapter();
+51: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+52: 	String firstName = queryhelper.getFirstName();
+53: 	ResultSet resultset;
+54: 	String p_id;
+
+
+An error occurred at line: 77 in the jsp file: /search.jsp
+helper cannot be resolved
+74: 			<TD align="center">
+75: 				<%
+76: 					if (request.getParameter("SEARCH") != null && (dateStart != null || dateEnd != null || query != null)) {
+77: 						resultset = helper.getSearchItems(query, dateStart, dateEnd);
+78: 					} else {
+79: 						response.setHeader("Refresh", "0; URL=profile.jsp");
+80: 						return;
+
+
+An error occurred at line: 92 in the jsp file: /search.jsp
+rset cannot be resolved
+89: 										done = true;
+90: 										break;
+91: 									}
+92: 									p_id = rset.getString("photo_id");
+93: 									out.println("<TD style='width:150px;height:150px;max-width:150px;max-height:150px;min-width:150px;min-height:150px;overflow:hidden;'>");
+94: 									out.println("<A href=\"/proj1/GetBigPic?big" + p_id+ "\">");
+95: 									out.println("<IMG src=\"/proj1/GetOnePic?" + p_id+ "\">");
+
+
+An error occurred at line: 111 in the jsp file: /search.jsp
+sqladapter cannot be resolved
+108: 		</TR>
+109: 	</TABLE>
+110: 	<%
+111: 		sqladapter.closeConnection();
+112: 	%>
+113: </BODY>
+114: </HTML>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 5:15:14 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 23 in the jsp file: /search.jsp
+c cannot be resolved to a variable
+20: 	//Start from the search time period
+21: 	try {
+22: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+23: 		c = Calender.getInstance();
+24: 		c.setTime(dateStart);
+25: 		c.set(Calender.HOUR_OF_DAY,0);
+26: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 23 in the jsp file: /search.jsp
+Calender cannot be resolved
+20: 	//Start from the search time period
+21: 	try {
+22: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+23: 		c = Calender.getInstance();
+24: 		c.setTime(dateStart);
+25: 		c.set(Calender.HOUR_OF_DAY,0);
+26: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 24 in the jsp file: /search.jsp
+c cannot be resolved
+21: 	try {
+22: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+23: 		c = Calender.getInstance();
+24: 		c.setTime(dateStart);
+25: 		c.set(Calender.HOUR_OF_DAY,0);
+26: 	}catch (IllegalArgumentException e) {
+27: 		e.printStackTrace();
+
+
+An error occurred at line: 25 in the jsp file: /search.jsp
+c cannot be resolved
+22: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+23: 		c = Calender.getInstance();
+24: 		c.setTime(dateStart);
+25: 		c.set(Calender.HOUR_OF_DAY,0);
+26: 	}catch (IllegalArgumentException e) {
+27: 		e.printStackTrace();
+28: 	}
+
+
+An error occurred at line: 25 in the jsp file: /search.jsp
+Calender.HOUR_OF_DAY cannot be resolved to a type
+22: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+23: 		c = Calender.getInstance();
+24: 		c.setTime(dateStart);
+25: 		c.set(Calender.HOUR_OF_DAY,0);
+26: 	}catch (IllegalArgumentException e) {
+27: 		e.printStackTrace();
+28: 	}
+
+
+An error occurred at line: 33 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+30: 	//End date
+31: 	try {
+32: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+33: 		Calender c = Calender.getInstance();
+34: 		c.setTime(dateStart);
+35: 		c.set(Calender.HOUR_OF_DATE,0);
+36: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 33 in the jsp file: /search.jsp
+Calender cannot be resolved
+30: 	//End date
+31: 	try {
+32: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+33: 		Calender c = Calender.getInstance();
+34: 		c.setTime(dateStart);
+35: 		c.set(Calender.HOUR_OF_DATE,0);
+36: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 35 in the jsp file: /search.jsp
+Calender.HOUR_OF_DATE cannot be resolved to a type
+32: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+33: 		Calender c = Calender.getInstance();
+34: 		c.setTime(dateStart);
+35: 		c.set(Calender.HOUR_OF_DATE,0);
+36: 	}catch (IllegalArgumentException e) {
+37: 		e.printStackTrace();
+38: 	}
+
+
+An error occurred at line: 42 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+39: 	
+40: 	query = query == null||query.equals("") ? null : query;
+41: 	
+42: 	String user = HtmlPrinter.getUserCookie(request.getCookies());
+43: 	
+44: 	if (user == null) {
+45: 		response.setHeader("Refresh", "0; URL=profile.jsp");
+
+
+An error occurred at line: 49 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+46: 		return;
+47: 	}
+48: 	
+49: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+50: 	SQLAdapter sqlAdapter = new SQLAdapter();
+51: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+52: 	String firstName = queryhelper.getFirstName();
+
+
+An error occurred at line: 50 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+47: 	}
+48: 	
+49: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+50: 	SQLAdapter sqlAdapter = new SQLAdapter();
+51: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+52: 	String firstName = queryhelper.getFirstName();
+53: 	ResultSet resultset;
+
+
+An error occurred at line: 50 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+47: 	}
+48: 	
+49: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+50: 	SQLAdapter sqlAdapter = new SQLAdapter();
+51: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+52: 	String firstName = queryhelper.getFirstName();
+53: 	ResultSet resultset;
+
+
+An error occurred at line: 51 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+48: 	
+49: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+50: 	SQLAdapter sqlAdapter = new SQLAdapter();
+51: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+52: 	String firstName = queryhelper.getFirstName();
+53: 	ResultSet resultset;
+54: 	String p_id;
+
+
+An error occurred at line: 51 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+48: 	
+49: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+50: 	SQLAdapter sqlAdapter = new SQLAdapter();
+51: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+52: 	String firstName = queryhelper.getFirstName();
+53: 	ResultSet resultset;
+54: 	String p_id;
+
+
+An error occurred at line: 51 in the jsp file: /search.jsp
+adapter cannot be resolved to a variable
+48: 	
+49: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+50: 	SQLAdapter sqlAdapter = new SQLAdapter();
+51: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+52: 	String firstName = queryhelper.getFirstName();
+53: 	ResultSet resultset;
+54: 	String p_id;
+
+
+An error occurred at line: 77 in the jsp file: /search.jsp
+helper cannot be resolved
+74: 			<TD align="center">
+75: 				<%
+76: 					if (request.getParameter("SEARCH") != null && (dateStart != null || dateEnd != null || query != null)) {
+77: 						resultset = helper.getSearchItems(query, dateStart, dateEnd);
+78: 					} else {
+79: 						response.setHeader("Refresh", "0; URL=profile.jsp");
+80: 						return;
+
+
+An error occurred at line: 92 in the jsp file: /search.jsp
+rset cannot be resolved
+89: 										done = true;
+90: 										break;
+91: 									}
+92: 									p_id = rset.getString("photo_id");
+93: 									out.println("<TD style='width:150px;height:150px;max-width:150px;max-height:150px;min-width:150px;min-height:150px;overflow:hidden;'>");
+94: 									out.println("<A href=\"/proj1/GetBigPic?big" + p_id+ "\">");
+95: 									out.println("<IMG src=\"/proj1/GetOnePic?" + p_id+ "\">");
+
+
+An error occurred at line: 111 in the jsp file: /search.jsp
+sqladapter cannot be resolved
+108: 		</TR>
+109: 	</TABLE>
+110: 	<%
+111: 		sqladapter.closeConnection();
+112: 	%>
+113: </BODY>
+114: </HTML>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 5:18:23 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 23 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+20: 	//Start from the search time period
+21: 	try {
+22: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+23: 		Calender c = new Calender();
+24: 		c = Calender.getInstance();
+25: 		c.setTime(dateStart);
+26: 		c.set(Calender.HOUR_OF_DAY,0);
+
+
+An error occurred at line: 23 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+20: 	//Start from the search time period
+21: 	try {
+22: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+23: 		Calender c = new Calender();
+24: 		c = Calender.getInstance();
+25: 		c.setTime(dateStart);
+26: 		c.set(Calender.HOUR_OF_DAY,0);
+
+
+An error occurred at line: 24 in the jsp file: /search.jsp
+Calender cannot be resolved
+21: 	try {
+22: 		dateStart = java.sql.Date.valueOf(request.getParameter("DATE_START"));
+23: 		Calender c = new Calender();
+24: 		c = Calender.getInstance();
+25: 		c.setTime(dateStart);
+26: 		c.set(Calender.HOUR_OF_DAY,0);
+27: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 26 in the jsp file: /search.jsp
+Calender.HOUR_OF_DAY cannot be resolved to a type
+23: 		Calender c = new Calender();
+24: 		c = Calender.getInstance();
+25: 		c.setTime(dateStart);
+26: 		c.set(Calender.HOUR_OF_DAY,0);
+27: 	}catch (IllegalArgumentException e) {
+28: 		e.printStackTrace();
+29: 	}
+
+
+An error occurred at line: 34 in the jsp file: /search.jsp
+Calender cannot be resolved to a type
+31: 	//End date
+32: 	try {
+33: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+34: 		Calender c = Calender.getInstance();
+35: 		c.setTime(dateStart);
+36: 		c.set(Calender.HOUR_OF_DATE,0);
+37: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 34 in the jsp file: /search.jsp
+Calender cannot be resolved
+31: 	//End date
+32: 	try {
+33: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+34: 		Calender c = Calender.getInstance();
+35: 		c.setTime(dateStart);
+36: 		c.set(Calender.HOUR_OF_DATE,0);
+37: 	}catch (IllegalArgumentException e) {
+
+
+An error occurred at line: 36 in the jsp file: /search.jsp
+Calender.HOUR_OF_DATE cannot be resolved to a type
+33: 		dateEnd = java.sql.Date.valueOf(request.getParameter("DATE_END"));
+34: 		Calender c = Calender.getInstance();
+35: 		c.setTime(dateStart);
+36: 		c.set(Calender.HOUR_OF_DATE,0);
+37: 	}catch (IllegalArgumentException e) {
+38: 		e.printStackTrace();
+39: 	}
+
+
+An error occurred at line: 43 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+40: 	
+41: 	query = query == null||query.equals("") ? null : query;
+42: 	
+43: 	String user = HtmlPrinter.getUserCookie(request.getCookies());
+44: 	
+45: 	if (user == null) {
+46: 		response.setHeader("Refresh", "0; URL=profile.jsp");
+
+
+An error occurred at line: 50 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+47: 		return;
+48: 	}
+49: 	
+50: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+51: 	SQLAdapter sqlAdapter = new SQLAdapter();
+52: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+53: 	String firstName = queryhelper.getFirstName();
+
+
+An error occurred at line: 51 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+48: 	}
+49: 	
+50: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+51: 	SQLAdapter sqlAdapter = new SQLAdapter();
+52: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+53: 	String firstName = queryhelper.getFirstName();
+54: 	ResultSet resultset;
+
+
+An error occurred at line: 51 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+48: 	}
+49: 	
+50: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+51: 	SQLAdapter sqlAdapter = new SQLAdapter();
+52: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+53: 	String firstName = queryhelper.getFirstName();
+54: 	ResultSet resultset;
+
+
+An error occurred at line: 52 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+49: 	
+50: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+51: 	SQLAdapter sqlAdapter = new SQLAdapter();
+52: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+53: 	String firstName = queryhelper.getFirstName();
+54: 	ResultSet resultset;
+55: 	String p_id;
+
+
+An error occurred at line: 52 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+49: 	
+50: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+51: 	SQLAdapter sqlAdapter = new SQLAdapter();
+52: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+53: 	String firstName = queryhelper.getFirstName();
+54: 	ResultSet resultset;
+55: 	String p_id;
+
+
+An error occurred at line: 52 in the jsp file: /search.jsp
+adapter cannot be resolved to a variable
+49: 	
+50: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+51: 	SQLAdapter sqlAdapter = new SQLAdapter();
+52: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+53: 	String firstName = queryhelper.getFirstName();
+54: 	ResultSet resultset;
+55: 	String p_id;
+
+
+An error occurred at line: 78 in the jsp file: /search.jsp
+helper cannot be resolved
+75: 			<TD align="center">
+76: 				<%
+77: 					if (request.getParameter("SEARCH") != null && (dateStart != null || dateEnd != null || query != null)) {
+78: 						resultset = helper.getSearchItems(query, dateStart, dateEnd);
+79: 					} else {
+80: 						response.setHeader("Refresh", "0; URL=profile.jsp");
+81: 						return;
+
+
+An error occurred at line: 93 in the jsp file: /search.jsp
+rset cannot be resolved
+90: 										done = true;
+91: 										break;
+92: 									}
+93: 									p_id = rset.getString("photo_id");
+94: 									out.println("<TD style='width:150px;height:150px;max-width:150px;max-height:150px;min-width:150px;min-height:150px;overflow:hidden;'>");
+95: 									out.println("<A href=\"/proj1/GetBigPic?big" + p_id+ "\">");
+96: 									out.println("<IMG src=\"/proj1/GetOnePic?" + p_id+ "\">");
+
+
+An error occurred at line: 112 in the jsp file: /search.jsp
+sqladapter cannot be resolved
+109: 		</TR>
+110: 	</TABLE>
+111: 	<%
+112: 		sqladapter.closeConnection();
+113: 	%>
+114: </BODY>
+115: </HTML>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 5:21:17 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 36 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+33: 	
+34: 	query = query == null||query.equals("") ? null : query;
+35: 	
+36: 	String user = HtmlPrinter.getUserCookie(request.getCookies());
+37: 	
+38: 	if (user == null) {
+39: 		response.setHeader("Refresh", "0; URL=profile.jsp");
+
+
+An error occurred at line: 43 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+40: 		return;
+41: 	}
+42: 	
+43: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+44: 	SQLAdapter sqlAdapter = new SQLAdapter();
+45: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+46: 	String firstName = queryhelper.getFirstName();
+
+
+An error occurred at line: 44 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+41: 	}
+42: 	
+43: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+44: 	SQLAdapter sqlAdapter = new SQLAdapter();
+45: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+46: 	String firstName = queryhelper.getFirstName();
+47: 	ResultSet resultset;
+
+
+An error occurred at line: 44 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+41: 	}
+42: 	
+43: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+44: 	SQLAdapter sqlAdapter = new SQLAdapter();
+45: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+46: 	String firstName = queryhelper.getFirstName();
+47: 	ResultSet resultset;
+
+
+An error occurred at line: 45 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+42: 	
+43: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+44: 	SQLAdapter sqlAdapter = new SQLAdapter();
+45: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+46: 	String firstName = queryhelper.getFirstName();
+47: 	ResultSet resultset;
+48: 	String p_id;
+
+
+An error occurred at line: 45 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+42: 	
+43: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+44: 	SQLAdapter sqlAdapter = new SQLAdapter();
+45: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+46: 	String firstName = queryhelper.getFirstName();
+47: 	ResultSet resultset;
+48: 	String p_id;
+
+
+An error occurred at line: 45 in the jsp file: /search.jsp
+adapter cannot be resolved to a variable
+42: 	
+43: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+44: 	SQLAdapter sqlAdapter = new SQLAdapter();
+45: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+46: 	String firstName = queryhelper.getFirstName();
+47: 	ResultSet resultset;
+48: 	String p_id;
+
+
+An error occurred at line: 71 in the jsp file: /search.jsp
+helper cannot be resolved
+68: 			<TD align="center">
+69: 				<%
+70: 					if (request.getParameter("SEARCH") != null && (dateStart != null || dateEnd != null || query != null)) {
+71: 						resultset = helper.getSearchItems(query, dateStart, dateEnd);
+72: 					} else {
+73: 						response.setHeader("Refresh", "0; URL=profile.jsp");
+74: 						return;
+
+
+An error occurred at line: 86 in the jsp file: /search.jsp
+rset cannot be resolved
+83: 										done = true;
+84: 										break;
+85: 									}
+86: 									p_id = rset.getString("photo_id");
+87: 									out.println("<TD style='width:150px;height:150px;max-width:150px;max-height:150px;min-width:150px;min-height:150px;overflow:hidden;'>");
+88: 									out.println("<A href=\"/proj1/GetBigPic?big" + p_id+ "\">");
+89: 									out.println("<IMG src=\"/proj1/GetOnePic?" + p_id+ "\">");
+
+
+An error occurred at line: 105 in the jsp file: /search.jsp
+sqladapter cannot be resolved
+102: 		</TR>
+103: 	</TABLE>
+104: 	<%
+105: 		sqladapter.closeConnection();
+106: 	%>
+107: </BODY>
+108: </HTML>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 5:34:37 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 36 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+33: 	
+34: 	query = query == null||query.equals("") ? null : query;
+35: 	
+36: 	String user = HtmlPrinter.getUserCookie(request.getCookies());
+37: 	
+38: 	if (user == null) {
+39: 		response.setHeader("Refresh", "0; URL=profile.jsp");
+
+
+An error occurred at line: 43 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+40: 		return;
+41: 	}
+42: 	
+43: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+44: 	SQLAdapter sqlAdapter = new SQLAdapter();
+45: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+46: 	String firstName = queryhelper.getFirstName();
+
+
+An error occurred at line: 44 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+41: 	}
+42: 	
+43: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+44: 	SQLAdapter sqlAdapter = new SQLAdapter();
+45: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+46: 	String firstName = queryhelper.getFirstName();
+47: 	ResultSet resultset;
+
+
+An error occurred at line: 44 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+41: 	}
+42: 	
+43: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+44: 	SQLAdapter sqlAdapter = new SQLAdapter();
+45: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+46: 	String firstName = queryhelper.getFirstName();
+47: 	ResultSet resultset;
+
+
+An error occurred at line: 45 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+42: 	
+43: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+44: 	SQLAdapter sqlAdapter = new SQLAdapter();
+45: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+46: 	String firstName = queryhelper.getFirstName();
+47: 	ResultSet resultset;
+48: 	String p_id;
+
+
+An error occurred at line: 45 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+42: 	
+43: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+44: 	SQLAdapter sqlAdapter = new SQLAdapter();
+45: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+46: 	String firstName = queryhelper.getFirstName();
+47: 	ResultSet resultset;
+48: 	String p_id;
+
+
+An error occurred at line: 45 in the jsp file: /search.jsp
+adapter cannot be resolved to a variable
+42: 	
+43: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+44: 	SQLAdapter sqlAdapter = new SQLAdapter();
+45: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+46: 	String firstName = queryhelper.getFirstName();
+47: 	ResultSet resultset;
+48: 	String p_id;
+
+
+An error occurred at line: 71 in the jsp file: /search.jsp
+helper cannot be resolved
+68: 			<TD align="center">
+69: 				<%
+70: 					if (request.getParameter("SEARCH") != null && (dateStart != null || dateEnd != null || query != null)) {
+71: 						resultset = helper.getSearchItems(query, dateStart, dateEnd);
+72: 					} else {
+73: 						response.setHeader("Refresh", "0; URL=profile.jsp");
+74: 						return;
+
+
+An error occurred at line: 86 in the jsp file: /search.jsp
+rset cannot be resolved
+83: 										done = true;
+84: 										break;
+85: 									}
+86: 									p_id = rset.getString("photo_id");
+87: 									out.println("<TD style='width:150px;height:150px;max-width:150px;max-height:150px;min-width:150px;min-height:150px;overflow:hidden;'>");
+88: 									out.println("<A href=\"/proj1/GetBigPic?big" + p_id+ "\">");
+89: 									out.println("<IMG src=\"/proj1/GetOnePic?" + p_id+ "\">");
+
+
+An error occurred at line: 105 in the jsp file: /search.jsp
+sqladapter cannot be resolved
+102: 		</TR>
+103: 	</TABLE>
+104: 	<%
+105: 		sqladapter.closeConnection();
+106: 	%>
+107: </BODY>
+108: </HTML>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 5:41:41 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 36 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+33: 	
+34: 	query = query == null||query.equals("") ? null : query;
+35: 	
+36: 	String user = HtmlPrinter.getUserCookie(request.getCookies());
+37: 	
+38: 	if (user == null) {
+39: 		response.setHeader("Refresh", "0; URL=profile.jsp");
+
+
+An error occurred at line: 43 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+40: 		return;
+41: 	}
+42: 	
+43: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+44: 	SQLAdapter sqlAdapter = new SQLAdapter();
+45: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+46: 	String firstName = queryhelper.getFirstName();
+
+
+An error occurred at line: 44 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+41: 	}
+42: 	
+43: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+44: 	SQLAdapter sqlAdapter = new SQLAdapter();
+45: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+46: 	String firstName = queryhelper.getFirstName();
+47: 	ResultSet resultset;
+
+
+An error occurred at line: 44 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+41: 	}
+42: 	
+43: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+44: 	SQLAdapter sqlAdapter = new SQLAdapter();
+45: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+46: 	String firstName = queryhelper.getFirstName();
+47: 	ResultSet resultset;
+
+
+An error occurred at line: 45 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+42: 	
+43: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+44: 	SQLAdapter sqlAdapter = new SQLAdapter();
+45: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+46: 	String firstName = queryhelper.getFirstName();
+47: 	ResultSet resultset;
+48: 	String p_id;
+
+
+An error occurred at line: 45 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+42: 	
+43: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+44: 	SQLAdapter sqlAdapter = new SQLAdapter();
+45: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+46: 	String firstName = queryhelper.getFirstName();
+47: 	ResultSet resultset;
+48: 	String p_id;
+
+
+An error occurred at line: 45 in the jsp file: /search.jsp
+adapter cannot be resolved to a variable
+42: 	
+43: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+44: 	SQLAdapter sqlAdapter = new SQLAdapter();
+45: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+46: 	String firstName = queryhelper.getFirstName();
+47: 	ResultSet resultset;
+48: 	String p_id;
+
+
+An error occurred at line: 71 in the jsp file: /search.jsp
+helper cannot be resolved
+68: 			<TD align="center">
+69: 				<%
+70: 					if (request.getParameter("SEARCH") != null && (dateStart != null || dateEnd != null || query != null)) {
+71: 						resultset = helper.getSearchItems(query, dateStart, dateEnd);
+72: 					} else {
+73: 						response.setHeader("Refresh", "0; URL=profile.jsp");
+74: 						return;
+
+
+An error occurred at line: 86 in the jsp file: /search.jsp
+rset cannot be resolved
+83: 										done = true;
+84: 										break;
+85: 									}
+86: 									p_id = rset.getString("photo_id");
+87: 									out.println("<TD style='width:150px;height:150px;max-width:150px;max-height:150px;min-width:150px;min-height:150px;overflow:hidden;'>");
+88: 									out.println("<A href=\"/proj1/GetBigPic?big" + p_id+ "\">");
+89: 									out.println("<IMG src=\"/proj1/GetOnePic?" + p_id+ "\">");
+
+
+An error occurred at line: 105 in the jsp file: /search.jsp
+sqladapter cannot be resolved
+102: 		</TR>
+103: 	</TABLE>
+104: 	<%
+105: 		sqladapter.closeConnection();
+106: 	%>
+107: </BODY>
+108: </HTML>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 5:42:29 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.lang.NoSuchMethodError: org.apache.commons.fileupload.servlet.ServletFileUpload.parseRequest(Lorg/apache/commons/fileupload/RequestContext;)Ljava/util/List;
+	at org.apache.commons.fileupload.servlet.ServletFileUpload.parseRequest(ServletFileUpload.java:116)
+	at org.apache.jsp.uploaddirec_jsp._jspService(uploaddirec_jsp.java:113)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 5:49:44 PM org.apache.catalina.core.ApplicationContext log
+INFO: Marking servlet PictureBrowse as unavailable
+Nov 11, 2014 5:49:44 PM org.apache.catalina.core.ApplicationContext log
+SEVERE: Error loading WebappClassLoader
+  context: /OnlineImageProcess
+  delegate: false
+  repositories:
+    /WEB-INF/classes/
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@70c13c17
+ PictureBrowse
+java.lang.ClassNotFoundException: PictureBrowse
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1680)
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1526)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1128)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:827)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:129)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 5:49:44 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Allocate exception for servlet PictureBrowse
+java.lang.ClassNotFoundException: PictureBrowse
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1680)
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1526)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1128)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:827)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:129)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 5:51:01 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 36 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+33: 	
+34: 	query = query == null||query.equals("") ? null : query;
+35: 	
+36: 	String user = HtmlPrinter.getUserCookie(request.getCookies());
+37: 	
+38: 	if (user == null) {
+39: 		response.setHeader("Refresh", "0; URL=profile.jsp");
+
+
+An error occurred at line: 43 in the jsp file: /search.jsp
+HtmlPrinter cannot be resolved
+40: 		return;
+41: 	}
+42: 	
+43: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+44: 	SQLAdapter sqlAdapter = new SQLAdapter();
+45: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+46: 	String firstName = queryhelper.getFirstName();
+
+
+An error occurred at line: 44 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+41: 	}
+42: 	
+43: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+44: 	SQLAdapter sqlAdapter = new SQLAdapter();
+45: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+46: 	String firstName = queryhelper.getFirstName();
+47: 	ResultSet resultset;
+
+
+An error occurred at line: 44 in the jsp file: /search.jsp
+SQLAdapter cannot be resolved to a type
+41: 	}
+42: 	
+43: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+44: 	SQLAdapter sqlAdapter = new SQLAdapter();
+45: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+46: 	String firstName = queryhelper.getFirstName();
+47: 	ResultSet resultset;
+
+
+An error occurred at line: 45 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+42: 	
+43: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+44: 	SQLAdapter sqlAdapter = new SQLAdapter();
+45: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+46: 	String firstName = queryhelper.getFirstName();
+47: 	ResultSet resultset;
+48: 	String p_id;
+
+
+An error occurred at line: 45 in the jsp file: /search.jsp
+QueryHelper cannot be resolved to a type
+42: 	
+43: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+44: 	SQLAdapter sqlAdapter = new SQLAdapter();
+45: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+46: 	String firstName = queryhelper.getFirstName();
+47: 	ResultSet resultset;
+48: 	String p_id;
+
+
+An error occurred at line: 45 in the jsp file: /search.jsp
+adapter cannot be resolved to a variable
+42: 	
+43: 	HtmlPrinter.printHeader(out,user,query,dateStart,dateEnd);
+44: 	SQLAdapter sqlAdapter = new SQLAdapter();
+45: 	QueryHelper queryhelper = new QueryHelper(adapter,user);
+46: 	String firstName = queryhelper.getFirstName();
+47: 	ResultSet resultset;
+48: 	String p_id;
+
+
+An error occurred at line: 71 in the jsp file: /search.jsp
+helper cannot be resolved
+68: 			<TD align="center">
+69: 				<%
+70: 					if (request.getParameter("SEARCH") != null && (dateStart != null || dateEnd != null || query != null)) {
+71: 						resultset = helper.getSearchItems(query, dateStart, dateEnd);
+72: 					} else {
+73: 						response.setHeader("Refresh", "0; URL=profile.jsp");
+74: 						return;
+
+
+An error occurred at line: 86 in the jsp file: /search.jsp
+rset cannot be resolved
+83: 										done = true;
+84: 										break;
+85: 									}
+86: 									p_id = rset.getString("photo_id");
+87: 									out.println("<TD style='width:150px;height:150px;max-width:150px;max-height:150px;min-width:150px;min-height:150px;overflow:hidden;'>");
+88: 									out.println("<A href=\"/proj1/GetBigPic?big" + p_id+ "\">");
+89: 									out.println("<IMG src=\"/proj1/GetOnePic?" + p_id+ "\">");
+
+
+An error occurred at line: 105 in the jsp file: /search.jsp
+sqladapter cannot be resolved
+102: 		</TR>
+103: 	</TABLE>
+104: 	<%
+105: 		sqladapter.closeConnection();
+106: 	%>
+107: </BODY>
+108: </HTML>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 11, 2014 5:51:03 PM org.apache.catalina.core.StandardWrapperValve invoke
+INFO: Servlet PictureBrowse is currently unavailable
+Nov 11, 2014 5:51:15 PM org.apache.catalina.core.StandardWrapperValve invoke
+INFO: Servlet PictureBrowse is currently unavailable
+Nov 11, 2014 5:52:22 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.lang.NoSuchMethodError: org.apache.commons.fileupload.servlet.ServletFileUpload.parseRequest(Lorg/apache/commons/fileupload/RequestContext;)Ljava/util/List;
+	at org.apache.commons.fileupload.servlet.ServletFileUpload.parseRequest(ServletFileUpload.java:116)
+	at org.apache.jsp.uploaddirec_jsp._jspService(uploaddirec_jsp.java:113)
+	at org.apache.jasper.runtime.HttpJspBase.service(HttpJspBase.java:70)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:388)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)

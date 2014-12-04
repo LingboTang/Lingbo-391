@@ -1,0 +1,1701 @@
+Nov 16, 2014 1:57:19 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 18 in the generated java file
+Only a type can be imported. db.Database resolves to a package
+
+An error occurred at line: 53 in the jsp file: /searchresults.jsp
+Syntax error, insert ";" to complete LocalVariableDeclarationStatement
+50: 		out.println("<H1>Search Results</H1>");
+51: 		
+52: 		
+53: 		String query = "select images.subject,images.place,images.description"
+54: 		//both keyword and date are entered
+55: 		if (keywords != "" && dateStart != "" && dateEnd != "") {
+56: 			query = query + ", ";
+
+
+An error occurred at line: 69 in the jsp file: /searchresults.jsp
+kewords cannot be resolved to a variable
+66: 			}
+67: 			query = query + "as rank ";
+68: 			query = query + "images where ";
+69: 			out.println("Records for keyword(s): " + kewords+ " between dates " + dateStart + " and " + dateEnd);
+70: 			//query statement to search for a certain time period
+71: 			query = query + "image.timing between to_date('" + dateStart+ "', 'DD/MM/YYYY') AND to_date('" + dateEnd+ "', 'DD/MM/YYYY') AND ";
+72: 			//creates query statement for every key word to match with the score function
+
+
+An error occurred at line: 75 in the jsp file: /searchresults.jsp
+class_id cannot be resolved to a variable
+72: 			//creates query statement for every key word to match with the score function
+73: 			int countNum = 0;
+74: 			for (int i = 0; i < wordList.length; i++) {
+75: 			query = query + class_id + "(contains(images.subject, '"+ wordList[i] + "', "+ Integer.toString(countNum + 1)+ ") > 0 OR contains(images.place, '"
+76: 			+ wordList[i] + "', "+ Integer.toString(countNum + 2)+ ") > 0 OR contains(images.description, '" + wordList[i]
+77: 			+ "', " + Integer.toString(countNum + 3)+ ") > 0";
+78: 				if (i != wordList.length - 1)
+
+
+An error occurred at line: 95 in the jsp file: /searchresults.jsp
+Connection cannot be resolved to a type
+92: 	//String keywords = (request.getParameter("key")).trim();
+93: 	out.println("<p>Your input key is "+keywords+"</p>");
+94: 	try{
+95: 		Connection conn = null;
+96: 		String driverName = "oracle.jdbc.driver.OracleDriver";
+97: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+98: 		//load and register the driver
+
+
+An error occurred at line: 100 in the jsp file: /searchresults.jsp
+DriverManager cannot be resolved
+97: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+98: 		//load and register the driver
+99: 		Class drvClass = Class.forName(driverName);
+100: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+
+
+An error occurred at line: 100 in the jsp file: /searchresults.jsp
+Driver cannot be resolved to a type
+97: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+98: 		//load and register the driver
+99: 		Class drvClass = Class.forName(driverName);
+100: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+
+
+An error occurred at line: 102 in the jsp file: /searchresults.jsp
+DriverManager cannot be resolved
+99: 		Class drvClass = Class.forName(driverName);
+100: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+104: 		Statement stmt = conn.createStatement();
+105: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+
+
+An error occurred at line: 104 in the jsp file: /searchresults.jsp
+Statement cannot be resolved to a type
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+104: 		Statement stmt = conn.createStatement();
+105: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+106: 		String p_id = "";
+107: 		while (rset.next()) {
+
+
+An error occurred at line: 105 in the jsp file: /searchresults.jsp
+ResultSet cannot be resolved to a type
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+104: 		Statement stmt = conn.createStatement();
+105: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+106: 		String p_id = "";
+107: 		while (rset.next()) {
+108: 			p_id = (rset.getObject(1)).toString();
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 16, 2014 2:00:02 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 18 in the generated java file
+Only a type can be imported. db.Database resolves to a package
+
+An error occurred at line: 69 in the jsp file: /searchresults.jsp
+kewords cannot be resolved to a variable
+66: 			}
+67: 			query = query + "as rank ";
+68: 			query = query + "images where ";
+69: 			out.println("Records for keyword(s): " + kewords+ " between dates " + dateStart + " and " + dateEnd);
+70: 			//query statement to search for a certain time period
+71: 			query = query + "image.timing between to_date('" + dateStart+ "', 'DD/MM/YYYY') AND to_date('" + dateEnd+ "', 'DD/MM/YYYY') AND ";
+72: 			//creates query statement for every key word to match with the score function
+
+
+An error occurred at line: 75 in the jsp file: /searchresults.jsp
+class_id cannot be resolved to a variable
+72: 			//creates query statement for every key word to match with the score function
+73: 			int countNum = 0;
+74: 			for (int i = 0; i < wordList.length; i++) {
+75: 			query = query + class_id + "(contains(images.subject, '"+ wordList[i] + "', "+ Integer.toString(countNum + 1)+ ") > 0 OR contains(images.place, '"
+76: 			+ wordList[i] + "', "+ Integer.toString(countNum + 2)+ ") > 0 OR contains(images.description, '" + wordList[i]
+77: 			+ "', " + Integer.toString(countNum + 3)+ ") > 0";
+78: 				if (i != wordList.length - 1)
+
+
+An error occurred at line: 95 in the jsp file: /searchresults.jsp
+Connection cannot be resolved to a type
+92: 	//String keywords = (request.getParameter("key")).trim();
+93: 	out.println("<p>Your input key is "+keywords+"</p>");
+94: 	try{
+95: 		Connection conn = null;
+96: 		String driverName = "oracle.jdbc.driver.OracleDriver";
+97: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+98: 		//load and register the driver
+
+
+An error occurred at line: 100 in the jsp file: /searchresults.jsp
+DriverManager cannot be resolved
+97: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+98: 		//load and register the driver
+99: 		Class drvClass = Class.forName(driverName);
+100: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+
+
+An error occurred at line: 100 in the jsp file: /searchresults.jsp
+Driver cannot be resolved to a type
+97: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+98: 		//load and register the driver
+99: 		Class drvClass = Class.forName(driverName);
+100: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+
+
+An error occurred at line: 102 in the jsp file: /searchresults.jsp
+DriverManager cannot be resolved
+99: 		Class drvClass = Class.forName(driverName);
+100: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+104: 		Statement stmt = conn.createStatement();
+105: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+
+
+An error occurred at line: 104 in the jsp file: /searchresults.jsp
+Statement cannot be resolved to a type
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+104: 		Statement stmt = conn.createStatement();
+105: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+106: 		String p_id = "";
+107: 		while (rset.next()) {
+
+
+An error occurred at line: 105 in the jsp file: /searchresults.jsp
+ResultSet cannot be resolved to a type
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+104: 		Statement stmt = conn.createStatement();
+105: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+106: 		String p_id = "";
+107: 		while (rset.next()) {
+108: 			p_id = (rset.getObject(1)).toString();
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 16, 2014 2:35:12 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 18 in the generated java file
+Only a type can be imported. db.Database resolves to a package
+
+An error occurred at line: 51 in the jsp file: /searchresults.jsp
+Duplicate local variable keywords
+48: 		//obtain the class and the ID of the current logged in user
+49: 		String userID = (String) session.getAttribute("USERID");
+50: 		out.println("<H1>Search Results</H1>");
+51: 		String keywords = request.getParameter("key");
+52: 		String dateStart = request.getParameter("dateStart");
+53: 		String dateEnd = request.getParameter("dateEnd");
+54: 		
+
+
+An error occurred at line: 52 in the jsp file: /searchresults.jsp
+Duplicate local variable dateStart
+49: 		String userID = (String) session.getAttribute("USERID");
+50: 		out.println("<H1>Search Results</H1>");
+51: 		String keywords = request.getParameter("key");
+52: 		String dateStart = request.getParameter("dateStart");
+53: 		String dateEnd = request.getParameter("dateEnd");
+54: 		
+55: 		String query = "select images.subject,images.place,images.description";
+
+
+An error occurred at line: 53 in the jsp file: /searchresults.jsp
+Duplicate local variable dateEnd
+50: 		out.println("<H1>Search Results</H1>");
+51: 		String keywords = request.getParameter("key");
+52: 		String dateStart = request.getParameter("dateStart");
+53: 		String dateEnd = request.getParameter("dateEnd");
+54: 		
+55: 		String query = "select images.subject,images.place,images.description";
+56: 		//both keyword and date are entered
+
+
+An error occurred at line: 71 in the jsp file: /searchresults.jsp
+kewords cannot be resolved to a variable
+68: 			}
+69: 			query = query + "as rank ";
+70: 			query = query + "images where ";
+71: 			out.println("Records for keyword(s): " + kewords+ " between dates " + dateStart + " and " + dateEnd);
+72: 			//query statement to search for a certain time period
+73: 			query = query + "image.timing between to_date('" + dateStart+ "', 'DD/MM/YYYY') AND to_date('" + dateEnd+ "', 'DD/MM/YYYY') AND ";
+74: 			//creates query statement for every key word to match with the score function
+
+
+An error occurred at line: 77 in the jsp file: /searchresults.jsp
+class_id cannot be resolved to a variable
+74: 			//creates query statement for every key word to match with the score function
+75: 			int countNum = 0;
+76: 			for (int i = 0; i < wordList.length; i++) {
+77: 			query = query + class_id + "(contains(images.subject, '"+ wordList[i] + "', "+ Integer.toString(countNum + 1)+ ") > 0 OR contains(images.place, '"
+78: 			+ wordList[i] + "', "+ Integer.toString(countNum + 2)+ ") > 0 OR contains(images.description, '" + wordList[i]
+79: 			+ "', " + Integer.toString(countNum + 3)+ ") > 0";
+80: 				if (i != wordList.length - 1)
+
+
+An error occurred at line: 97 in the jsp file: /searchresults.jsp
+Connection cannot be resolved to a type
+94: 	//String keywords = (request.getParameter("key")).trim();
+95: 	out.println("<p>Your input key is "+keywords+"</p>");
+96: 	try{
+97: 		Connection conn = null;
+98: 		String driverName = "oracle.jdbc.driver.OracleDriver";
+99: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+100: 		//load and register the driver
+
+
+An error occurred at line: 102 in the jsp file: /searchresults.jsp
+DriverManager cannot be resolved
+99: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+100: 		//load and register the driver
+101: 		Class drvClass = Class.forName(driverName);
+102: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+103: 		//establish the connection
+104: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+105: 		conn.setAutoCommit(false);
+
+
+An error occurred at line: 102 in the jsp file: /searchresults.jsp
+Driver cannot be resolved to a type
+99: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+100: 		//load and register the driver
+101: 		Class drvClass = Class.forName(driverName);
+102: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+103: 		//establish the connection
+104: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+105: 		conn.setAutoCommit(false);
+
+
+An error occurred at line: 104 in the jsp file: /searchresults.jsp
+DriverManager cannot be resolved
+101: 		Class drvClass = Class.forName(driverName);
+102: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+103: 		//establish the connection
+104: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+105: 		conn.setAutoCommit(false);
+106: 		Statement stmt = conn.createStatement();
+107: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+
+
+An error occurred at line: 106 in the jsp file: /searchresults.jsp
+Statement cannot be resolved to a type
+103: 		//establish the connection
+104: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+105: 		conn.setAutoCommit(false);
+106: 		Statement stmt = conn.createStatement();
+107: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+108: 		String p_id = "";
+109: 		while (rset.next()) {
+
+
+An error occurred at line: 107 in the jsp file: /searchresults.jsp
+ResultSet cannot be resolved to a type
+104: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+105: 		conn.setAutoCommit(false);
+106: 		Statement stmt = conn.createStatement();
+107: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+108: 		String p_id = "";
+109: 		while (rset.next()) {
+110: 			p_id = (rset.getObject(1)).toString();
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 16, 2014 2:35:44 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 18 in the generated java file
+Only a type can be imported. db.Database resolves to a package
+
+An error occurred at line: 69 in the jsp file: /searchresults.jsp
+kewords cannot be resolved to a variable
+66: 			}
+67: 			query = query + "as rank ";
+68: 			query = query + "images where ";
+69: 			out.println("Records for keyword(s): " + kewords+ " between dates " + dateStart + " and " + dateEnd);
+70: 			//query statement to search for a certain time period
+71: 			query = query + "image.timing between to_date('" + dateStart+ "', 'DD/MM/YYYY') AND to_date('" + dateEnd+ "', 'DD/MM/YYYY') AND ";
+72: 			//creates query statement for every key word to match with the score function
+
+
+An error occurred at line: 75 in the jsp file: /searchresults.jsp
+class_id cannot be resolved to a variable
+72: 			//creates query statement for every key word to match with the score function
+73: 			int countNum = 0;
+74: 			for (int i = 0; i < wordList.length; i++) {
+75: 			query = query + class_id + "(contains(images.subject, '"+ wordList[i] + "', "+ Integer.toString(countNum + 1)+ ") > 0 OR contains(images.place, '"
+76: 			+ wordList[i] + "', "+ Integer.toString(countNum + 2)+ ") > 0 OR contains(images.description, '" + wordList[i]
+77: 			+ "', " + Integer.toString(countNum + 3)+ ") > 0";
+78: 				if (i != wordList.length - 1)
+
+
+An error occurred at line: 95 in the jsp file: /searchresults.jsp
+Connection cannot be resolved to a type
+92: 	//String keywords = (request.getParameter("key")).trim();
+93: 	out.println("<p>Your input key is "+keywords+"</p>");
+94: 	try{
+95: 		Connection conn = null;
+96: 		String driverName = "oracle.jdbc.driver.OracleDriver";
+97: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+98: 		//load and register the driver
+
+
+An error occurred at line: 100 in the jsp file: /searchresults.jsp
+DriverManager cannot be resolved
+97: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+98: 		//load and register the driver
+99: 		Class drvClass = Class.forName(driverName);
+100: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+
+
+An error occurred at line: 100 in the jsp file: /searchresults.jsp
+Driver cannot be resolved to a type
+97: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+98: 		//load and register the driver
+99: 		Class drvClass = Class.forName(driverName);
+100: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+
+
+An error occurred at line: 102 in the jsp file: /searchresults.jsp
+DriverManager cannot be resolved
+99: 		Class drvClass = Class.forName(driverName);
+100: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+104: 		Statement stmt = conn.createStatement();
+105: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+
+
+An error occurred at line: 104 in the jsp file: /searchresults.jsp
+Statement cannot be resolved to a type
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+104: 		Statement stmt = conn.createStatement();
+105: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+106: 		String p_id = "";
+107: 		while (rset.next()) {
+
+
+An error occurred at line: 105 in the jsp file: /searchresults.jsp
+ResultSet cannot be resolved to a type
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+104: 		Statement stmt = conn.createStatement();
+105: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+106: 		String p_id = "";
+107: 		while (rset.next()) {
+108: 			p_id = (rset.getObject(1)).toString();
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 16, 2014 3:14:59 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 18 in the generated java file
+Only a type can be imported. db.Database resolves to a package
+
+An error occurred at line: 69 in the jsp file: /searchresults.jsp
+kewords cannot be resolved to a variable
+66: 			}
+67: 			query = query + "as rank ";
+68: 			query = query + "images where ";
+69: 			out.println("Records for keyword(s): " + kewords+ " between dates " + dateStart + " and " + dateEnd);
+70: 			//query statement to search for a certain time period
+71: 			query = query + "image.timing between to_date('" + dateStart+ "', 'DD/MM/YYYY') AND to_date('" + dateEnd+ "', 'DD/MM/YYYY') AND ";
+72: 			//creates query statement for every key word to match with the score function
+
+
+An error occurred at line: 75 in the jsp file: /searchresults.jsp
+class_id cannot be resolved to a variable
+72: 			//creates query statement for every key word to match with the score function
+73: 			int countNum = 0;
+74: 			for (int i = 0; i < wordList.length; i++) {
+75: 			query = query + class_id + "(contains(images.subject, '"+ wordList[i] + "', "+ Integer.toString(countNum + 1)+ ") > 0 OR contains(images.place, '"
+76: 			+ wordList[i] + "', "+ Integer.toString(countNum + 2)+ ") > 0 OR contains(images.description, '" + wordList[i]
+77: 			+ "', " + Integer.toString(countNum + 3)+ ") > 0";
+78: 				if (i != wordList.length - 1)
+
+
+An error occurred at line: 95 in the jsp file: /searchresults.jsp
+Connection cannot be resolved to a type
+92: 	//String keywords = (request.getParameter("key")).trim();
+93: 	out.println("<p>Your input key is "+keywords+"</p>");
+94: 	try{
+95: 		Connection conn = null;
+96: 		String driverName = "oracle.jdbc.driver.OracleDriver";
+97: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+98: 		//load and register the driver
+
+
+An error occurred at line: 100 in the jsp file: /searchresults.jsp
+DriverManager cannot be resolved
+97: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+98: 		//load and register the driver
+99: 		Class drvClass = Class.forName(driverName);
+100: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+
+
+An error occurred at line: 100 in the jsp file: /searchresults.jsp
+Driver cannot be resolved to a type
+97: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+98: 		//load and register the driver
+99: 		Class drvClass = Class.forName(driverName);
+100: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+
+
+An error occurred at line: 102 in the jsp file: /searchresults.jsp
+DriverManager cannot be resolved
+99: 		Class drvClass = Class.forName(driverName);
+100: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+104: 		Statement stmt = conn.createStatement();
+105: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+
+
+An error occurred at line: 104 in the jsp file: /searchresults.jsp
+Statement cannot be resolved to a type
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+104: 		Statement stmt = conn.createStatement();
+105: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+106: 		String p_id = "";
+107: 		while (rset.next()) {
+
+
+An error occurred at line: 105 in the jsp file: /searchresults.jsp
+ResultSet cannot be resolved to a type
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+104: 		Statement stmt = conn.createStatement();
+105: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+106: 		String p_id = "";
+107: 		while (rset.next()) {
+108: 			p_id = (rset.getObject(1)).toString();
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 16, 2014 3:21:09 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 18 in the generated java file
+Only a type can be imported. db.Database resolves to a package
+
+An error occurred at line: 69 in the jsp file: /searchresults.jsp
+kewords cannot be resolved to a variable
+66: 			}
+67: 			query = query + "as rank ";
+68: 			query = query + "images where ";
+69: 			out.println("Records for keyword(s): " + kewords+ " between dates " + dateStart + " and " + dateEnd);
+70: 			//query statement to search for a certain time period
+71: 			query = query + "image.timing between to_date('" + dateStart+ "', 'DD/MM/YYYY') AND to_date('" + dateEnd+ "', 'DD/MM/YYYY') AND ";
+72: 			//creates query statement for every key word to match with the score function
+
+
+An error occurred at line: 95 in the jsp file: /searchresults.jsp
+Connection cannot be resolved to a type
+92: 	//String keywords = (request.getParameter("key")).trim();
+93: 	out.println("<p>Your input key is "+keywords+"</p>");
+94: 	try{
+95: 		Connection conn = null;
+96: 		String driverName = "oracle.jdbc.driver.OracleDriver";
+97: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+98: 		//load and register the driver
+
+
+An error occurred at line: 100 in the jsp file: /searchresults.jsp
+DriverManager cannot be resolved
+97: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+98: 		//load and register the driver
+99: 		Class drvClass = Class.forName(driverName);
+100: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+
+
+An error occurred at line: 100 in the jsp file: /searchresults.jsp
+Driver cannot be resolved to a type
+97: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+98: 		//load and register the driver
+99: 		Class drvClass = Class.forName(driverName);
+100: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+
+
+An error occurred at line: 102 in the jsp file: /searchresults.jsp
+DriverManager cannot be resolved
+99: 		Class drvClass = Class.forName(driverName);
+100: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+104: 		Statement stmt = conn.createStatement();
+105: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+
+
+An error occurred at line: 104 in the jsp file: /searchresults.jsp
+Statement cannot be resolved to a type
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+104: 		Statement stmt = conn.createStatement();
+105: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+106: 		String p_id = "";
+107: 		while (rset.next()) {
+
+
+An error occurred at line: 105 in the jsp file: /searchresults.jsp
+ResultSet cannot be resolved to a type
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+104: 		Statement stmt = conn.createStatement();
+105: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+106: 		String p_id = "";
+107: 		while (rset.next()) {
+108: 			p_id = (rset.getObject(1)).toString();
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 16, 2014 3:21:24 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 18 in the generated java file
+Only a type can be imported. db.Database resolves to a package
+
+An error occurred at line: 95 in the jsp file: /searchresults.jsp
+Connection cannot be resolved to a type
+92: 	//String keywords = (request.getParameter("key")).trim();
+93: 	out.println("<p>Your input key is "+keywords+"</p>");
+94: 	try{
+95: 		Connection conn = null;
+96: 		String driverName = "oracle.jdbc.driver.OracleDriver";
+97: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+98: 		//load and register the driver
+
+
+An error occurred at line: 100 in the jsp file: /searchresults.jsp
+DriverManager cannot be resolved
+97: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+98: 		//load and register the driver
+99: 		Class drvClass = Class.forName(driverName);
+100: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+
+
+An error occurred at line: 100 in the jsp file: /searchresults.jsp
+Driver cannot be resolved to a type
+97: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+98: 		//load and register the driver
+99: 		Class drvClass = Class.forName(driverName);
+100: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+
+
+An error occurred at line: 102 in the jsp file: /searchresults.jsp
+DriverManager cannot be resolved
+99: 		Class drvClass = Class.forName(driverName);
+100: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+104: 		Statement stmt = conn.createStatement();
+105: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+
+
+An error occurred at line: 104 in the jsp file: /searchresults.jsp
+Statement cannot be resolved to a type
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+104: 		Statement stmt = conn.createStatement();
+105: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+106: 		String p_id = "";
+107: 		while (rset.next()) {
+
+
+An error occurred at line: 105 in the jsp file: /searchresults.jsp
+ResultSet cannot be resolved to a type
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+104: 		Statement stmt = conn.createStatement();
+105: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+106: 		String p_id = "";
+107: 		while (rset.next()) {
+108: 			p_id = (rset.getObject(1)).toString();
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 16, 2014 3:22:18 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 18 in the generated java file
+Only a type can be imported. db.Database resolves to a package
+
+An error occurred at line: 95 in the jsp file: /searchresults.jsp
+Connection cannot be resolved to a type
+92: 	//String keywords = (request.getParameter("key")).trim();
+93: 	out.println("<p>Your input key is "+keywords+"</p>");
+94: 	try{
+95: 		Connection conn = null;
+96: 		String driverName = "oracle.jdbc.driver.OracleDriver";
+97: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+98: 		//load and register the driver
+
+
+An error occurred at line: 100 in the jsp file: /searchresults.jsp
+DriverManager cannot be resolved
+97: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+98: 		//load and register the driver
+99: 		Class drvClass = Class.forName(driverName);
+100: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+
+
+An error occurred at line: 100 in the jsp file: /searchresults.jsp
+Driver cannot be resolved to a type
+97: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+98: 		//load and register the driver
+99: 		Class drvClass = Class.forName(driverName);
+100: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+
+
+An error occurred at line: 102 in the jsp file: /searchresults.jsp
+DriverManager cannot be resolved
+99: 		Class drvClass = Class.forName(driverName);
+100: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+104: 		Statement stmt = conn.createStatement();
+105: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+
+
+An error occurred at line: 104 in the jsp file: /searchresults.jsp
+Statement cannot be resolved to a type
+101: 		//establish the connection
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+104: 		Statement stmt = conn.createStatement();
+105: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+106: 		String p_id = "";
+107: 		while (rset.next()) {
+
+
+An error occurred at line: 105 in the jsp file: /searchresults.jsp
+ResultSet cannot be resolved to a type
+102: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+103: 		conn.setAutoCommit(false);
+104: 		Statement stmt = conn.createStatement();
+105: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+106: 		String p_id = "";
+107: 		while (rset.next()) {
+108: 			p_id = (rset.getObject(1)).toString();
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 16, 2014 3:26:11 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 18 in the generated java file
+Only a type can be imported. db.Database resolves to a package
+
+An error occurred at line: 96 in the jsp file: /searchresults.jsp
+Connection cannot be resolved to a type
+93: 	//String keywords = (request.getParameter("key")).trim();
+94: 	out.println("<p>Your input key is "+keywords+"</p>");
+95: 	try{
+96: 		Connection conn = null;
+97: 		String driverName = "oracle.jdbc.driver.OracleDriver";
+98: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+99: 		//load and register the driver
+
+
+An error occurred at line: 101 in the jsp file: /searchresults.jsp
+DriverManager cannot be resolved
+98: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+99: 		//load and register the driver
+100: 		Class drvClass = Class.forName(driverName);
+101: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+102: 		//establish the connection
+103: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+104: 		conn.setAutoCommit(false);
+
+
+An error occurred at line: 101 in the jsp file: /searchresults.jsp
+Driver cannot be resolved to a type
+98: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+99: 		//load and register the driver
+100: 		Class drvClass = Class.forName(driverName);
+101: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+102: 		//establish the connection
+103: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+104: 		conn.setAutoCommit(false);
+
+
+An error occurred at line: 103 in the jsp file: /searchresults.jsp
+DriverManager cannot be resolved
+100: 		Class drvClass = Class.forName(driverName);
+101: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+102: 		//establish the connection
+103: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+104: 		conn.setAutoCommit(false);
+105: 		Statement stmt = conn.createStatement();
+106: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+
+
+An error occurred at line: 105 in the jsp file: /searchresults.jsp
+Statement cannot be resolved to a type
+102: 		//establish the connection
+103: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+104: 		conn.setAutoCommit(false);
+105: 		Statement stmt = conn.createStatement();
+106: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+107: 		String p_id = "";
+108: 		while (rset.next()) {
+
+
+An error occurred at line: 106 in the jsp file: /searchresults.jsp
+ResultSet cannot be resolved to a type
+103: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+104: 		conn.setAutoCommit(false);
+105: 		Statement stmt = conn.createStatement();
+106: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+107: 		String p_id = "";
+108: 		while (rset.next()) {
+109: 			p_id = (rset.getObject(1)).toString();
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 16, 2014 3:32:27 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 96 in the jsp file: /searchresults.jsp
+Connection cannot be resolved to a type
+93: 	//String keywords = (request.getParameter("key")).trim();
+94: 	out.println("<p>Your input key is "+keywords+"</p>");
+95: 	try{
+96: 		Connection conn = null;
+97: 		String driverName = "oracle.jdbc.driver.OracleDriver";
+98: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+99: 		//load and register the driver
+
+
+An error occurred at line: 101 in the jsp file: /searchresults.jsp
+DriverManager cannot be resolved
+98: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+99: 		//load and register the driver
+100: 		Class drvClass = Class.forName(driverName);
+101: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+102: 		//establish the connection
+103: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+104: 		conn.setAutoCommit(false);
+
+
+An error occurred at line: 101 in the jsp file: /searchresults.jsp
+Driver cannot be resolved to a type
+98: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+99: 		//load and register the driver
+100: 		Class drvClass = Class.forName(driverName);
+101: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+102: 		//establish the connection
+103: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+104: 		conn.setAutoCommit(false);
+
+
+An error occurred at line: 103 in the jsp file: /searchresults.jsp
+DriverManager cannot be resolved
+100: 		Class drvClass = Class.forName(driverName);
+101: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+102: 		//establish the connection
+103: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+104: 		conn.setAutoCommit(false);
+105: 		Statement stmt = conn.createStatement();
+106: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+
+
+An error occurred at line: 105 in the jsp file: /searchresults.jsp
+Statement cannot be resolved to a type
+102: 		//establish the connection
+103: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+104: 		conn.setAutoCommit(false);
+105: 		Statement stmt = conn.createStatement();
+106: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+107: 		String p_id = "";
+108: 		while (rset.next()) {
+
+
+An error occurred at line: 106 in the jsp file: /searchresults.jsp
+ResultSet cannot be resolved to a type
+103: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+104: 		conn.setAutoCommit(false);
+105: 		Statement stmt = conn.createStatement();
+106: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+107: 		String p_id = "";
+108: 		while (rset.next()) {
+109: 			p_id = (rset.getObject(1)).toString();
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 16, 2014 3:32:51 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 96 in the jsp file: /searchresults.jsp
+Connection cannot be resolved to a type
+93: 	//String keywords = (request.getParameter("key")).trim();
+94: 	out.println("<p>Your input key is "+keywords+"</p>");
+95: 	try{
+96: 		Connection conn = null;
+97: 		String driverName = "oracle.jdbc.driver.OracleDriver";
+98: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+99: 		//load and register the driver
+
+
+An error occurred at line: 101 in the jsp file: /searchresults.jsp
+DriverManager cannot be resolved
+98: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+99: 		//load and register the driver
+100: 		Class drvClass = Class.forName(driverName);
+101: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+102: 		//establish the connection
+103: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+104: 		conn.setAutoCommit(false);
+
+
+An error occurred at line: 101 in the jsp file: /searchresults.jsp
+Driver cannot be resolved to a type
+98: 		String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+99: 		//load and register the driver
+100: 		Class drvClass = Class.forName(driverName);
+101: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+102: 		//establish the connection
+103: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+104: 		conn.setAutoCommit(false);
+
+
+An error occurred at line: 103 in the jsp file: /searchresults.jsp
+DriverManager cannot be resolved
+100: 		Class drvClass = Class.forName(driverName);
+101: 		DriverManager.registerDriver((Driver) drvClass.newInstance());
+102: 		//establish the connection
+103: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+104: 		conn.setAutoCommit(false);
+105: 		Statement stmt = conn.createStatement();
+106: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+
+
+An error occurred at line: 105 in the jsp file: /searchresults.jsp
+Statement cannot be resolved to a type
+102: 		//establish the connection
+103: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+104: 		conn.setAutoCommit(false);
+105: 		Statement stmt = conn.createStatement();
+106: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+107: 		String p_id = "";
+108: 		while (rset.next()) {
+
+
+An error occurred at line: 106 in the jsp file: /searchresults.jsp
+ResultSet cannot be resolved to a type
+103: 		conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+104: 		conn.setAutoCommit(false);
+105: 		Statement stmt = conn.createStatement();
+106: 		ResultSet rset = stmt.executeQuery("SELECT photo_id FROM images WHERE subject like "+"'%"+keywords+"%'");
+107: 		String p_id = "";
+108: 		while (rset.next()) {
+109: 			p_id = (rset.getObject(1)).toString();
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 16, 2014 4:00:45 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 18 in the generated java file
+Only a type can be imported. db.Database resolves to a package
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 16, 2014 5:10:53 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 89 in the jsp file: /searchresults.jsp
+Syntax error, insert ") Statement" to complete IfStatement
+86: 	
+87: 	
+88: 	//No keywords entered
+89: 	else if (keywords.equals("") && (!dateStart.equals("") && !dateEnd.equals("")) {
+90: 		out.println("Results of time period between " + dateStart+" and " + dateEnd);
+91: 		
+92: 		query = query + "FROM  images where ";
+
+
+An error occurred at line: 98 in the jsp file: /searchresults.jsp
+Syntax error on token "else", delete this token
+95: 				dateEnd+"','DD/MM/YYYY') ORDER BY " + queryOrder;
+96: 	}
+97: 	
+98: 	else if (keywords.equals("") && (!dateStart.equals() || !dateEnd.equals("")) {
+99: 		out.println("Resutls of matching keywords: " + keywords);
+100: 		query = query + ", ";
+101: 		String[] wordList = keywords.split();
+
+
+An error occurred at line: 98 in the jsp file: /searchresults.jsp
+The method equals(Object) in the type String is not applicable for the arguments ()
+95: 				dateEnd+"','DD/MM/YYYY') ORDER BY " + queryOrder;
+96: 	}
+97: 	
+98: 	else if (keywords.equals("") && (!dateStart.equals() || !dateEnd.equals("")) {
+99: 		out.println("Resutls of matching keywords: " + keywords);
+100: 		query = query + ", ";
+101: 		String[] wordList = keywords.split();
+
+
+An error occurred at line: 98 in the jsp file: /searchresults.jsp
+Syntax error, insert ") Statement" to complete IfStatement
+95: 				dateEnd+"','DD/MM/YYYY') ORDER BY " + queryOrder;
+96: 	}
+97: 	
+98: 	else if (keywords.equals("") && (!dateStart.equals() || !dateEnd.equals("")) {
+99: 		out.println("Resutls of matching keywords: " + keywords);
+100: 		query = query + ", ";
+101: 		String[] wordList = keywords.split();
+
+
+An error occurred at line: 101 in the jsp file: /searchresults.jsp
+The method split(String) in the type String is not applicable for the arguments ()
+98: 	else if (keywords.equals("") && (!dateStart.equals() || !dateEnd.equals("")) {
+99: 		out.println("Resutls of matching keywords: " + keywords);
+100: 		query = query + ", ";
+101: 		String[] wordList = keywords.split();
+102: 		int matchCount = 0;
+103: 		for (int i = 0; i<wordList.length; i++) {
+104: 			query = query + "6*score(" + Integer.toString(matchCount + 1)+ ")+3*score("+Integer.toString(matchCount+2)
+
+
+An error occurred at line: 105 in the jsp file: /searchresults.jsp
+Interger cannot be resolved
+102: 		int matchCount = 0;
+103: 		for (int i = 0; i<wordList.length; i++) {
+104: 			query = query + "6*score(" + Integer.toString(matchCount + 1)+ ")+3*score("+Integer.toString(matchCount+2)
+105: 					+")+score("+Interger.toString(matchCount+3)+")";
+106: 			if (i != wordList.length -1)
+107: 				query = query + "+ "
+108: 			matchCount = matchCount+3;
+
+
+An error occurred at line: 107 in the jsp file: /searchresults.jsp
+Syntax error, insert ";" to complete Statement
+104: 			query = query + "6*score(" + Integer.toString(matchCount + 1)+ ")+3*score("+Integer.toString(matchCount+2)
+105: 					+")+score("+Interger.toString(matchCount+3)+")";
+106: 			if (i != wordList.length -1)
+107: 				query = query + "+ "
+108: 			matchCount = matchCount+3;
+109: 		}
+110: 		
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 16, 2014 5:14:20 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 89 in the jsp file: /searchresults.jsp
+Syntax error, insert ") Statement" to complete IfStatement
+86: 	
+87: 	
+88: 	//No keywords entered
+89: 	else if (keywords.equals("") && (!dateStart.equals("") && !dateEnd.equals("")) {
+90: 		out.println("Results of time period between " + dateStart+" and " + dateEnd);
+91: 		
+92: 		query = query + "FROM  images where ";
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 16, 2014 5:15:24 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 98 in the jsp file: /searchresults.jsp
+The method equals(Object) in the type String is not applicable for the arguments ()
+95: 				dateEnd+"','DD/MM/YYYY') ORDER BY " + queryOrder;
+96: 	}
+97: 	
+98: 	else if (keywords.equals("") && (!dateStart.equals() || !dateEnd.equals(""))) {
+99: 		out.println("Resutls of matching keywords: " + keywords);
+100: 		query = query + ", ";
+101: 		String[] wordList = keywords.split();
+
+
+An error occurred at line: 101 in the jsp file: /searchresults.jsp
+The method split(String) in the type String is not applicable for the arguments ()
+98: 	else if (keywords.equals("") && (!dateStart.equals() || !dateEnd.equals(""))) {
+99: 		out.println("Resutls of matching keywords: " + keywords);
+100: 		query = query + ", ";
+101: 		String[] wordList = keywords.split();
+102: 		int matchCount = 0;
+103: 		for (int i = 0; i<wordList.length; i++) {
+104: 			query = query + "6*score(" + Integer.toString(matchCount + 1)+ ")+3*score("+Integer.toString(matchCount+2)
+
+
+An error occurred at line: 105 in the jsp file: /searchresults.jsp
+Interger cannot be resolved
+102: 		int matchCount = 0;
+103: 		for (int i = 0; i<wordList.length; i++) {
+104: 			query = query + "6*score(" + Integer.toString(matchCount + 1)+ ")+3*score("+Integer.toString(matchCount+2)
+105: 					+")+score("+Interger.toString(matchCount+3)+")";
+106: 			if (i != wordList.length -1)
+107: 				query = query + "+ "
+108: 			matchCount = matchCount+3;
+
+
+An error occurred at line: 107 in the jsp file: /searchresults.jsp
+Syntax error, insert ";" to complete Statement
+104: 			query = query + "6*score(" + Integer.toString(matchCount + 1)+ ")+3*score("+Integer.toString(matchCount+2)
+105: 					+")+score("+Interger.toString(matchCount+3)+")";
+106: 			if (i != wordList.length -1)
+107: 				query = query + "+ "
+108: 			matchCount = matchCount+3;
+109: 		}
+110: 		
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 16, 2014 5:15:56 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 101 in the jsp file: /searchresults.jsp
+The method split(String) in the type String is not applicable for the arguments ()
+98: 	else if (keywords.equals("") && (!dateStart.equals("") || !dateEnd.equals(""))) {
+99: 		out.println("Resutls of matching keywords: " + keywords);
+100: 		query = query + ", ";
+101: 		String[] wordList = keywords.split();
+102: 		int matchCount = 0;
+103: 		for (int i = 0; i<wordList.length; i++) {
+104: 			query = query + "6*score(" + Integer.toString(matchCount + 1)+ ")+3*score("+Integer.toString(matchCount+2)
+
+
+An error occurred at line: 105 in the jsp file: /searchresults.jsp
+Interger cannot be resolved
+102: 		int matchCount = 0;
+103: 		for (int i = 0; i<wordList.length; i++) {
+104: 			query = query + "6*score(" + Integer.toString(matchCount + 1)+ ")+3*score("+Integer.toString(matchCount+2)
+105: 					+")+score("+Interger.toString(matchCount+3)+")";
+106: 			if (i != wordList.length -1)
+107: 				query = query + "+ "
+108: 			matchCount = matchCount+3;
+
+
+An error occurred at line: 107 in the jsp file: /searchresults.jsp
+Syntax error, insert ";" to complete Statement
+104: 			query = query + "6*score(" + Integer.toString(matchCount + 1)+ ")+3*score("+Integer.toString(matchCount+2)
+105: 					+")+score("+Interger.toString(matchCount+3)+")";
+106: 			if (i != wordList.length -1)
+107: 				query = query + "+ "
+108: 			matchCount = matchCount+3;
+109: 		}
+110: 		
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 16, 2014 5:16:34 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 101 in the jsp file: /searchresults.jsp
+The method split(String) in the type String is not applicable for the arguments ()
+98: 	else if (keywords.equals("") && (!dateStart.equals("") || !dateEnd.equals(""))) {
+99: 		out.println("Resutls of matching keywords: " + keywords);
+100: 		query = query + ", ";
+101: 		String[] wordList = keywords.split();
+102: 		int matchCount = 0;
+103: 		for (int i = 0; i<wordList.length; i++) {
+104: 			query = query + "6*score(" + Integer.toString(matchCount + 1)+ ")+3*score("+Integer.toString(matchCount+2)
+
+
+An error occurred at line: 105 in the jsp file: /searchresults.jsp
+Interger cannot be resolved
+102: 		int matchCount = 0;
+103: 		for (int i = 0; i<wordList.length; i++) {
+104: 			query = query + "6*score(" + Integer.toString(matchCount + 1)+ ")+3*score("+Integer.toString(matchCount+2)
+105: 					+")+score("+Interger.toString(matchCount+3)+")";
+106: 			if (i != wordList.length -1)
+107: 				query = query + "+ ";
+108: 			matchCount = matchCount+3;
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 16, 2014 5:16:58 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 105 in the jsp file: /searchresults.jsp
+Interger cannot be resolved
+102: 		int matchCount = 0;
+103: 		for (int i = 0; i<wordList.length; i++) {
+104: 			query = query + "6*score(" + Integer.toString(matchCount + 1)+ ")+3*score("+Integer.toString(matchCount+2)
+105: 					+")+score("+Interger.toString(matchCount+3)+")";
+106: 			if (i != wordList.length -1)
+107: 				query = query + "+ ";
+108: 			matchCount = matchCount+3;
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 16, 2014 6:15:50 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 125 in the jsp file: /searchresults.jsp
+SQLOrder cannot be resolved to a variable
+122: 				query=query+"OR ";
+123: 			countNum = countNum+3;
+124: 		}
+125: 		query = query + "ORDER BY "+SQLOrder;
+126: 	}
+127: 	
+128: 	
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 16, 2014 6:16:21 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 125 in the jsp file: /searchresults.jsp
+Syntax error on token "queryOrder", delete this token
+122: 				query=query+"OR ";
+123: 			countNum = countNum+3;
+124: 		}
+125: 		query = query + "ORDER BY "queryOrder;
+126: 	}
+127: 	
+128: 	
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)

@@ -1,0 +1,819 @@
+Nov 14, 2014 4:22:46 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 20 in the jsp file: /picturebrowse.jsp
+drivername cannot be resolved to a variable
+17: <%
+18: 	String keywords = (request.getParameter("key")).trim();
+19: 	out.println("<p>Your input key is "+keywords+"</p>");
+20: 	Connection conn = getConnected(drivername,dbstring,username,password);
+21: 	Statement stmt = conn.createStatement();
+22: 	ResultSet rsetTest = stmt.executeQuery("SELECT photo_id from images WHERE description like "+"'%"+keywords+"%'");
+23: 	String p_id = "";
+
+
+An error occurred at line: 20 in the jsp file: /picturebrowse.jsp
+dbstring cannot be resolved to a variable
+17: <%
+18: 	String keywords = (request.getParameter("key")).trim();
+19: 	out.println("<p>Your input key is "+keywords+"</p>");
+20: 	Connection conn = getConnected(drivername,dbstring,username,password);
+21: 	Statement stmt = conn.createStatement();
+22: 	ResultSet rsetTest = stmt.executeQuery("SELECT photo_id from images WHERE description like "+"'%"+keywords+"%'");
+23: 	String p_id = "";
+
+
+An error occurred at line: 20 in the jsp file: /picturebrowse.jsp
+username cannot be resolved to a variable
+17: <%
+18: 	String keywords = (request.getParameter("key")).trim();
+19: 	out.println("<p>Your input key is "+keywords+"</p>");
+20: 	Connection conn = getConnected(drivername,dbstring,username,password);
+21: 	Statement stmt = conn.createStatement();
+22: 	ResultSet rsetTest = stmt.executeQuery("SELECT photo_id from images WHERE description like "+"'%"+keywords+"%'");
+23: 	String p_id = "";
+
+
+An error occurred at line: 20 in the jsp file: /picturebrowse.jsp
+password cannot be resolved to a variable
+17: <%
+18: 	String keywords = (request.getParameter("key")).trim();
+19: 	out.println("<p>Your input key is "+keywords+"</p>");
+20: 	Connection conn = getConnected(drivername,dbstring,username,password);
+21: 	Statement stmt = conn.createStatement();
+22: 	ResultSet rsetTest = stmt.executeQuery("SELECT photo_id from images WHERE description like "+"'%"+keywords+"%'");
+23: 	String p_id = "";
+
+
+An error occurred at line: 25 in the jsp file: /picturebrowse.jsp
+rset cannot be resolved
+22: 	ResultSet rsetTest = stmt.executeQuery("SELECT photo_id from images WHERE description like "+"'%"+keywords+"%'");
+23: 	String p_id = "";
+24: 	while (rsetTest.next()) {
+25: 		p_id = (rset.getObject(1)).toString();
+26: 		// specify the servlet for the image
+27: 		out.println("<a href=\"/OnlineImageProcess/GetOnePic?big"+p_id+"\">");
+28: 		// specify the servlet for the themernail
+
+
+An error occurred at line: 42 in the jsp file: /picturebrowse.jsp
+Duplicate local variable conn
+39: //String query = "select pic_id from pictures";
+40: String query = "select photo_id from images";
+41: //establish the connection to the underlying database
+42: Connection conn = null;
+43: String driverName = "oracle.jdbc.driver.OracleDriver";
+44: String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+45: //load and register the driver
+
+
+An error occurred at line: 51 in the jsp file: /picturebrowse.jsp
+Duplicate local variable stmt
+48: //establish the connection
+49: conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+50: conn.setAutoCommit(false);
+51: Statement stmt = conn.createStatement();
+52: ResultSet rset = stmt.executeQuery(query);
+53: String p_id = "";
+54: while (rset.next() ) {
+
+
+An error occurred at line: 53 in the jsp file: /picturebrowse.jsp
+Duplicate local variable p_id
+50: conn.setAutoCommit(false);
+51: Statement stmt = conn.createStatement();
+52: ResultSet rset = stmt.executeQuery(query);
+53: String p_id = "";
+54: while (rset.next() ) {
+55: p_id = (rset.getObject(1)).toString();
+56: // specify the servlet for the image
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 14, 2014 4:23:40 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 29 in the jsp file: /picturebrowse.jsp
+Duplicate local variable conn
+26: 	//establish the connection
+27: 	conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+28: 	conn.setAutoCommit(false);
+29: 	Connection conn = getConnected(drivername,dbstring,username,password);
+30: 	Statement stmt = conn.createStatement();
+31: 	ResultSet rsetTest = stmt.executeQuery("SELECT photo_id from images WHERE description like "+"'%"+keywords+"%'");
+32: 	String p_id = "";
+
+
+An error occurred at line: 29 in the jsp file: /picturebrowse.jsp
+drivername cannot be resolved to a variable
+26: 	//establish the connection
+27: 	conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+28: 	conn.setAutoCommit(false);
+29: 	Connection conn = getConnected(drivername,dbstring,username,password);
+30: 	Statement stmt = conn.createStatement();
+31: 	ResultSet rsetTest = stmt.executeQuery("SELECT photo_id from images WHERE description like "+"'%"+keywords+"%'");
+32: 	String p_id = "";
+
+
+An error occurred at line: 29 in the jsp file: /picturebrowse.jsp
+username cannot be resolved to a variable
+26: 	//establish the connection
+27: 	conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+28: 	conn.setAutoCommit(false);
+29: 	Connection conn = getConnected(drivername,dbstring,username,password);
+30: 	Statement stmt = conn.createStatement();
+31: 	ResultSet rsetTest = stmt.executeQuery("SELECT photo_id from images WHERE description like "+"'%"+keywords+"%'");
+32: 	String p_id = "";
+
+
+An error occurred at line: 29 in the jsp file: /picturebrowse.jsp
+password cannot be resolved to a variable
+26: 	//establish the connection
+27: 	conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+28: 	conn.setAutoCommit(false);
+29: 	Connection conn = getConnected(drivername,dbstring,username,password);
+30: 	Statement stmt = conn.createStatement();
+31: 	ResultSet rsetTest = stmt.executeQuery("SELECT photo_id from images WHERE description like "+"'%"+keywords+"%'");
+32: 	String p_id = "";
+
+
+An error occurred at line: 34 in the jsp file: /picturebrowse.jsp
+rset cannot be resolved
+31: 	ResultSet rsetTest = stmt.executeQuery("SELECT photo_id from images WHERE description like "+"'%"+keywords+"%'");
+32: 	String p_id = "";
+33: 	while (rsetTest.next()) {
+34: 		p_id = (rset.getObject(1)).toString();
+35: 		// specify the servlet for the image
+36: 		out.println("<a href=\"/OnlineImageProcess/GetOnePic?big"+p_id+"\">");
+37: 		// specify the servlet for the themernail
+
+
+An error occurred at line: 51 in the jsp file: /picturebrowse.jsp
+Duplicate local variable conn
+48: //String query = "select pic_id from pictures";
+49: String query = "select photo_id from images";
+50: //establish the connection to the underlying database
+51: Connection conn = null;
+52: String driverName = "oracle.jdbc.driver.OracleDriver";
+53: String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+54: //load and register the driver
+
+
+An error occurred at line: 52 in the jsp file: /picturebrowse.jsp
+Duplicate local variable driverName
+49: String query = "select photo_id from images";
+50: //establish the connection to the underlying database
+51: Connection conn = null;
+52: String driverName = "oracle.jdbc.driver.OracleDriver";
+53: String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+54: //load and register the driver
+55: Class drvClass = Class.forName(driverName);
+
+
+An error occurred at line: 53 in the jsp file: /picturebrowse.jsp
+Duplicate local variable dbstring
+50: //establish the connection to the underlying database
+51: Connection conn = null;
+52: String driverName = "oracle.jdbc.driver.OracleDriver";
+53: String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+54: //load and register the driver
+55: Class drvClass = Class.forName(driverName);
+56: DriverManager.registerDriver((Driver) drvClass.newInstance());
+
+
+An error occurred at line: 55 in the jsp file: /picturebrowse.jsp
+Duplicate local variable drvClass
+52: String driverName = "oracle.jdbc.driver.OracleDriver";
+53: String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+54: //load and register the driver
+55: Class drvClass = Class.forName(driverName);
+56: DriverManager.registerDriver((Driver) drvClass.newInstance());
+57: //establish the connection
+58: conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+
+
+An error occurred at line: 60 in the jsp file: /picturebrowse.jsp
+Duplicate local variable stmt
+57: //establish the connection
+58: conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+59: conn.setAutoCommit(false);
+60: Statement stmt = conn.createStatement();
+61: ResultSet rset = stmt.executeQuery(query);
+62: String p_id = "";
+63: while (rset.next() ) {
+
+
+An error occurred at line: 62 in the jsp file: /picturebrowse.jsp
+Duplicate local variable p_id
+59: conn.setAutoCommit(false);
+60: Statement stmt = conn.createStatement();
+61: ResultSet rset = stmt.executeQuery(query);
+62: String p_id = "";
+63: while (rset.next() ) {
+64: p_id = (rset.getObject(1)).toString();
+65: // specify the servlet for the image
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 14, 2014 4:24:53 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 29 in the jsp file: /picturebrowse.jsp
+Duplicate local variable conn
+26: 	//establish the connection
+27: 	conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+28: 	conn.setAutoCommit(false);
+29: 	Connection conn = getConnected(drivername,dbstring,username,password);
+30: 	Statement stmt = conn.createStatement();
+31: 	ResultSet rsetTest = stmt.executeQuery("SELECT photo_id from images WHERE description like "+"'%"+keywords+"%'");
+32: 	String p_id = "";
+
+
+An error occurred at line: 29 in the jsp file: /picturebrowse.jsp
+drivername cannot be resolved to a variable
+26: 	//establish the connection
+27: 	conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+28: 	conn.setAutoCommit(false);
+29: 	Connection conn = getConnected(drivername,dbstring,username,password);
+30: 	Statement stmt = conn.createStatement();
+31: 	ResultSet rsetTest = stmt.executeQuery("SELECT photo_id from images WHERE description like "+"'%"+keywords+"%'");
+32: 	String p_id = "";
+
+
+An error occurred at line: 29 in the jsp file: /picturebrowse.jsp
+username cannot be resolved to a variable
+26: 	//establish the connection
+27: 	conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+28: 	conn.setAutoCommit(false);
+29: 	Connection conn = getConnected(drivername,dbstring,username,password);
+30: 	Statement stmt = conn.createStatement();
+31: 	ResultSet rsetTest = stmt.executeQuery("SELECT photo_id from images WHERE description like "+"'%"+keywords+"%'");
+32: 	String p_id = "";
+
+
+An error occurred at line: 29 in the jsp file: /picturebrowse.jsp
+password cannot be resolved to a variable
+26: 	//establish the connection
+27: 	conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+28: 	conn.setAutoCommit(false);
+29: 	Connection conn = getConnected(drivername,dbstring,username,password);
+30: 	Statement stmt = conn.createStatement();
+31: 	ResultSet rsetTest = stmt.executeQuery("SELECT photo_id from images WHERE description like "+"'%"+keywords+"%'");
+32: 	String p_id = "";
+
+
+An error occurred at line: 34 in the jsp file: /picturebrowse.jsp
+rset cannot be resolved
+31: 	ResultSet rsetTest = stmt.executeQuery("SELECT photo_id from images WHERE description like "+"'%"+keywords+"%'");
+32: 	String p_id = "";
+33: 	while (rsetTest.next()) {
+34: 		p_id = (rset.getObject(1)).toString();
+35: 		// specify the servlet for the image
+36: 		out.println("<a href=\"/OnlineImageProcess/GetOnePic?big"+p_id+"\">");
+37: 		// specify the servlet for the themernail
+
+
+An error occurred at line: 51 in the jsp file: /picturebrowse.jsp
+Duplicate local variable stmt
+48: //String query = "select pic_id from pictures";
+49: String query = "select photo_id from images";
+50: //establish the connection to the underlying database
+51: Statement stmt = conn.createStatement();
+52: ResultSet rset = stmt.executeQuery(query);
+53: String p_id = "";
+54: while (rset.next() ) {
+
+
+An error occurred at line: 53 in the jsp file: /picturebrowse.jsp
+Duplicate local variable p_id
+50: //establish the connection to the underlying database
+51: Statement stmt = conn.createStatement();
+52: ResultSet rset = stmt.executeQuery(query);
+53: String p_id = "";
+54: while (rset.next() ) {
+55: p_id = (rset.getObject(1)).toString();
+56: // specify the servlet for the image
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 14, 2014 4:25:42 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 34 in the jsp file: /picturebrowse.jsp
+rset cannot be resolved
+31: 	ResultSet rsetTest = stmt.executeQuery("SELECT photo_id from images WHERE description like "+"'%"+keywords+"%'");
+32: 	String p_id = "";
+33: 	while (rsetTest.next()) {
+34: 		p_id = (rset.getObject(1)).toString();
+35: 		// specify the servlet for the image
+36: 		out.println("<a href=\"/OnlineImageProcess/GetOnePic?big"+p_id+"\">");
+37: 		// specify the servlet for the themernail
+
+
+An error occurred at line: 51 in the jsp file: /picturebrowse.jsp
+Duplicate local variable stmt
+48: //String query = "select pic_id from pictures";
+49: String query = "select photo_id from images";
+50: //establish the connection to the underlying database
+51: Statement stmt = conn.createStatement();
+52: ResultSet rset = stmt.executeQuery(query);
+53: String p_id = "";
+54: while (rset.next() ) {
+
+
+An error occurred at line: 53 in the jsp file: /picturebrowse.jsp
+Duplicate local variable p_id
+50: //establish the connection to the underlying database
+51: Statement stmt = conn.createStatement();
+52: ResultSet rset = stmt.executeQuery(query);
+53: String p_id = "";
+54: while (rset.next() ) {
+55: p_id = (rset.getObject(1)).toString();
+56: // specify the servlet for the image
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 14, 2014 4:26:17 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 51 in the jsp file: /picturebrowse.jsp
+Duplicate local variable stmt
+48: //String query = "select pic_id from pictures";
+49: String query = "select photo_id from images";
+50: //establish the connection to the underlying database
+51: Statement stmt = conn.createStatement();
+52: ResultSet rset = stmt.executeQuery(query);
+53: String p_id = "";
+54: while (rset.next() ) {
+
+
+An error occurred at line: 53 in the jsp file: /picturebrowse.jsp
+Duplicate local variable p_id
+50: //establish the connection to the underlying database
+51: Statement stmt = conn.createStatement();
+52: ResultSet rset = stmt.executeQuery(query);
+53: String p_id = "";
+54: while (rset.next() ) {
+55: p_id = (rset.getObject(1)).toString();
+56: // specify the servlet for the image
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 14, 2014 4:34:52 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 25 in the jsp file: /picturebrowse.jsp
+s cannot be resolved to a type
+22: <%
+23: try {
+24: //String query = "select pic_id from pictures";
+25: String query = "select photo_id from images";s
+26: //establish the connection to the underlying database
+27: Connection conn = null;
+28: String driverName = "oracle.jdbc.driver.OracleDriver";
+
+
+An error occurred at line: 27 in the jsp file: /picturebrowse.jsp
+Syntax error, insert ";" to complete LocalVariableDeclarationStatement
+24: //String query = "select pic_id from pictures";
+25: String query = "select photo_id from images";s
+26: //establish the connection to the underlying database
+27: Connection conn = null;
+28: String driverName = "oracle.jdbc.driver.OracleDriver";
+29: String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+30: //load and register the driver
+
+
+An error occurred at line: 27 in the jsp file: /picturebrowse.jsp
+conn cannot be resolved to a variable
+24: //String query = "select pic_id from pictures";
+25: String query = "select photo_id from images";s
+26: //establish the connection to the underlying database
+27: Connection conn = null;
+28: String driverName = "oracle.jdbc.driver.OracleDriver";
+29: String dbstring="jdbc:oracle:thin:@gwynne.cs.ualberta.ca:1521:CRS";
+30: //load and register the driver
+
+
+An error occurred at line: 34 in the jsp file: /picturebrowse.jsp
+conn cannot be resolved to a variable
+31: Class drvClass = Class.forName(driverName);
+32: DriverManager.registerDriver((Driver) drvClass.newInstance());
+33: //establish the connection
+34: conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+35: conn.setAutoCommit(false);
+36: Statement stmt = conn.createStatement();
+37: ResultSet rset = stmt.executeQuery(query);
+
+
+An error occurred at line: 35 in the jsp file: /picturebrowse.jsp
+conn cannot be resolved
+32: DriverManager.registerDriver((Driver) drvClass.newInstance());
+33: //establish the connection
+34: conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+35: conn.setAutoCommit(false);
+36: Statement stmt = conn.createStatement();
+37: ResultSet rset = stmt.executeQuery(query);
+38: String p_id = "";
+
+
+An error occurred at line: 36 in the jsp file: /picturebrowse.jsp
+conn cannot be resolved
+33: //establish the connection
+34: conn = DriverManager.getConnection(dbstring,"Lingbo","TlboSci1994");
+35: conn.setAutoCommit(false);
+36: Statement stmt = conn.createStatement();
+37: ResultSet rset = stmt.executeQuery(query);
+38: String p_id = "";
+39: while (rset.next() ) {
+
+
+An error occurred at line: 48 in the jsp file: /picturebrowse.jsp
+conn cannot be resolved
+45: "\"></a>");
+46: }
+47: stmt.close();
+48: conn.close();
+49: } catch ( Exception ex ){ out.println( ex.toString() );}
+50: %>
+51: <P><a href="profile.jsp"> Return </a></P>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 14, 2014 4:53:37 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 47 in the jsp file: /searchresults.jsp
+ex cannot be resolved
+44: 		}
+45: 		stmt.close();
+46: 		conn.close();
+47: 	} catch ( Exception e){ out.println( ex.toString() );}
+48: 	
+49: %>	
+50: 
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 14, 2014 5:23:54 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Allocate exception for servlet GetOnePic
+java.lang.NullPointerException
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:856)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:129)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 14, 2014 5:38:07 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 37 in the jsp file: /searchresults.jsp
+rset cannot be resolved
+34: 		counter = (rset2.getObject(1)).toString();
+35: 		out.println("<p>Your input key is "+counter+"</p>");
+36: 		String p_id = "";
+37: 		while (rset.next() ) {
+38: 			p_id = (rset.getObject(1)).toString();
+39: 			// specify the servlet for the image
+40: 			out.println("<a href=\"/OnlineImageProcess/GetOnePic?big"+p_id+"\">");
+
+
+An error occurred at line: 38 in the jsp file: /searchresults.jsp
+rset cannot be resolved
+35: 		out.println("<p>Your input key is "+counter+"</p>");
+36: 		String p_id = "";
+37: 		while (rset.next() ) {
+38: 			p_id = (rset.getObject(1)).toString();
+39: 			// specify the servlet for the image
+40: 			out.println("<a href=\"/OnlineImageProcess/GetOnePic?big"+p_id+"\">");
+41: 			// specify the servlet for the themernail
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 14, 2014 7:56:45 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Allocate exception for servlet GetOnePic
+java.lang.NullPointerException
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:856)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:129)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 14, 2014 8:44:54 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 55 in the jsp file: /searchresults.jsp
+The method getParaeter(String) is undefined for the type HttpServletRequest
+52: 	java.sql.Date dateEnd = null;
+53: 	
+54: 	try {
+55: 		dateStart = java.sql.Date.valueOf(request.getParaeter("DATE_START"));
+56: 	} catch (IllegalArgumetException e) {
+57: 	}
+58: 	
+
+
+An error occurred at line: 56 in the jsp file: /searchresults.jsp
+IllegalArgumetException cannot be resolved to a type
+53: 	
+54: 	try {
+55: 		dateStart = java.sql.Date.valueOf(request.getParaeter("DATE_START"));
+56: 	} catch (IllegalArgumetException e) {
+57: 	}
+58: 	
+59: 	try {
+
+
+An error occurred at line: 67 in the jsp file: /searchresults.jsp
+conn cannot be resolved
+64: 	dateKey = (dateKey == null) || (dateKey.equals("")) ? null : dateKey;
+65: 	
+66: 	try {
+67: 		Statement stmt2 = conn.createStatement();
+68: 		ResultSet rset2 = stmt.executeQuery("SELECT photo_id FROM images where timing between to_date("+dateStart+","+dateFormat+")"+"AND to_date("+dateEnd+","+dateFormat+")");
+69: 		String p_id = "";
+70: 		while (rset.next()) {
+
+
+An error occurred at line: 68 in the jsp file: /searchresults.jsp
+stmt cannot be resolved
+65: 	
+66: 	try {
+67: 		Statement stmt2 = conn.createStatement();
+68: 		ResultSet rset2 = stmt.executeQuery("SELECT photo_id FROM images where timing between to_date("+dateStart+","+dateFormat+")"+"AND to_date("+dateEnd+","+dateFormat+")");
+69: 		String p_id = "";
+70: 		while (rset.next()) {
+71: 			p_id = (rset.getObject(1)).toString();
+
+
+An error occurred at line: 70 in the jsp file: /searchresults.jsp
+rset cannot be resolved
+67: 		Statement stmt2 = conn.createStatement();
+68: 		ResultSet rset2 = stmt.executeQuery("SELECT photo_id FROM images where timing between to_date("+dateStart+","+dateFormat+")"+"AND to_date("+dateEnd+","+dateFormat+")");
+69: 		String p_id = "";
+70: 		while (rset.next()) {
+71: 			p_id = (rset.getObject(1)).toString();
+72: 			// specify the servlet for the image
+73: 			out.println("<a href=\"/OnlineImageProcess/GetOnePic?big"+p_id+"\">");
+
+
+An error occurred at line: 71 in the jsp file: /searchresults.jsp
+rset cannot be resolved
+68: 		ResultSet rset2 = stmt.executeQuery("SELECT photo_id FROM images where timing between to_date("+dateStart+","+dateFormat+")"+"AND to_date("+dateEnd+","+dateFormat+")");
+69: 		String p_id = "";
+70: 		while (rset.next()) {
+71: 			p_id = (rset.getObject(1)).toString();
+72: 			// specify the servlet for the image
+73: 			out.println("<a href=\"/OnlineImageProcess/GetOnePic?big"+p_id+"\">");
+74: 			// specify the servlet for the themernail
+
+
+An error occurred at line: 78 in the jsp file: /searchresults.jsp
+stmt cannot be resolved
+75: 			out.println("<img src=\"/OnlineImageProcess/GetOnePic?"+p_id +
+76: 			"\"></a>");
+77: 		}
+78: 		stmt.close();
+79: 		conn.close();
+80: 	} catch ( Exception e){ out.println( e.toString() );}
+81: 	
+
+
+An error occurred at line: 79 in the jsp file: /searchresults.jsp
+conn cannot be resolved
+76: 			"\"></a>");
+77: 		}
+78: 		stmt.close();
+79: 		conn.close();
+80: 	} catch ( Exception e){ out.println( e.toString() );}
+81: 	
+82: 			
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)

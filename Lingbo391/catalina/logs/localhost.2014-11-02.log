@@ -1,0 +1,668 @@
+Nov 2, 2014 5:32:48 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token(s), misplaced construct(s)
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!Before, it's "uploadimage.html",but now we set them uniforly to profile page>
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token "!", delete this token
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!Before, it's "uploadimage.html",but now we set them uniforly to profile page>
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Invalid character constant
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!Before, it's "uploadimage.html",but now we set them uniforly to profile page>
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token ""uploadimage.html"", delete this token
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!Before, it's "uploadimage.html",but now we set them uniforly to profile page>
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+now cannot be resolved to a type
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!Before, it's "uploadimage.html",but now we set them uniforly to profile page>
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token "set", ; expected
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!Before, it's "uploadimage.html",but now we set them uniforly to profile page>
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+them cannot be resolved to a type
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!Before, it's "uploadimage.html",but now we set them uniforly to profile page>
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token "to", ; expected
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!Before, it's "uploadimage.html",but now we set them uniforly to profile page>
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+profile cannot be resolved to a type
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!Before, it's "uploadimage.html",but now we set them uniforly to profile page>
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Duplicate local variable page
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!Before, it's "uploadimage.html",but now we set them uniforly to profile page>
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token ">", ; expected
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!Before, it's "uploadimage.html",but now we set them uniforly to profile page>
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 2, 2014 5:32:56 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token(s), misplaced construct(s)
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!Before, it's "uploadimage.html",but now we set them uniforly to profile page>
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token "!", delete this token
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!Before, it's "uploadimage.html",but now we set them uniforly to profile page>
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Invalid character constant
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!Before, it's "uploadimage.html",but now we set them uniforly to profile page>
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token ""uploadimage.html"", delete this token
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!Before, it's "uploadimage.html",but now we set them uniforly to profile page>
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+now cannot be resolved to a type
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!Before, it's "uploadimage.html",but now we set them uniforly to profile page>
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token "set", ; expected
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!Before, it's "uploadimage.html",but now we set them uniforly to profile page>
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+them cannot be resolved to a type
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!Before, it's "uploadimage.html",but now we set them uniforly to profile page>
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token "to", ; expected
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!Before, it's "uploadimage.html",but now we set them uniforly to profile page>
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+profile cannot be resolved to a type
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!Before, it's "uploadimage.html",but now we set them uniforly to profile page>
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Duplicate local variable page
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!Before, it's "uploadimage.html",but now we set them uniforly to profile page>
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token ">", ; expected
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!Before, it's "uploadimage.html",but now we set them uniforly to profile page>
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 2, 2014 5:33:37 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token "<", assert expected
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!--Before, it's "uploadimage.html",but now we set them uniforly to profile page-->
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on tokens, Type expected instead
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!--Before, it's "uploadimage.html",but now we set them uniforly to profile page-->
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Invalid character constant
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!--Before, it's "uploadimage.html",but now we set them uniforly to profile page-->
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token ""uploadimage.html"", delete this token
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!--Before, it's "uploadimage.html",but now we set them uniforly to profile page-->
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token "now", ; expected
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!--Before, it's "uploadimage.html",but now we set them uniforly to profile page-->
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token "them", ; expected
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!--Before, it's "uploadimage.html",but now we set them uniforly to profile page-->
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token "profile", = expected
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!--Before, it's "uploadimage.html",but now we set them uniforly to profile page-->
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+
+
+An error occurred at line: 16 in the jsp file: /login.jsp
+Syntax error, insert ";" to complete LocalVariableDeclarationStatement
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!--Before, it's "uploadimage.html",but now we set them uniforly to profile page-->
+16: String site = new String("profilepage.html");
+17: String userName = (request.getParameter("USERID")).trim();
+18: String passwd = (request.getParameter("PASSWD")).trim();
+19: out.println("<p>Your input User Name is "+userName+"</p>");
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 2, 2014 5:35:08 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token "<", assert expected
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!--Before, it's "uploadimage.html",but now we set them uniforly to profile page
+16: -->
+17: String site = new String("profile.html");
+18: String userName = (request.getParameter("USERID")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on tokens, Type expected instead
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!--Before, it's "uploadimage.html",but now we set them uniforly to profile page
+16: -->
+17: String site = new String("profile.html");
+18: String userName = (request.getParameter("USERID")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Invalid character constant
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!--Before, it's "uploadimage.html",but now we set them uniforly to profile page
+16: -->
+17: String site = new String("profile.html");
+18: String userName = (request.getParameter("USERID")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token ""uploadimage.html"", delete this token
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!--Before, it's "uploadimage.html",but now we set them uniforly to profile page
+16: -->
+17: String site = new String("profile.html");
+18: String userName = (request.getParameter("USERID")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token "now", ; expected
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!--Before, it's "uploadimage.html",but now we set them uniforly to profile page
+16: -->
+17: String site = new String("profile.html");
+18: String userName = (request.getParameter("USERID")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token "them", ; expected
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!--Before, it's "uploadimage.html",but now we set them uniforly to profile page
+16: -->
+17: String site = new String("profile.html");
+18: String userName = (request.getParameter("USERID")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token "profile", = expected
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!--Before, it's "uploadimage.html",but now we set them uniforly to profile page
+16: -->
+17: String site = new String("profile.html");
+18: String userName = (request.getParameter("USERID")).trim();
+
+
+An error occurred at line: 17 in the jsp file: /login.jsp
+Syntax error, insert ";" to complete LocalVariableDeclarationStatement
+14: // New location to be redirected
+15: <!--Before, it's "uploadimage.html",but now we set them uniforly to profile page
+16: -->
+17: String site = new String("profile.html");
+18: String userName = (request.getParameter("USERID")).trim();
+19: String passwd = (request.getParameter("PASSWD")).trim();
+20: out.println("<p>Your input User Name is "+userName+"</p>");
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 2, 2014 5:36:07 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token "<", assert expected
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!--Before, it's uploadimage.html,but now we set them uniforly to profile page
+16: -->
+17: String site = new String("profile.html");
+18: String userName = (request.getParameter("USERID")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Before cannot be resolved to a variable
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!--Before, it's uploadimage.html,but now we set them uniforly to profile page
+16: -->
+17: String site = new String("profile.html");
+18: String userName = (request.getParameter("USERID")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token ",", ; expected
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!--Before, it's uploadimage.html,but now we set them uniforly to profile page
+16: -->
+17: String site = new String("profile.html");
+18: String userName = (request.getParameter("USERID")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Invalid character constant
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!--Before, it's uploadimage.html,but now we set them uniforly to profile page
+16: -->
+17: String site = new String("profile.html");
+18: String userName = (request.getParameter("USERID")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Invalid character constant
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!--Before, it's uploadimage.html,but now we set them uniforly to profile page
+16: -->
+17: String site = new String("profile.html");
+18: String userName = (request.getParameter("USERID")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token ".", , expected
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!--Before, it's uploadimage.html,but now we set them uniforly to profile page
+16: -->
+17: String site = new String("profile.html");
+18: String userName = (request.getParameter("USERID")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token "now", ; expected
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!--Before, it's uploadimage.html,but now we set them uniforly to profile page
+16: -->
+17: String site = new String("profile.html");
+18: String userName = (request.getParameter("USERID")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token "them", ; expected
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!--Before, it's uploadimage.html,but now we set them uniforly to profile page
+16: -->
+17: String site = new String("profile.html");
+18: String userName = (request.getParameter("USERID")).trim();
+
+
+An error occurred at line: 15 in the jsp file: /login.jsp
+Syntax error on token "profile", = expected
+12: <%
+13: //get the user input from the login page
+14: // New location to be redirected
+15: <!--Before, it's uploadimage.html,but now we set them uniforly to profile page
+16: -->
+17: String site = new String("profile.html");
+18: String userName = (request.getParameter("USERID")).trim();
+
+
+An error occurred at line: 17 in the jsp file: /login.jsp
+Syntax error, insert ";" to complete LocalVariableDeclarationStatement
+14: // New location to be redirected
+15: <!--Before, it's uploadimage.html,but now we set them uniforly to profile page
+16: -->
+17: String site = new String("profile.html");
+18: String userName = (request.getParameter("USERID")).trim();
+19: String passwd = (request.getParameter("PASSWD")).trim();
+20: out.println("<p>Your input User Name is "+userName+"</p>");
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)

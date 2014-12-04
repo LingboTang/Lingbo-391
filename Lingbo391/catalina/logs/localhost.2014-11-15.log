@@ -1,0 +1,629 @@
+Nov 15, 2014 4:37:19 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 54 in the jsp file: /searchresults.jsp
+The method getParaeter(String) is undefined for the type HttpServletRequest
+51: 	java.sql.Date dateEnd = null;
+52: 	
+53: 	try {
+54: 		dateStart = java.sql.Date.valueOf(request.getParaeter("DATE_START"));
+55: 	} catch (IllegalArgumetException e) {
+56: 	}
+57: 	
+
+
+An error occurred at line: 55 in the jsp file: /searchresults.jsp
+IllegalArgumetException cannot be resolved to a type
+52: 	
+53: 	try {
+54: 		dateStart = java.sql.Date.valueOf(request.getParaeter("DATE_START"));
+55: 	} catch (IllegalArgumetException e) {
+56: 	}
+57: 	
+58: 	try {
+
+
+An error occurred at line: 66 in the jsp file: /searchresults.jsp
+conn cannot be resolved
+63: 	dateKey = (dateKey == null) || (dateKey.equals("")) ? null : dateKey;
+64: 	
+65: 	try {
+66: 		Statement stmt2 = conn.createStatement();
+67: 		ResultSet rset2 = stmt.executeQuery("SELECT photo_id FROM images where timing between to_date("+dateStart+","+dateFormat+")"+"AND to_date("+dateEnd+","+dateFormat+")");
+68: 		String p_id = "";
+69: 		while (rset.next()) {
+
+
+An error occurred at line: 67 in the jsp file: /searchresults.jsp
+stmt cannot be resolved
+64: 	
+65: 	try {
+66: 		Statement stmt2 = conn.createStatement();
+67: 		ResultSet rset2 = stmt.executeQuery("SELECT photo_id FROM images where timing between to_date("+dateStart+","+dateFormat+")"+"AND to_date("+dateEnd+","+dateFormat+")");
+68: 		String p_id = "";
+69: 		while (rset.next()) {
+70: 			p_id = (rset.getObject(1)).toString();
+
+
+An error occurred at line: 69 in the jsp file: /searchresults.jsp
+rset cannot be resolved
+66: 		Statement stmt2 = conn.createStatement();
+67: 		ResultSet rset2 = stmt.executeQuery("SELECT photo_id FROM images where timing between to_date("+dateStart+","+dateFormat+")"+"AND to_date("+dateEnd+","+dateFormat+")");
+68: 		String p_id = "";
+69: 		while (rset.next()) {
+70: 			p_id = (rset.getObject(1)).toString();
+71: 			// specify the servlet for the image
+72: 			out.println("<a href=\"/OnlineImageProcess/GetOnePic?big"+p_id+"\">");
+
+
+An error occurred at line: 70 in the jsp file: /searchresults.jsp
+rset cannot be resolved
+67: 		ResultSet rset2 = stmt.executeQuery("SELECT photo_id FROM images where timing between to_date("+dateStart+","+dateFormat+")"+"AND to_date("+dateEnd+","+dateFormat+")");
+68: 		String p_id = "";
+69: 		while (rset.next()) {
+70: 			p_id = (rset.getObject(1)).toString();
+71: 			// specify the servlet for the image
+72: 			out.println("<a href=\"/OnlineImageProcess/GetOnePic?big"+p_id+"\">");
+73: 			// specify the servlet for the themernail
+
+
+An error occurred at line: 77 in the jsp file: /searchresults.jsp
+stmt cannot be resolved
+74: 			out.println("<img src=\"/OnlineImageProcess/GetOnePic?"+p_id +
+75: 			"\"></a>");
+76: 		}
+77: 		stmt.close();
+78: 		conn.close();
+79: 	} catch ( Exception e){ out.println( e.toString() );}
+80: 	
+
+
+An error occurred at line: 78 in the jsp file: /searchresults.jsp
+conn cannot be resolved
+75: 			"\"></a>");
+76: 		}
+77: 		stmt.close();
+78: 		conn.close();
+79: 	} catch ( Exception e){ out.println( e.toString() );}
+80: 	
+81: 			
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 15, 2014 4:41:05 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 54 in the jsp file: /searchresults.jsp
+The method getParaeter(String) is undefined for the type HttpServletRequest
+51: 	java.sql.Date dateEnd = null;
+52: 	
+53: 	try {
+54: 		dateStart = java.sql.Date.valueOf(request.getParaeter("DATE_START"));
+55: 	} catch (IllegalArgumetException e) {
+56: 	}
+57: 	
+
+
+An error occurred at line: 55 in the jsp file: /searchresults.jsp
+IllegalArgumetException cannot be resolved to a type
+52: 	
+53: 	try {
+54: 		dateStart = java.sql.Date.valueOf(request.getParaeter("DATE_START"));
+55: 	} catch (IllegalArgumetException e) {
+56: 	}
+57: 	
+58: 	try {
+
+
+An error occurred at line: 66 in the jsp file: /searchresults.jsp
+conn cannot be resolved
+63: 	dateKey = (dateKey == null) || (dateKey.equals("")) ? null : dateKey;
+64: 	
+65: 	try {
+66: 		Statement stmt2 = conn.createStatement();
+67: 		ResultSet rset2 = stmt.executeQuery("SELECT photo_id FROM images where timing between to_date("+dateStart+","+dateFormat+")"+"AND to_date("+dateEnd+","+dateFormat+")");
+68: 		String p_id = "";
+69: 		while (rset.next()) {
+
+
+An error occurred at line: 67 in the jsp file: /searchresults.jsp
+stmt cannot be resolved
+64: 	
+65: 	try {
+66: 		Statement stmt2 = conn.createStatement();
+67: 		ResultSet rset2 = stmt.executeQuery("SELECT photo_id FROM images where timing between to_date("+dateStart+","+dateFormat+")"+"AND to_date("+dateEnd+","+dateFormat+")");
+68: 		String p_id = "";
+69: 		while (rset.next()) {
+70: 			p_id = (rset.getObject(1)).toString();
+
+
+An error occurred at line: 69 in the jsp file: /searchresults.jsp
+rset cannot be resolved
+66: 		Statement stmt2 = conn.createStatement();
+67: 		ResultSet rset2 = stmt.executeQuery("SELECT photo_id FROM images where timing between to_date("+dateStart+","+dateFormat+")"+"AND to_date("+dateEnd+","+dateFormat+")");
+68: 		String p_id = "";
+69: 		while (rset.next()) {
+70: 			p_id = (rset.getObject(1)).toString();
+71: 			// specify the servlet for the image
+72: 			out.println("<a href=\"/OnlineImageProcess/GetOnePic?big"+p_id+"\">");
+
+
+An error occurred at line: 70 in the jsp file: /searchresults.jsp
+rset cannot be resolved
+67: 		ResultSet rset2 = stmt.executeQuery("SELECT photo_id FROM images where timing between to_date("+dateStart+","+dateFormat+")"+"AND to_date("+dateEnd+","+dateFormat+")");
+68: 		String p_id = "";
+69: 		while (rset.next()) {
+70: 			p_id = (rset.getObject(1)).toString();
+71: 			// specify the servlet for the image
+72: 			out.println("<a href=\"/OnlineImageProcess/GetOnePic?big"+p_id+"\">");
+73: 			// specify the servlet for the themernail
+
+
+An error occurred at line: 77 in the jsp file: /searchresults.jsp
+stmt cannot be resolved
+74: 			out.println("<img src=\"/OnlineImageProcess/GetOnePic?"+p_id +
+75: 			"\"></a>");
+76: 		}
+77: 		stmt.close();
+78: 		conn.close();
+79: 	} catch ( Exception e){ out.println( e.toString() );}
+80: 	
+
+
+An error occurred at line: 78 in the jsp file: /searchresults.jsp
+conn cannot be resolved
+75: 			"\"></a>");
+76: 		}
+77: 		stmt.close();
+78: 		conn.close();
+79: 	} catch ( Exception e){ out.println( e.toString() );}
+80: 	
+81: 			
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 15, 2014 4:43:12 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 54 in the jsp file: /searchresults.jsp
+The method getParaeter(String) is undefined for the type HttpServletRequest
+51: 	java.sql.Date dateEnd = null;
+52: 	
+53: 	try {
+54: 		dateStart = java.sql.Date.valueOf(request.getParaeter("DATE_START"));
+55: 	} catch (IllegalArgumetException e) {
+56: 	}
+57: 	
+
+
+An error occurred at line: 55 in the jsp file: /searchresults.jsp
+IllegalArgumetException cannot be resolved to a type
+52: 	
+53: 	try {
+54: 		dateStart = java.sql.Date.valueOf(request.getParaeter("DATE_START"));
+55: 	} catch (IllegalArgumetException e) {
+56: 	}
+57: 	
+58: 	try {
+
+
+An error occurred at line: 66 in the jsp file: /searchresults.jsp
+conn cannot be resolved
+63: 	dateKey = (dateKey == null) || (dateKey.equals("")) ? null : dateKey;
+64: 	
+65: 	try {
+66: 		Statement stmt2 = conn.createStatement();
+67: 		ResultSet rset2 = stmt.executeQuery("SELECT photo_id FROM images where timing between to_date("+dateStart+","+dateFormat+")"+"AND to_date("+dateEnd+","+dateFormat+")");
+68: 		String p_id = "";
+69: 		while (rset.next()) {
+
+
+An error occurred at line: 67 in the jsp file: /searchresults.jsp
+stmt cannot be resolved
+64: 	
+65: 	try {
+66: 		Statement stmt2 = conn.createStatement();
+67: 		ResultSet rset2 = stmt.executeQuery("SELECT photo_id FROM images where timing between to_date("+dateStart+","+dateFormat+")"+"AND to_date("+dateEnd+","+dateFormat+")");
+68: 		String p_id = "";
+69: 		while (rset.next()) {
+70: 			p_id = (rset.getObject(1)).toString();
+
+
+An error occurred at line: 69 in the jsp file: /searchresults.jsp
+rset cannot be resolved
+66: 		Statement stmt2 = conn.createStatement();
+67: 		ResultSet rset2 = stmt.executeQuery("SELECT photo_id FROM images where timing between to_date("+dateStart+","+dateFormat+")"+"AND to_date("+dateEnd+","+dateFormat+")");
+68: 		String p_id = "";
+69: 		while (rset.next()) {
+70: 			p_id = (rset.getObject(1)).toString();
+71: 			// specify the servlet for the image
+72: 			out.println("<a href=\"/OnlineImageProcess/GetOnePic?big"+p_id+"\">");
+
+
+An error occurred at line: 70 in the jsp file: /searchresults.jsp
+rset cannot be resolved
+67: 		ResultSet rset2 = stmt.executeQuery("SELECT photo_id FROM images where timing between to_date("+dateStart+","+dateFormat+")"+"AND to_date("+dateEnd+","+dateFormat+")");
+68: 		String p_id = "";
+69: 		while (rset.next()) {
+70: 			p_id = (rset.getObject(1)).toString();
+71: 			// specify the servlet for the image
+72: 			out.println("<a href=\"/OnlineImageProcess/GetOnePic?big"+p_id+"\">");
+73: 			// specify the servlet for the themernail
+
+
+An error occurred at line: 77 in the jsp file: /searchresults.jsp
+stmt cannot be resolved
+74: 			out.println("<img src=\"/OnlineImageProcess/GetOnePic?"+p_id +
+75: 			"\"></a>");
+76: 		}
+77: 		stmt.close();
+78: 		conn.close();
+79: 	} catch ( Exception e){ out.println( e.toString() );}
+80: 	
+
+
+An error occurred at line: 78 in the jsp file: /searchresults.jsp
+conn cannot be resolved
+75: 			"\"></a>");
+76: 		}
+77: 		stmt.close();
+78: 		conn.close();
+79: 	} catch ( Exception e){ out.println( e.toString() );}
+80: 	
+81: 			
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 15, 2014 4:44:00 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 54 in the jsp file: /searchresults.jsp
+The method getParaeter(String) is undefined for the type HttpServletRequest
+51: 	java.sql.Date dateEnd = null;
+52: 	
+53: 	try {
+54: 		dateStart = java.sql.Date.valueOf(request.getParaeter("DATE_START"));
+55: 	} catch (IllegalArgumetException e) {
+56: 	}
+57: 	
+
+
+An error occurred at line: 55 in the jsp file: /searchresults.jsp
+IllegalArgumetException cannot be resolved to a type
+52: 	
+53: 	try {
+54: 		dateStart = java.sql.Date.valueOf(request.getParaeter("DATE_START"));
+55: 	} catch (IllegalArgumetException e) {
+56: 	}
+57: 	
+58: 	try {
+
+
+An error occurred at line: 66 in the jsp file: /searchresults.jsp
+conn cannot be resolved
+63: 	dateKey = (dateKey == null) || (dateKey.equals("")) ? null : dateKey;
+64: 	
+65: 	try {
+66: 		Statement stmt2 = conn.createStatement();
+67: 		ResultSet rset2 = stmt.executeQuery("SELECT photo_id FROM images where timing between to_date("+dateStart+","+dateFormat+")"+"AND to_date("+dateEnd+","+dateFormat+")");
+68: 		String p_id = "";
+69: 		while (rset.next()) {
+
+
+An error occurred at line: 67 in the jsp file: /searchresults.jsp
+stmt cannot be resolved
+64: 	
+65: 	try {
+66: 		Statement stmt2 = conn.createStatement();
+67: 		ResultSet rset2 = stmt.executeQuery("SELECT photo_id FROM images where timing between to_date("+dateStart+","+dateFormat+")"+"AND to_date("+dateEnd+","+dateFormat+")");
+68: 		String p_id = "";
+69: 		while (rset.next()) {
+70: 			p_id = (rset.getObject(1)).toString();
+
+
+An error occurred at line: 69 in the jsp file: /searchresults.jsp
+rset cannot be resolved
+66: 		Statement stmt2 = conn.createStatement();
+67: 		ResultSet rset2 = stmt.executeQuery("SELECT photo_id FROM images where timing between to_date("+dateStart+","+dateFormat+")"+"AND to_date("+dateEnd+","+dateFormat+")");
+68: 		String p_id = "";
+69: 		while (rset.next()) {
+70: 			p_id = (rset.getObject(1)).toString();
+71: 			// specify the servlet for the image
+72: 			out.println("<a href=\"/OnlineImageProcess/GetOnePic?big"+p_id+"\">");
+
+
+An error occurred at line: 70 in the jsp file: /searchresults.jsp
+rset cannot be resolved
+67: 		ResultSet rset2 = stmt.executeQuery("SELECT photo_id FROM images where timing between to_date("+dateStart+","+dateFormat+")"+"AND to_date("+dateEnd+","+dateFormat+")");
+68: 		String p_id = "";
+69: 		while (rset.next()) {
+70: 			p_id = (rset.getObject(1)).toString();
+71: 			// specify the servlet for the image
+72: 			out.println("<a href=\"/OnlineImageProcess/GetOnePic?big"+p_id+"\">");
+73: 			// specify the servlet for the themernail
+
+
+An error occurred at line: 77 in the jsp file: /searchresults.jsp
+stmt cannot be resolved
+74: 			out.println("<img src=\"/OnlineImageProcess/GetOnePic?"+p_id +
+75: 			"\"></a>");
+76: 		}
+77: 		stmt.close();
+78: 		conn.close();
+79: 	} catch ( Exception e){ out.println( e.toString() );}
+80: 	
+
+
+An error occurred at line: 78 in the jsp file: /searchresults.jsp
+conn cannot be resolved
+75: 			"\"></a>");
+76: 		}
+77: 		stmt.close();
+78: 		conn.close();
+79: 	} catch ( Exception e){ out.println( e.toString() );}
+80: 	
+81: 			
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 15, 2014 4:48:28 PM org.apache.catalina.core.ApplicationContext log
+INFO: Marking servlet UpdateImage as unavailable
+Nov 15, 2014 4:48:28 PM org.apache.catalina.core.ApplicationContext log
+SEVERE: Error loading WebappClassLoader
+  context: /OnlineImageProcess
+  delegate: false
+  repositories:
+    /WEB-INF/classes/
+----------> Parent Classloader:
+org.apache.catalina.loader.StandardClassLoader@70c13c17
+ UpdateImage
+java.lang.ClassNotFoundException: UpdateImage
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1680)
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1526)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1128)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:827)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:129)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 15, 2014 4:48:28 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Allocate exception for servlet UpdateImage
+java.lang.ClassNotFoundException: UpdateImage
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1680)
+	at org.apache.catalina.loader.WebappClassLoader.loadClass(WebappClassLoader.java:1526)
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1128)
+	at org.apache.catalina.core.StandardWrapper.allocate(StandardWrapper.java:827)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:129)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 15, 2014 4:57:12 PM org.apache.catalina.core.StandardWrapperValve invoke
+INFO: Servlet UpdateImage is currently unavailable
+Nov 15, 2014 5:16:52 PM org.apache.catalina.core.StandardWrapperValve invoke
+INFO: Servlet UpdateImage is currently unavailable
+Nov 15, 2014 5:17:40 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 55 in the jsp file: /searchresults.jsp
+The method getParaeter(String) is undefined for the type HttpServletRequest
+52: 	java.sql.Date dateEnd = null;
+53: 	
+54: 	try {
+55: 		dateStart = java.sql.Date.valueOf(request.getParaeter("DATE_START"));
+56: 	} catch (IllegalArgumetException e) {
+57: 	}
+58: 	
+
+
+An error occurred at line: 56 in the jsp file: /searchresults.jsp
+IllegalArgumetException cannot be resolved to a type
+53: 	
+54: 	try {
+55: 		dateStart = java.sql.Date.valueOf(request.getParaeter("DATE_START"));
+56: 	} catch (IllegalArgumetException e) {
+57: 	}
+58: 	
+59: 	try {
+
+
+An error occurred at line: 67 in the jsp file: /searchresults.jsp
+conn cannot be resolved
+64: 	dateKey = (dateKey == null) || (dateKey.equals("")) ? null : dateKey;
+65: 	
+66: 	try {
+67: 		Statement stmt2 = conn.createStatement();
+68: 		ResultSet rset2 = stmt.executeQuery("SELECT photo_id FROM images where timing between to_date("+dateStart+","+dateFormat+")"+"AND to_date("+dateEnd+","+dateFormat+")");
+69: 		String p_id = "";
+70: 		while (rset.next()) {
+
+
+An error occurred at line: 68 in the jsp file: /searchresults.jsp
+stmt cannot be resolved
+65: 	
+66: 	try {
+67: 		Statement stmt2 = conn.createStatement();
+68: 		ResultSet rset2 = stmt.executeQuery("SELECT photo_id FROM images where timing between to_date("+dateStart+","+dateFormat+")"+"AND to_date("+dateEnd+","+dateFormat+")");
+69: 		String p_id = "";
+70: 		while (rset.next()) {
+71: 			p_id = (rset.getObject(1)).toString();
+
+
+An error occurred at line: 70 in the jsp file: /searchresults.jsp
+rset cannot be resolved
+67: 		Statement stmt2 = conn.createStatement();
+68: 		ResultSet rset2 = stmt.executeQuery("SELECT photo_id FROM images where timing between to_date("+dateStart+","+dateFormat+")"+"AND to_date("+dateEnd+","+dateFormat+")");
+69: 		String p_id = "";
+70: 		while (rset.next()) {
+71: 			p_id = (rset.getObject(1)).toString();
+72: 			// specify the servlet for the image
+73: 			out.println("<a href=\"/OnlineImageProcess/GetOnePic?big"+p_id+"\">");
+
+
+An error occurred at line: 71 in the jsp file: /searchresults.jsp
+rset cannot be resolved
+68: 		ResultSet rset2 = stmt.executeQuery("SELECT photo_id FROM images where timing between to_date("+dateStart+","+dateFormat+")"+"AND to_date("+dateEnd+","+dateFormat+")");
+69: 		String p_id = "";
+70: 		while (rset.next()) {
+71: 			p_id = (rset.getObject(1)).toString();
+72: 			// specify the servlet for the image
+73: 			out.println("<a href=\"/OnlineImageProcess/GetOnePic?big"+p_id+"\">");
+74: 			// specify the servlet for the themernail
+
+
+An error occurred at line: 78 in the jsp file: /searchresults.jsp
+stmt cannot be resolved
+75: 			out.println("<img src=\"/OnlineImageProcess/GetOnePic?"+p_id +
+76: 			"\"></a>");
+77: 		}
+78: 		stmt.close();
+79: 		conn.close();
+80: 	} catch ( Exception e){ out.println( e.toString() );}
+81: 	
+
+
+An error occurred at line: 79 in the jsp file: /searchresults.jsp
+conn cannot be resolved
+76: 			"\"></a>");
+77: 		}
+78: 		stmt.close();
+79: 		conn.close();
+80: 	} catch ( Exception e){ out.println( e.toString() );}
+81: 	
+82: 			
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 15, 2014 5:18:21 PM org.apache.catalina.core.StandardWrapperValve invoke
+INFO: Servlet UpdateImage is currently unavailable

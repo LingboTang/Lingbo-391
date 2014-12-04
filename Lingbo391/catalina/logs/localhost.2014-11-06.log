@@ -1,0 +1,449 @@
+Nov 6, 2014 3:40:10 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: /uploadimage.jsp(27,2) Unterminated &lt;% tag
+	at org.apache.jasper.compiler.DefaultErrorHandler.jspError(DefaultErrorHandler.java:40)
+	at org.apache.jasper.compiler.ErrorDispatcher.dispatch(ErrorDispatcher.java:407)
+	at org.apache.jasper.compiler.ErrorDispatcher.jspError(ErrorDispatcher.java:132)
+	at org.apache.jasper.compiler.Parser.parseScriptlet(Parser.java:747)
+	at org.apache.jasper.compiler.Parser.parseElements(Parser.java:1409)
+	at org.apache.jasper.compiler.Parser.parse(Parser.java:130)
+	at org.apache.jasper.compiler.ParserController.doParse(ParserController.java:255)
+	at org.apache.jasper.compiler.ParserController.parse(ParserController.java:103)
+	at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:185)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:354)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 6, 2014 3:40:13 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+java.lang.ClassNotFoundException: org.apache.jsp.uploadimage_jsp
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:217)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:205)
+	at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:134)
+	at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:66)
+	at org.apache.jasper.JspCompilationContext.load(JspCompilationContext.java:628)
+	at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:149)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:340)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 6, 2014 3:40:21 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: /uploadimage.jsp(27,2) Unterminated &lt;% tag
+	at org.apache.jasper.compiler.DefaultErrorHandler.jspError(DefaultErrorHandler.java:40)
+	at org.apache.jasper.compiler.ErrorDispatcher.dispatch(ErrorDispatcher.java:407)
+	at org.apache.jasper.compiler.ErrorDispatcher.jspError(ErrorDispatcher.java:132)
+	at org.apache.jasper.compiler.Parser.parseScriptlet(Parser.java:747)
+	at org.apache.jasper.compiler.Parser.parseElements(Parser.java:1409)
+	at org.apache.jasper.compiler.Parser.parse(Parser.java:130)
+	at org.apache.jasper.compiler.ParserController.doParse(ParserController.java:255)
+	at org.apache.jasper.compiler.ParserController.parse(ParserController.java:103)
+	at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:185)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:354)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 6, 2014 3:40:28 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: /uploadimage.jsp(27,2) Unterminated &lt;% tag
+	at org.apache.jasper.compiler.DefaultErrorHandler.jspError(DefaultErrorHandler.java:40)
+	at org.apache.jasper.compiler.ErrorDispatcher.dispatch(ErrorDispatcher.java:407)
+	at org.apache.jasper.compiler.ErrorDispatcher.jspError(ErrorDispatcher.java:132)
+	at org.apache.jasper.compiler.Parser.parseScriptlet(Parser.java:747)
+	at org.apache.jasper.compiler.Parser.parseElements(Parser.java:1409)
+	at org.apache.jasper.compiler.Parser.parse(Parser.java:130)
+	at org.apache.jasper.compiler.ParserController.doParse(ParserController.java:255)
+	at org.apache.jasper.compiler.ParserController.parse(ParserController.java:103)
+	at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:185)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:354)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 6, 2014 6:19:04 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 59 in the jsp file: /uploadimage.jsp
+Type mismatch: cannot convert from Object to String
+56: <%
+57: try {
+58: 	String path;
+59: 	path = session.getAttribute("file-path");
+60: } catch (NullObjectException e) {
+61: 	e.printStackTrace();
+62: 	response.sendRedirect("profile.jsp");
+
+
+An error occurred at line: 60 in the jsp file: /uploadimage.jsp
+NullObjectException cannot be resolved to a type
+57: try {
+58: 	String path;
+59: 	path = session.getAttribute("file-path");
+60: } catch (NullObjectException e) {
+61: 	e.printStackTrace();
+62: 	response.sendRedirect("profile.jsp");
+63: }	
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 6, 2014 6:23:39 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 7 in the jsp file: /uploadimage.jsp
+Syntax error on token "import", @ expected
+4: <title>Upload image</title>
+5: </head>
+6: <body background="http://bgwallpaper.net/image/designs-download-background-design-red-light-desktop-142119.jpg">
+7: <% import java.lang.Object %>
+8: <% import java.lang.Exception.*%>
+9: <%
+10: if (session.getAttribute("USERNAME") == null){
+
+
+An error occurred at line: 7 in the jsp file: /uploadimage.jsp
+Syntax error on token(s), misplaced construct(s)
+4: <title>Upload image</title>
+5: </head>
+6: <body background="http://bgwallpaper.net/image/designs-download-background-design-red-light-desktop-142119.jpg">
+7: <% import java.lang.Object %>
+8: <% import java.lang.Exception.*%>
+9: <%
+10: if (session.getAttribute("USERNAME") == null){
+
+
+An error occurred at line: 7 in the jsp file: /uploadimage.jsp
+Syntax error on tokens, delete these tokens
+4: <title>Upload image</title>
+5: </head>
+6: <body background="http://bgwallpaper.net/image/designs-download-background-design-red-light-desktop-142119.jpg">
+7: <% import java.lang.Object %>
+8: <% import java.lang.Exception.*%>
+9: <%
+10: if (session.getAttribute("USERNAME") == null){
+
+
+An error occurred at line: 8 in the jsp file: /uploadimage.jsp
+Syntax error on token "*", delete this token
+5: </head>
+6: <body background="http://bgwallpaper.net/image/designs-download-background-design-red-light-desktop-142119.jpg">
+7: <% import java.lang.Object %>
+8: <% import java.lang.Exception.*%>
+9: <%
+10: if (session.getAttribute("USERNAME") == null){
+11: 	response.sendRedirect("welcome.html");
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 6, 2014 6:24:24 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 7 in the jsp file: /uploadimage.jsp
+Syntax error on token "import", @ expected
+4: <title>Upload image</title>
+5: </head>
+6: <body background="http://bgwallpaper.net/image/designs-download-background-design-red-light-desktop-142119.jpg">
+7: <% import java.lang.Object %>
+8: <% import java.lang.Exception.*%>
+9: <%
+10: if (session.getAttribute("USERNAME") == null){
+
+
+An error occurred at line: 7 in the jsp file: /uploadimage.jsp
+Syntax error on token(s), misplaced construct(s)
+4: <title>Upload image</title>
+5: </head>
+6: <body background="http://bgwallpaper.net/image/designs-download-background-design-red-light-desktop-142119.jpg">
+7: <% import java.lang.Object %>
+8: <% import java.lang.Exception.*%>
+9: <%
+10: if (session.getAttribute("USERNAME") == null){
+
+
+An error occurred at line: 7 in the jsp file: /uploadimage.jsp
+Syntax error on tokens, delete these tokens
+4: <title>Upload image</title>
+5: </head>
+6: <body background="http://bgwallpaper.net/image/designs-download-background-design-red-light-desktop-142119.jpg">
+7: <% import java.lang.Object %>
+8: <% import java.lang.Exception.*%>
+9: <%
+10: if (session.getAttribute("USERNAME") == null){
+
+
+An error occurred at line: 8 in the jsp file: /uploadimage.jsp
+Syntax error on token "*", delete this token
+5: </head>
+6: <body background="http://bgwallpaper.net/image/designs-download-background-design-red-light-desktop-142119.jpg">
+7: <% import java.lang.Object %>
+8: <% import java.lang.Exception.*%>
+9: <%
+10: if (session.getAttribute("USERNAME") == null){
+11: 	response.sendRedirect("welcome.html");
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 6, 2014 6:27:55 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 7 in the jsp file: /uploadimage.jsp
+Syntax error on token "import", @ expected
+4: <title>Upload image</title>
+5: </head>
+6: <body background="http://bgwallpaper.net/image/designs-download-background-design-red-light-desktop-142119.jpg">
+7: <% import java.lang.object %>
+8: <% import java.lang.Exception %>
+9: <%
+10: if (session.getAttribute("USERNAME") == null){
+
+
+An error occurred at line: 7 in the jsp file: /uploadimage.jsp
+Syntax error on token(s), misplaced construct(s)
+4: <title>Upload image</title>
+5: </head>
+6: <body background="http://bgwallpaper.net/image/designs-download-background-design-red-light-desktop-142119.jpg">
+7: <% import java.lang.object %>
+8: <% import java.lang.Exception %>
+9: <%
+10: if (session.getAttribute("USERNAME") == null){
+
+
+An error occurred at line: 7 in the jsp file: /uploadimage.jsp
+out.write cannot be resolved to a type
+4: <title>Upload image</title>
+5: </head>
+6: <body background="http://bgwallpaper.net/image/designs-download-background-design-red-light-desktop-142119.jpg">
+7: <% import java.lang.object %>
+8: <% import java.lang.Exception %>
+9: <%
+10: if (session.getAttribute("USERNAME") == null){
+
+
+An error occurred at line: 7 in the jsp file: /uploadimage.jsp
+Syntax error on tokens, delete these tokens
+4: <title>Upload image</title>
+5: </head>
+6: <body background="http://bgwallpaper.net/image/designs-download-background-design-red-light-desktop-142119.jpg">
+7: <% import java.lang.object %>
+8: <% import java.lang.Exception %>
+9: <%
+10: if (session.getAttribute("USERNAME") == null){
+
+
+An error occurred at line: 8 in the jsp file: /uploadimage.jsp
+Syntax error on token ".", ; expected
+5: </head>
+6: <body background="http://bgwallpaper.net/image/designs-download-background-design-red-light-desktop-142119.jpg">
+7: <% import java.lang.object %>
+8: <% import java.lang.Exception %>
+9: <%
+10: if (session.getAttribute("USERNAME") == null){
+11: 	response.sendRedirect("welcome.html");
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
+Nov 6, 2014 6:54:49 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 61 in the jsp file: /uploadimage.jsp
+Syntax error on token(s), misplaced construct(s)
+58: <%
+59: try {
+60: 	String path;
+61: 	path = 
+62: } catch (NullObjectException e) {
+63: 	//e.printStackTrace();
+64: 	//response.sendRedirect("profile.jsp");
+
+
+An error occurred at line: 62 in the jsp file: /uploadimage.jsp
+NullObjectException cannot be resolved to a type
+59: try {
+60: 	String path;
+61: 	path = 
+62: } catch (NullObjectException e) {
+63: 	//e.printStackTrace();
+64: 	//response.sendRedirect("profile.jsp");
+65: }	
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)

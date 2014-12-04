@@ -1,0 +1,105 @@
+Oct 2, 2014 5:29:27 PM org.apache.catalina.core.StandardWrapperValve invoke
+SEVERE: Servlet.service() for servlet jsp threw exception
+org.apache.jasper.JasperException: Unable to compile class for JSP: 
+
+An error occurred at line: 6 in the jsp file: /JSPExample1.jsp
+Syntax error on token(s), misplaced construct(s)
+3: 	<%
+4: 	// This is a scriptlet. Notice that the "date"
+5: 	// variable we declare here is available in the
+6: 	JavaServer Pages
+7: 	CMPUT 391 – Database Management Systems
+8: 	11
+9: 	// embedded expression later on.
+
+
+An error occurred at line: 6 in the jsp file: /JSPExample1.jsp
+Pages cannot be resolved to a type
+3: 	<%
+4: 	// This is a scriptlet. Notice that the "date"
+5: 	// variable we declare here is available in the
+6: 	JavaServer Pages
+7: 	CMPUT 391 – Database Management Systems
+8: 	11
+9: 	// embedded expression later on.
+
+
+An error occurred at line: 7 in the jsp file: /JSPExample1.jsp
+Syntax error on token "391", ; expected
+4: 	// This is a scriptlet. Notice that the "date"
+5: 	// variable we declare here is available in the
+6: 	JavaServer Pages
+7: 	CMPUT 391 – Database Management Systems
+8: 	11
+9: 	// embedded expression later on.
+10: 	java.util.Date date = new java.util.Date();
+
+
+An error occurred at line: 7 in the jsp file: /JSPExample1.jsp
+â cannot be resolved to a type
+4: 	// This is a scriptlet. Notice that the "date"
+5: 	// variable we declare here is available in the
+6: 	JavaServer Pages
+7: 	CMPUT 391 – Database Management Systems
+8: 	11
+9: 	// embedded expression later on.
+10: 	java.util.Date date = new java.util.Date();
+
+
+An error occurred at line: 7 in the jsp file: /JSPExample1.jsp
+Syntax error, insert ";" to complete LocalVariableDeclarationStatement
+4: 	// This is a scriptlet. Notice that the "date"
+5: 	// variable we declare here is available in the
+6: 	JavaServer Pages
+7: 	CMPUT 391 – Database Management Systems
+8: 	11
+9: 	// embedded expression later on.
+10: 	java.util.Date date = new java.util.Date();
+
+
+An error occurred at line: 7 in the jsp file: /JSPExample1.jsp
+Management cannot be resolved to a type
+4: 	// This is a scriptlet. Notice that the "date"
+5: 	// variable we declare here is available in the
+6: 	JavaServer Pages
+7: 	CMPUT 391 – Database Management Systems
+8: 	11
+9: 	// embedded expression later on.
+10: 	java.util.Date date = new java.util.Date();
+
+
+An error occurred at line: 8 in the jsp file: /JSPExample1.jsp
+Syntax error on token "11", ; expected
+5: 	// variable we declare here is available in the
+6: 	JavaServer Pages
+7: 	CMPUT 391 – Database Management Systems
+8: 	11
+9: 	// embedded expression later on.
+10: 	java.util.Date date = new java.util.Date();
+11: 	%>
+
+
+Stacktrace:
+	at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:92)
+	at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:330)
+	at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:439)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:356)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:334)
+	at org.apache.jasper.compiler.Compiler.compile(Compiler.java:321)
+	at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:592)
+	at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:328)
+	at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:313)
+	at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:260)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:717)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:290)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:206)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:233)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:191)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:127)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:102)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:109)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:293)
+	at org.apache.coyote.http11.Http11Processor.process(Http11Processor.java:859)
+	at org.apache.coyote.http11.Http11Protocol$Http11ConnectionHandler.process(Http11Protocol.java:602)
+	at org.apache.tomcat.util.net.JIoEndpoint$Worker.run(JIoEndpoint.java:489)
+	at java.lang.Thread.run(Thread.java:701)
